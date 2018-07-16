@@ -1,0 +1,64 @@
+apiVersion: xl-release/v1
+kind: Templates
+spec:
+- name: Rest-o-rant Kubernetes
+  type: xlrelease.Release
+  description: |
+    This XL Release template shows how to deploy an undeploy an application to a Kubernetes cluster using XL Deploy.
+  tags:
+  - Rest-o-rant
+  - Kubernetes
+  phases:
+  - name: Deploy
+    color: '#ff9e3b'
+    type: xlrelease.Phase
+    tasks:
+    - name: Ready to go?
+      type: xlrelease.GateTask
+      team: Release Admin
+    - name: Deploy rest-o-rant-api
+      type: xldeploy.Deploy
+      server: XL Deploy
+      deploymentPackage: Rest-o-Rant/rest-o-rant-api/1.0
+      deploymentEnvironment: Environments/Kubernetes
+    - name: Deploy rest-o-rant-web
+      type: xldeploy.Deploy
+      server: XL Deploy
+      deploymentPackage:  Rest-o-Rant/rest-o-rant-web/1.0
+      deploymentEnvironment: Environments/Kubernetes
+  - name: Test
+    type: xlrelease.Phase
+    tasks:
+    - name: Test Rest-o-Rant
+      type: xlrelease.Task
+      status: planned
+      description: |
+        The Rest-o-rant app is now live on Kubernetes!
+        Check out the web site and complete this task when done.
+
+        Open the web site by running this command:
+        ```
+        minikube service rest-o-rant-web
+        ```
+      team: Release admin
+  - name: Clean up
+    color: '#999999'
+    type: xlrelease.Phase
+    tasks:
+    - name: Undeploy Rest-o-rant-web
+      type: xldeploy.Undeploy
+      server: XL Deploy
+      deployedApplication: Environments/Kubernetes/rest-o-rant-web
+    - name: Undeploy Rest-o-rant-api
+      type: xldeploy.Undeploy
+      server: XL Deploy
+      deployedApplication: Environments/Kubernetes/rest-o-rant-api
+---
+apiVersion: xl-release/v1
+kind: Configurations
+spec:
+  - type: xldeploy.XLDeployServer
+    name: XL Deploy
+    url: http://xld:4516
+    username: admin
+    password: admin

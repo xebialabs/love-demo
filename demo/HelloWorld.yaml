@@ -1,0 +1,5 @@
+apiVersion: xl-deploy/v1alpha1
+kind: Applications
+spec:
+- name: Hello World
+  type: udm.Application

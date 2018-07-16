@@ -1,0 +1,81 @@
+apiVersion: xl-deploy/v1alpha1
+kind: Applications
+spec:
+- name: Applications/Rest-o-Rant
+  type: core.Directory
+  children:
+    - name: rest-o-rant-api
+      type: udm.Application
+      children:
+      - name: 1.0
+        type: udm.DeploymentPackage
+        deployables:
+          - name: rest-o-rant-api
+            type: k8s.DeploymentSpec
+            labels:
+              io.kompose.service: rest-o-rant-api
+            matchLabels:
+              io.kompose.service: rest-o-rant-api
+            deploymentName: rest-o-rant-api
+            replicasCount: 1
+            containers:
+              - name: rest-o-rant-api
+                type: k8s.ContainerSpec
+                containerName: rest-o-rant-api
+                image: xebialabsunsupported/rest-o-rant-api:v1
+                ports:
+                  - name: rest-o-rant-api-port-spec
+                    type: k8s.ContainerPortSpec
+                    containerPort: 8080
+
+          - name: rest-o-rant-api-service
+            type: k8s.ServiceSpec
+            serviceName: rest-o-rant-api
+            serviceType: LoadBalancer
+            selectors:
+              io.kompose.service: rest-o-rant-api
+            ports:
+              - name: port
+                type: k8s.ServicePortSpec
+                port: 8080
+                targetPort: 8080
+
+    - name: rest-o-rant-web
+      type: udm.Application
+      children:
+        - name: 1.0
+          type: udm.DeploymentPackage
+          applicationDependencies:
+            rest-o-rant-api: "[1.0,1.0]"
+          orchestrator:
+          - sequential-by-dependency
+          deployables:
+            - name: rest-o-rant-web
+              type: k8s.DeploymentSpec
+              labels:
+                io.kompose.service: rest-o-rant-web
+              matchLabels:
+                io.kompose.service: rest-o-rant-web
+              deploymentName: rest-o-rant-web
+              replicasCount: 1
+              containers:
+                - name: rest-o-rant-web
+                  type: k8s.ContainerSpec
+                  containerName: rest-o-rant-web
+                  image: xebialabsunsupported/rest-o-rant-web:v1
+                  ports:
+                    - name: rest-o-rant-web-port-spec
+                      type: k8s.ContainerPortSpec
+                      containerPort: 80
+
+            - name: rest-o-rant-web-service
+              type: k8s.ServiceSpec
+              serviceName: rest-o-rant-web
+              serviceType: LoadBalancer
+              selectors:
+                io.kompose.service: rest-o-rant-web
+              ports:
+                - name: web
+                  type: k8s.ServicePortSpec
+                  port: 80
+                  targetPort: 80

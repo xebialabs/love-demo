@@ -1,0 +1,27 @@
+version: '2'
+
+services:
+  xld:
+    image: xl-docker.xebialabs.com:443/xl-deploy:8.2.0-alpha.21
+    ports:
+     - "4516:4516"
+    container_name: xld
+    volumes:
+     - ~/.xl-config/deployit-license.lic:/opt/xl-deploy-server/conf/deployit-license.lic
+     - ./volumes/xld/hotfix/plugins:/opt/xl-deploy-server/hotfix/plugins
+     - ./volumes/xld/plugins:/opt/xl-deploy-server/plugins
+    environment:
+     - ADMIN_PASSWORD=admin
+
+  xlr:
+    image: xl-docker.xebialabs.com:443/xl-release:8.1.1-alpha.8
+    ports:
+     - "5516:5516"
+    depends_on:
+     - xld
+    container_name: xlr
+    volumes:
+     - ~/.xl-config/xl-release-license.lic:/opt/xl-release-server/conf/xl-release-license.lic
+     - ./volumes/xlr/hotfix/:/opt/xl-release-server/hotfix
+    environment:
+     - ADMIN_PASSWORD=admin
