@@ -2,9 +2,7 @@
 
 Demo scenarios showcasing the XL command line client for the XebiaLabs Devops Platform.
 
-The demos show you how to import infrastructure, environments, deployment packages and provisioning packages into XL Deploy and to create a pipelines in XL Release.
-
-_Note: for the prototype see [python-prototype](https://github.com/xebialabs/xl-client-yaml-demo/tree/python-prototype) branch._
+The demos show you how to import infrastructure, environments, deployment packages and provisioning packages into XL Deploy and to create a release pipeline in XL Release.
 
 ## Prerequisites
  * Docker
