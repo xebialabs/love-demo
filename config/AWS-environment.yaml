@@ -1,0 +1,32 @@
+apiVersion: xl-deploy/v1alpha1
+kind: Environments
+
+spec:
+- name: AWS
+  type: core.Directory
+  children:
+  - name: AWS Dictionary
+    type: udm.Dictionary
+    entries:
+      ami_id: ami-d91be1ae
+      key_pair: !secret aws.keypair
+      key_pair_file_name: !secret aws.keypair.file
+      region: !value aws.region
+    encryptedEntries:
+      mysql_password: password
+  - name: AWS Environment
+    type: udm.Environment
+    dictionaries:
+    - Environments/AWS/AWS Dictionary
+    members:
+    - Infrastructure/AWS Cloud
+
+---
+apiVersion: xl-deploy/v1alpha1
+kind: Infrastructure
+
+spec:
+- name: AWS Cloud
+  type: aws.Cloud
+  accesskey: !secret aws.access.key
+  accessSecret: !secret aws.access.secret
