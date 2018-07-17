@@ -5,7 +5,7 @@ Creates AWS infrastructure and deploys Rest-o-Rant application to it.
 *THIS DEMO NEEDS SUPPORT FOR ARTIFACT UPLOAD IN XL CLIENT*
 
 
-#### Step 1. Configure AWS in XL Deploy
+## Step 1. Configure AWS in XL Deploy
 
 Make sure you have access to an AWS environment.
 
@@ -37,13 +37,13 @@ Now send this file to XL Deploy using
 	
 In XL Deploy, run 'check connection' on Infrastructure/AWS Cloud to see if your credentials have been imported correctly.
 	
-### Step 2. Import the Rest-o-rant application and AWS provisioning
+## Step 2. Import the Rest-o-rant application and AWS provisioning
 
 Use the following command to import the Rest-o-rant application with AWS provisioning into XL Deploy.
 
 	xl apply -f demo/aws-provisioning/Rest-o-Rant-Package.yaml
 
-### Step 3. Run the pipeline in XL Release
+## Step 3. Run the pipeline in XL Release
 
 Create a template in XL Release using
 

@@ -54,42 +54,19 @@ For more information, see
 
     xl --help
     
+### Run the Hello world example
+
+Execute the following command:
+
+	xl apply -f demo/HelloWorld.yaml
+	
+Open XL Deploy and locate an empty application called **HelloWorld** under **Applications**.
+
     
 ## Demos 
 
-### Rest-o-Rant Kubernetes
+The following demos are available. Click on the links to see the READMEs with further instructions.
 
-#### Step 1. Configuring Minikube in XL Deploy
-
-Make sure you have a running minikube environment locally.
-
-Use the `kubeconfig2xld.py`  in the `config` directory to create XL YAML files that will create the Kubernetes environment in XL Deploy.
-
-	python config/kubeconfig2xld.py > KubeConfig.yaml
-	
-Now send this file to XL Deploy using
-
-	xl apply -f KubeConfig.yaml
-	
-### Step 2. Importing the Rest-o-rant application
-
-Use thew following command to import the Rest-o-rant application or Kubernetes into XL Deploy.
-
-	xl apply -f demo/rest-o-rant/kubernetes-package.yaml
-
-### Step 3. Run the pipeline in XL Release
-
-Create a template in XL Release using
-
-	xl apply -f demo/rest-o-rant/kubernetes-pipeline.yaml
-
-Now go to the XL Release UI running on http://localhost:5516.
-Go to **Design > Templates** and locate the **Rest-o-rant Kubernetes** template.
-
-Create a new release from the template, start it and follow the release flow.
-	
-	
-
-
-
+* [Rest-o-rant Kubernetes](demo/rest-o-rant/README.md) -- Set up a sample pipeline in Kubernetes.
+* [AWS Provisioning](demo/aws-provisioning/README.md) -- _not working yet_
 
