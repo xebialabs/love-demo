@@ -59,6 +59,6 @@ kind: Configurations
 spec:
   - type: xldeploy.XLDeployServer
     name: XL Deploy
-    url: http://xld:4516
+    url: http://xl-deploy:4516
     username: admin
     password: admin

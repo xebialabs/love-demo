@@ -5,7 +5,7 @@ services:
     image: xl-docker.xebialabs.com:443/xl-deploy:8.2.0-alpha.21
     ports:
      - "4516:4516"
-    container_name: xld
+    container_name: xl-deploy
     volumes:
      - ~/.xl-config/deployit-license.lic:/opt/xl-deploy-server/conf/deployit-license.lic
      - ./volumes/xld/hotfix/plugins:/opt/xl-deploy-server/hotfix/plugins
@@ -19,7 +19,7 @@ services:
      - "5516:5516"
     depends_on:
      - xld
-    container_name: xlr
+    container_name: xl-release
     volumes:
      - ~/.xl-config/xl-release-license.lic:/opt/xl-release-server/conf/xl-release-license.lic
      - ./volumes/xlr/hotfix/:/opt/xl-release-server/hotfix
