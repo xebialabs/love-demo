@@ -75,14 +75,14 @@ Now send this file to XL Deploy using
 
 Use thew following command to import the Rest-o-rant application or Kubernetes into XL Deploy.
 
-	xl apply -f demo/kubernetes-rest-o-rant/rest-o-rant-package.yaml
-	
+	xl apply -f demo/rest-o-rant/kubernetes-package.yaml
+
 ### Step 3. Run the pipeline in XL Release
 
 Create a template in XL Release using
 
-	xl apply -f demo/kubernetes-rest-o-rant/pipeline.yaml
-	
+	xl apply -f demo/rest-o-rant/kubernetes-pipeline.yaml
+
 Now go to the XL Release UI running on http://localhost:5516.
 Go to **Design > Templates** and locate the **Rest-o-rant Kubernetes** template.
 
