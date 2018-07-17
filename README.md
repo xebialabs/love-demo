@@ -67,6 +67,6 @@ Open XL Deploy and locate an empty application called **HelloWorld** under **App
 
 The following demos are available. Click on the links to see the READMEs with further instructions.
 
-* [Rest-o-rant Kubernetes](demo/rest-o-rant/README.md) -- Set up a sample pipeline in Kubernetes.
-* [AWS Provisioning](demo/aws-provisioning/README.md) -- _not working yet_
+* [Rest-o-rant Kubernetes](demo/rest-o-rant/) -- Set up a sample pipeline in Kubernetes.
+* [AWS Provisioning](demo/aws-provisioning/) -- _not working yet_
 
