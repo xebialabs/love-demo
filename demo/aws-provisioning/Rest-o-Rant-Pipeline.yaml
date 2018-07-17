@@ -1,0 +1,65 @@
+apiVersion: xl-release/v1
+kind: Templates
+spec:
+- name: AWS Provisioning Demo
+  type: xlrelease.Release
+  description: |
+    This XL Release template shows how to provision an AWS environment and deploys the Rest-o-Rant sample application to it.
+  tags:
+  - Rest-o-rant
+  - AWS
+
+  phases:
+  - name: AWS provisioning
+    type: xlrelease.Phase
+    color: '#ff9e3b'
+    tasks:
+    - name: Ready to go?
+      type: xlrelease.GateTask
+      team: Release Admin
+
+    - name: Provision Rest-O-Rant DB Instance
+      type: xldeploy.Deploy
+      server: XL Deploy
+      deploymentPackage: Rest-o-Rant (AWS)/rest-o-rant-aws-provision/1.0
+      deploymentEnvironment: AWS/AWS Environment
+      rollbackOnFailure: false
+      cancelOnError: false
+
+    - name: Get Rest-o-rant URL
+      type: webhook.JsonWebhook
+      URL: http://xl-deploy:4516/deployit/repository/ci/Infrastructure/AWS Cloud/rest-o-rant-alb
+      username: admin
+      password: admin
+      jsonPathExpression: dnsName
+      result: ${website.url}
+
+  - name: Demo
+    type: xlrelease.Phase
+    tasks:
+      - name: Show Rest-o-Rant app
+        type: xlrelease.Task
+        description: |
+          The [Rest-o-rant app](http://${website.url}) is now live on AWS!
+
+          Check out the web site and complete this task when done.
+        team: Release admin
+
+  - name: Tear down environment
+    type: xlrelease.Phase
+    color: '#999999'
+    tasks:
+      - name: Undeploy Rest-o-rant app
+        type: xldeploy.Undeploy
+        server: XL Deploy
+        deployedApplication: Environments/AWS/AWS Environment/rest-o-rant-aws-provision
+
+---
+apiVersion: xl-release/v1
+kind: Configurations
+spec:
+  - type: xldeploy.XLDeployServer
+    name: XL Deploy
+    url: http://xl-deploy:4516
+    username: admin
+    password: admin

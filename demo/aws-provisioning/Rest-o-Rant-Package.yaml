@@ -1,0 +1,414 @@
+apiVersion: xl-deploy/v1alpha1
+kind: Applications
+
+spec:
+- name: Applications/Rest-o-Rant (AWS)
+  type: core.Directory
+  children:
+    - name: rest-o-rant-aws-provision
+      type: udm.Application
+      children:
+      - name: 1.0
+        type: udm.DeploymentPackage
+        deployables:
+
+        - name: rest-o-rant-target-group
+          type: aws.elb.TargetGroupSpec
+          targetName: rest-o-rant-target-group
+          region: '{{region}}'
+          vpc: Name:rest-o-rant-vpc
+          protocol: http
+          port: '80'
+          instances:
+            Name:rest-o-rant-instance-a: '80'
+            Name:rest-o-rant-instance-b: '80'
+
+        - name: rest-o-rant-ebs-b
+          type: aws.ec2.EBSVolumeSpec
+          volumeName: rest-o-rant-ebs-b
+          region: '{{region}}'
+          availabilityZone: '{{region}}b'
+          size: '15'
+          volumeType: standard
+          encryption: 'false'
+
+        - name: rest-o-rant-ebs-a
+          type: aws.ec2.EBSVolumeSpec
+          volumeName: rest-o-rant-ebs-a
+          region: '{{region}}'
+          availabilityZone: '{{region}}a'
+          size: '15'
+          volumeType: standard
+          encryption: 'false'
+
+        - name: rest-o-rant-vpc
+          type: aws.vpc.VPCSpec
+          vpcName: rest-o-rant-vpc
+          cidrBlock: 10.0.0.0/16
+          amazonProvidedIpv6CidrBlock: 'True'
+          region: '{{region}}'
+          dnsSupport: 'True'
+          dnsHostnames: 'True'
+          createInternetGateway: 'True'
+          internetGatewayName: igw-rest-o-rant
+
+        - name: rest-o-rant-DB-instance
+          type: aws.ec2.InstanceSpec
+          boundTemplates:
+          - Applications/Rest-o-Rant (AWS)/rest-o-rant-aws-provision/1.0/mysql-dict
+          - Applications/Rest-o-Rant (AWS)/rest-o-rant-aws-provision/1.0/rest-o-rant-DB-ssh-host
+          provisioners:
+          - name: stdlib-module
+            type: puppet.provisioner.Module
+            hostTemplate: Applications/Rest-o-Rant (AWS)/rest-o-rant-aws-provision/1.0/rest-o-rant-DB-ssh-host
+            moduleName: puppetlabs-stdlib
+            version: 4.19.0
+            installOrder: 50
+          # - name: mysql-manifest
+          #   type: puppet.provisioner.Manifest
+          #   scanPlaceholders: true
+          #   checksum: ebe51129a41d3be0682800a01b4f632be28dd8b9
+          #   file: /Rest-o-Rant-Package/mysql.pp
+          #   hostTemplate: Applications/Rest-o-Rant (AWS)/rest-o-rant-aws-provision/1.0/rest-o-rant-DB-ssh-host
+          - name: mysqlModule
+            type: puppet.provisioner.Module
+            hostTemplate: Applications/Rest-o-Rant (AWS)/rest-o-rant-aws-provision/1.0/rest-o-rant-DB-ssh-host
+            moduleName: puppetlabs-mysql
+            version: 3.9.0
+            installOrder: 50
+          instanceName: rest-o-rant-db-instance
+          amiId: '{{ami_id}}'
+          region: '{{region}}'
+          availabilityZone: '{{region}}a'
+          securityGroup:
+          - Name:rest-o-rant-security-group-a
+          instanceType: m1.small
+          keyName: '{{key_pair}}'
+          instanceBootRetryCount: '5'
+          shutdownBehavior: stop
+          detailedMonitoring: 'false'
+          terminationProtection: 'false'
+          tenancy: default
+          subnet: Name:rest-o-rant-subnet-a
+          elasticIpDomain: standard
+
+        - name: rest-o-rant-instance-a
+          type: aws.ec2.InstanceSpec
+          boundTemplates:
+          - Applications/Rest-o-Rant (AWS)/rest-o-rant-aws-provision/1.0/rest-o-rant-ssh-host-a
+          provisioners:
+          - name: stdlib-module
+            type: puppet.provisioner.Module
+            hostTemplate: Applications/Rest-o-Rant (AWS)/rest-o-rant-aws-provision/1.0/rest-o-rant-ssh-host-a
+            moduleName: puppetlabs-stdlib
+            version: 4.19.0
+            installOrder: 50
+          - name: tomcat-module
+            type: puppet.provisioner.Module
+            hostTemplate: Applications/Rest-o-Rant (AWS)/rest-o-rant-aws-provision/1.0/rest-o-rant-ssh-host-a
+            moduleName: puppetlabs-tomcat
+            version: 1.7.0
+            installOrder: 50
+          - name: staging-module
+            type: puppet.provisioner.Module
+            hostTemplate: Applications/Rest-o-Rant (AWS)/rest-o-rant-aws-provision/1.0/rest-o-rant-ssh-host-a
+            moduleName: nanliu-staging
+            version: 1.0.3
+            installOrder: 50
+          - name: java-module
+            type: puppet.provisioner.Module
+            hostTemplate: Applications/Rest-o-Rant (AWS)/rest-o-rant-aws-provision/1.0/rest-o-rant-ssh-host-a
+            moduleName: spantree-java8
+            version: 0.6.0
+            installOrder: 50
+          - name: apt-module
+            type: puppet.provisioner.Module
+            hostTemplate: Applications/Rest-o-Rant (AWS)/rest-o-rant-aws-provision/1.0/rest-o-rant-ssh-host-a
+            moduleName: puppetlabs-apt
+            version: 2.3.0
+            installOrder: 50
+          # - name: mount-volume
+          #   type: script.provisioner.Script
+          #   scanPlaceholders: true
+          #   checksum: 7824d0ec191de6e7522c93cf76c35099374a37f3
+          #   file: /Rest-o-Rant-Package/mount.sh
+          #   hostTemplate: Applications/Rest-o-Rant (AWS)/rest-o-rant-aws-provision/1.0/rest-o-rant-ssh-host-a
+          - name: apacheHTTPModule
+            type: puppet.provisioner.Module
+            hostTemplate: Applications/Rest-o-Rant (AWS)/rest-o-rant-aws-provision/1.0/rest-o-rant-ssh-host-a
+            moduleName: puppetlabs-apache
+            version: 0.9.0
+            installOrder: 55
+          - name: concatModule
+            type: puppet.provisioner.Module
+            hostTemplate: Applications/Rest-o-Rant (AWS)/rest-o-rant-aws-provision/1.0/rest-o-rant-ssh-host-a
+            moduleName: puppetlabs-concat
+            version: 2.2.1
+            installOrder: 50
+          # - name: apache-tomcat
+          #   type: puppet.provisioner.Manifest
+          #   checksum: fe1d0b1b0f9896158919801a7b8574a17631e79d
+          #   file: /Rest-o-Rant-Package/ta.pp
+          #   hostTemplate: Applications/Rest-o-Rant (AWS)/rest-o-rant-aws-provision/1.0/rest-o-rant-ssh-host-a
+          instanceName: rest-o-rant-instance-a
+          amiId: '{{ami_id}}'
+          region: '{{region}}'
+          availabilityZone: '{{region}}a'
+          securityGroup:
+          - Name:rest-o-rant-security-group-a
+          instanceType: m1.small
+          keyName: '{{key_pair}}'
+          instanceBootRetryCount: '5'
+          volumes:
+            Name:rest-o-rant-ebs-a: /dev/sdh1
+          shutdownBehavior: stop
+          detailedMonitoring: 'false'
+          terminationProtection: 'false'
+          tenancy: default
+          subnet: Name:rest-o-rant-subnet-a
+          elasticIpDomain: standard
+
+        - name: rest-o-rant-instance-b
+          type: aws.ec2.InstanceSpec
+          boundTemplates:
+          - Applications/Rest-o-Rant (AWS)/rest-o-rant-aws-provision/1.0/rest-o-rant-ssh-host-b
+          provisioners:
+          - name: stdlib-module
+            type: puppet.provisioner.Module
+            hostTemplate: Applications/Rest-o-Rant (AWS)/rest-o-rant-aws-provision/1.0/rest-o-rant-ssh-host-b
+            moduleName: puppetlabs-stdlib
+            version: 4.19.0
+            installOrder: 50
+          - name: tomcat-module
+            type: puppet.provisioner.Module
+            hostTemplate: Applications/Rest-o-Rant (AWS)/rest-o-rant-aws-provision/1.0/rest-o-rant-ssh-host-b
+            moduleName: puppetlabs-tomcat
+            version: 1.7.0
+            installOrder: 50
+          - name: staging-module
+            type: puppet.provisioner.Module
+            hostTemplate: Applications/Rest-o-Rant (AWS)/rest-o-rant-aws-provision/1.0/rest-o-rant-ssh-host-b
+            moduleName: nanliu-staging
+            version: 1.0.3
+            installOrder: 50
+          - name: java-module
+            type: puppet.provisioner.Module
+            hostTemplate: Applications/Rest-o-Rant (AWS)/rest-o-rant-aws-provision/1.0/rest-o-rant-ssh-host-b
+            moduleName: spantree-java8
+            version: 0.6.0
+            installOrder: 50
+          - name: apt-module
+            type: puppet.provisioner.Module
+            hostTemplate: Applications/Rest-o-Rant (AWS)/rest-o-rant-aws-provision/1.0/rest-o-rant-ssh-host-b
+            moduleName: puppetlabs-apt
+            version: 2.3.0
+            installOrder: 50
+          # - name: mount-volume
+          #   type: script.provisioner.Script
+          #   scanPlaceholders: true
+          #   checksum: 7824d0ec191de6e7522c93cf76c35099374a37f3
+          #   file: /Rest-o-Rant-Package/mount.sh
+          #   hostTemplate: Applications/Rest-o-Rant (AWS)/rest-o-rant-aws-provision/1.0/rest-o-rant-ssh-host-b
+          - name: apacheHTTPModule
+            type: puppet.provisioner.Module
+            hostTemplate: Applications/Rest-o-Rant (AWS)/rest-o-rant-aws-provision/1.0/rest-o-rant-ssh-host-b
+            moduleName: puppetlabs-apache
+            version: 0.9.0
+            installOrder: 55
+          - name: concatModule
+            type: puppet.provisioner.Module
+            hostTemplate: Applications/Rest-o-Rant (AWS)/rest-o-rant-aws-provision/1.0/rest-o-rant-ssh-host-b
+            moduleName: puppetlabs-concat
+            version: 2.2.1
+            installOrder: 50
+          # - name: apache-tomcat
+          #   type: puppet.provisioner.Manifest
+          #   checksum: fe1d0b1b0f9896158919801a7b8574a17631e79d
+          #   file: /Rest-o-Rant-Package/ta.pp
+          #   hostTemplate: Applications/Rest-o-Rant (AWS)/rest-o-rant-aws-provision/1.0/rest-o-rant-ssh-host-b
+          instanceName: rest-o-rant-instance-b
+          amiId: '{{ami_id}}'
+          region: '{{region}}'
+          availabilityZone: '{{region}}b'
+          securityGroup:
+          - Name:rest-o-rant-security-group-b
+          instanceType: m1.small
+          keyName: '{{key_pair}}'
+          instanceBootRetryCount: '20'
+          volumes:
+            Name:rest-o-rant-ebs-b: /dev/sdh1
+          shutdownBehavior: stop
+          detailedMonitoring: 'false'
+          terminationProtection: 'false'
+          tenancy: default
+          subnet: Name:rest-o-rant-subnet-b
+          elasticIpDomain: standard
+
+        - name: rest-o-rant-route-table
+          type: aws.vpc.RouteTableSpec
+          routeTableName: rest-o-rant-route-table
+          region: '{{region}}'
+          vpc: Name:rest-o-rant-vpc
+          subnets:
+          - Name:rest-o-rant-subnet-b
+          - Name:rest-o-rant-subnet-a
+          routes:
+          - name: rest-o-rant-route
+            type: aws.vpc.RouteSpec
+            ipv4Address: 0.0.0.0/0
+            gatewayId: Name:igw-rest-o-rant
+
+        - name: rest-o-rant-subnet-a
+          type: aws.vpc.SubnetSpec
+          subnetName: rest-o-rant-subnet-a
+          vpc: Name:rest-o-rant-vpc
+          cidrBlock: 10.0.1.0/24
+          region: '{{region}}'
+          availabilityZone: '{{region}}a'
+          mapPublicIpOnLaunch: 'true'
+
+        - name: rest-o-rant-security-group-a
+          type: aws.vpc.SecurityGroupSpec
+          securityGroupName: rest-o-rant-security-group-a
+          description: rest-o-rant-security-group-a
+          region: '{{region}}'
+          vpc: Name:rest-o-rant-vpc
+          inboundRules:
+          - name: rest-o-rant-inbound-ssh-rule
+            type: aws.vpc.SecurityGroupInboundRuleSpec
+            protocol: tcp
+            portRange: 0-9090
+            source: 0.0.0.0/0
+
+        - name: rest-o-rant-security-group-b
+          type: aws.vpc.SecurityGroupSpec
+          securityGroupName: rest-o-rant-security-group-b
+          description: rest-o-rant-security-group-b
+          region: '{{region}}'
+          vpc: Name:rest-o-rant-vpc
+          inboundRules:
+          - name: rest-o-rant-inbound-ssh-rule
+            type: aws.vpc.SecurityGroupInboundRuleSpec
+            protocol: tcp
+            portRange: 0-9090
+            source: 0.0.0.0/0
+
+        - name: rest-o-rant-subnet-b
+          type: aws.vpc.SubnetSpec
+          subnetName: rest-o-rant-subnet-b
+          vpc: Name:rest-o-rant-vpc
+          cidrBlock: 10.0.2.0/24
+          region: '{{region}}'
+          availabilityZone: '{{region}}b'
+          mapPublicIpOnLaunch: 'true'
+
+        - name: rest-o-rant-alb
+          type: aws.elb.ApplicationELBSpec
+          loadBalancerName: rest-o-rant-alb
+          region: '{{region}}'
+          scheme: internet-facing
+          ipAddressType: ipv4
+          subnets:
+          - Name:rest-o-rant-subnet-b
+          - Name:rest-o-rant-subnet-a
+          securityGroups:
+          - Name:rest-o-rant-security-group-b
+          - Name:rest-o-rant-security-group-a
+          listeners:
+          - name: rest-o-rant-listener
+            type: aws.elb.ApplicationListenerSpec
+            protocol: http
+            port: '80'
+            targetGroup: rest-o-rant-target-group
+        dependencyResolution: LATEST
+        undeployDependencies: 'false'
+
+        templates:
+        - name: mysql-dict
+          type: template.udm.Dictionary
+          entries:
+            mysql_host: '{{%publicHostname%}}'
+
+        - name: rest-o-rant-ssh-host-a
+          type: template.overthere.SshHost
+          childTemplates:
+          - name: tomcat-server
+            type: template.tomcat.Server
+            childTemplates:
+            - name: virtual-host
+              type: template.tomcat.VirtualHost
+              appBase: webapps
+              hostName: localhost
+            home: /opt/apache-tomcat/
+            startCommand: /opt/apache-tomcat/bin/startup.sh
+            stopCommand: /opt/apache-tomcat/bin/shutdown.sh
+            startWaitTime: '0'
+            stopWaitTime: '0'
+          - name: apache-server
+            type: template.www.ApacheHttpdServer
+            startCommand: apache2ctl start
+            startWaitTime: '10'
+            stopCommand: apache2ctl stop
+            stopWaitTime: '10'
+            restartWaitTime: '10'
+            defaultDocumentRoot: /var/www
+            configurationFragmentDirectory: /etc/apache2/sites-enabled
+          os: UNIX
+          puppetPath: /usr/local/bin
+          connectionType: SUDO
+          address: '{{%publicHostname%}}'
+          port: '22'
+          username: ubuntu
+          privateKeyFile: '{{key_pair_file_name}}'
+          sudoUsername: root
+
+        - name: rest-o-rant-ssh-host-b
+          type: template.overthere.SshHost
+          childTemplates:
+          - name: apache-server
+            type: template.www.ApacheHttpdServer
+            startCommand: apache2ctl start
+            startWaitTime: '10'
+            stopCommand: apache2ctl stop
+            stopWaitTime: '10'
+            restartWaitTime: '10'
+            defaultDocumentRoot: /var/www
+            configurationFragmentDirectory: /etc/apache2/sites-enabled
+          - name: tomcat-server
+            type: template.tomcat.Server
+            childTemplates:
+            - name: virtual-host
+              type: template.tomcat.VirtualHost
+              appBase: webapps
+              hostName: localhost
+            home: /opt/apache-tomcat/
+            startCommand: /opt/apache-tomcat/bin/startup.sh
+            stopCommand: /opt/apache-tomcat/bin/shutdown.sh
+            startWaitTime: '0'
+            stopWaitTime: '0'
+          os: UNIX
+          puppetPath: /usr/local/bin
+          connectionType: SUDO
+          address: '{{%publicHostname%}}'
+          port: '22'
+          username: ubuntu
+          privateKeyFile: '{{key_pair_file_name}}'
+          sudoUsername: root
+
+        - name: rest-o-rant-DB-ssh-host
+          type: template.overthere.SshHost
+          childTemplates:
+          - name: mysql-client
+            type: template.sql.MySqlClient
+            username: root
+            password: "{{mysql_password}}"
+            mySqlHome: /usr
+            databaseName: restaurant
+          os: UNIX
+          puppetPath: /usr/local/bin
+          connectionType: SUDO
+          address: '{{%publicHostname%}}'
+          port: '22'
+          username: ubuntu
+          privateKeyFile: '{{key_pair_file_name}}'
+          sudoUsername: root
