@@ -1,7 +1,7 @@
 version: '2'
 
 services:
-  xld:
+  xl-deploy:
     image: xl-docker.xebialabs.com:443/xl-deploy:8.2.0-alpha.21
     ports:
      - "4516:4516"
@@ -13,12 +13,12 @@ services:
     environment:
      - ADMIN_PASSWORD=admin
 
-  xlr:
+  xl-release:
     image: xl-docker.xebialabs.com:443/xl-release:8.1.1-alpha.8
     ports:
      - "5516:5516"
     depends_on:
-     - xld
+     - xl-deploy
     container_name: xl-release
     volumes:
      - ~/.xl-config/xl-release-license.lic:/opt/xl-release-server/conf/xl-release-license.lic
