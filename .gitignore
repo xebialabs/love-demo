@@ -1,6 +1,5 @@
 # XL Deploy mounted plugins
-volumes/xld/plugins/*.xldp
-volumes/xld/plugins/*.jar
+volumes/xld/plugins
 
 # use glob syntax.
 syntax: glob
