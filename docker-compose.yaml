@@ -1,8 +1,8 @@
-version: '2'
-
+version: '2.3'
 services:
   xl-deploy:
-    image: xl-docker.xebialabs.com:443/xl-deploy:8.2.0-alpha.21
+    build: xl-deploy
+    # image: xl-docker.xebialabs.com:443/xl-deploy:8.2.0-alpha.21
     ports:
     - "4516:4516"
     volumes:
@@ -11,9 +11,16 @@ services:
     - ./volumes/xld/plugins:/opt/xl-deploy-server/plugins
     environment:
     - ADMIN_PASSWORD=admin
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:4516"]
+      interval: 5s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
 
   xl-release:
-    image: xl-docker.xebialabs.com:443/xl-release:8.1.1-alpha.8
+    build: xl-release
+    # image: xl-docker.xebialabs.com:443/xl-release:8.1.1-alpha.8
     ports:
     - "5516:5516"
     depends_on:
@@ -23,3 +30,10 @@ services:
     - ./volumes/xlr/hotfix/:/opt/xl-release-server/hotfix
     environment:
     - ADMIN_PASSWORD=admin
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5516"]
+      interval: 5s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
