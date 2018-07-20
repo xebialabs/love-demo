@@ -4,24 +4,22 @@ services:
   xl-deploy:
     image: xl-docker.xebialabs.com:443/xl-deploy:8.2.0-alpha.21
     ports:
-     - "4516:4516"
-    container_name: xl-deploy
+    - "4516:4516"
     volumes:
-     - ~/.xl-config/deployit-license.lic:/opt/xl-deploy-server/conf/deployit-license.lic
-     - ./volumes/xld/hotfix/plugins:/opt/xl-deploy-server/hotfix/plugins
-     - ./volumes/xld/plugins:/opt/xl-deploy-server/plugins
+    - ~/.xl-config/deployit-license.lic:/opt/xl-deploy-server/conf/deployit-license.lic
+    - ./volumes/xld/hotfix/plugins:/opt/xl-deploy-server/hotfix/plugins
+    - ./volumes/xld/plugins:/opt/xl-deploy-server/plugins
     environment:
-     - ADMIN_PASSWORD=admin
+    - ADMIN_PASSWORD=admin
 
   xl-release:
     image: xl-docker.xebialabs.com:443/xl-release:8.1.1-alpha.8
     ports:
-     - "5516:5516"
+    - "5516:5516"
     depends_on:
-     - xl-deploy
-    container_name: xl-release
+    - xl-deploy
     volumes:
-     - ~/.xl-config/xl-release-license.lic:/opt/xl-release-server/conf/xl-release-license.lic
-     - ./volumes/xlr/hotfix/:/opt/xl-release-server/hotfix
+    - ~/.xl-config/xl-release-license.lic:/opt/xl-release-server/conf/xl-release-license.lic
+    - ./volumes/xlr/hotfix/:/opt/xl-release-server/hotfix
     environment:
-     - ADMIN_PASSWORD=admin
+    - ADMIN_PASSWORD=admin
