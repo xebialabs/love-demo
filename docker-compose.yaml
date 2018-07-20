@@ -37,3 +37,12 @@ services:
       retries: 3
       start_period: 30s
 
+  xl-cli:
+    build: xl-cli
+    # image: xebialabs/xl-cli:8.2.0-alpha.2
+    depends_on:
+    - xl-deploy
+    - xl-release
+    command: ["apply", "--url", "http://admin:admin@xl-release:5516/ascode", "-f", "/data/link-xl-release-to-xl-deploy.yaml"]
+    volumes:
+    - ./demo:/data
