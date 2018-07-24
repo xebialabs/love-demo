@@ -1,0 +1,12 @@
+apiVersion: xl-deploy/v1alpha1
+kind: Environments
+
+spec:
+- name: AWS Dictionary
+  type: udm.Dictionary
+  entries:
+    region: eu-west-1
+    key_pair: vpartington
+    key_pair_filename: /opt/xl-deploy-server/conf/id_rsa
+    PETPORTAL_TITLE: PetPortal from the as-code demo
+    ecs_ami_id: ami-c91624b0
