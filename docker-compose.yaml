@@ -1,48 +1,33 @@
 version: '2.3'
 services:
   xl-deploy:
-    build: xl-deploy
-    # image: xl-docker.xebialabs.com:443/xl-deploy:8.2.0-alpha.21
+    image: xl-docker.xebialabs.com:443/xl-deploy:8.2.0-alpha.21
     ports:
     - "4516:4516"
     volumes:
     - ~/.xl-config/deployit-license.lic:/opt/xl-deploy-server/conf/deployit-license.lic
-    - ./volumes/xld/hotfix/plugins:/opt/xl-deploy-server/hotfix/plugins
-    - ./volumes/xld/plugins:/opt/xl-deploy-server/plugins
+    - ./docker/volumes/xld/hotfix/plugins:/opt/xl-deploy-server/hotfix/plugins
+    - ./docker/volumes/xld/plugins:/opt/xl-deploy-server/plugins
     environment:
     - ADMIN_PASSWORD=admin
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:4516"]
-      interval: 5s
-      timeout: 10s
-      retries: 3
-      start_period: 30s
 
   xl-release:
-    build: xl-release
-    # image: xl-docker.xebialabs.com:443/xl-release:8.1.1-alpha.8
+    image: xl-docker.xebialabs.com:443/xl-release:8.1.1-alpha.8
     ports:
     - "5516:5516"
     depends_on:
     - xl-deploy
     volumes:
     - ~/.xl-config/xl-release-license.lic:/opt/xl-release-server/conf/xl-release-license.lic
-    - ./volumes/xlr/hotfix/:/opt/xl-release-server/hotfix
+    - ./docker/volumes/xlr/hotfix/:/opt/xl-release-server/hotfix
     environment:
     - ADMIN_PASSWORD=admin
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:5516"]
-      interval: 5s
-      timeout: 10s
-      retries: 3
-      start_period: 30s
 
   xl-cli:
     build: xl-cli
-    # image: xebialabs/xl-cli:8.2.0-alpha.2
     depends_on:
     - xl-deploy
     - xl-release
-    command: ["apply", "--url", "http://admin:admin@xl-release:5516/ascode", "-f", "/data/link-xl-release-to-xl-deploy.yaml"]
+    command: ["apply", "--url", "http://admin:admin@xl-release:5516/ascode", "-f", "/data/config/link-xl-release-to-xl-deploy.yaml"]
     volumes:
-    - ./demo:/data
+    - .:/data

@@ -1,10 +1,10 @@
 apiVersion: xl-deploy/v1alpha1
 kind: Applications
 spec:
-- name: Applications/Rest-o-Rant
+- name: Applications/K8s
   type: core.Directory
   children:
-    - name: rest-o-rant-api
+    - name: k8s-rest-o-rant-api
       type: udm.Application
       children:
       - name: 1.0
@@ -40,13 +40,13 @@ spec:
                 port: 8080
                 targetPort: 8080
 
-    - name: rest-o-rant-web
+    - name: k8s-rest-o-rant-web
       type: udm.Application
       children:
         - name: 1.0
           type: udm.DeploymentPackage
           applicationDependencies:
-            rest-o-rant-api: "[1.0,1.0]"
+            k8s-rest-o-rant-api: "[1.0,1.0]"
           orchestrator:
           - sequential-by-dependency
           deployables:

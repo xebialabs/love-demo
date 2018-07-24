@@ -19,12 +19,12 @@ spec:
     - name: Deploy rest-o-rant-api
       type: xldeploy.Deploy
       server: XL Deploy
-      deploymentPackage: Rest-o-Rant/rest-o-rant-api/1.0
+      deploymentPackage: K8s/k8s-rest-o-rant-api/1.0
       deploymentEnvironment: Environments/Kubernetes
     - name: Deploy rest-o-rant-web
       type: xldeploy.Deploy
       server: XL Deploy
-      deploymentPackage:  Rest-o-Rant/rest-o-rant-web/1.0
+      deploymentPackage:  K8s/k8s-rest-o-rant-web/1.0
       deploymentEnvironment: Environments/Kubernetes
   - name: Test
     type: xlrelease.Phase
@@ -48,17 +48,8 @@ spec:
     - name: Undeploy Rest-o-rant-web
       type: xldeploy.Undeploy
       server: XL Deploy
-      deployedApplication: Environments/Kubernetes/rest-o-rant-web
+      deployedApplication: Environments/Kubernetes/k8s-rest-o-rant-web
     - name: Undeploy Rest-o-rant-api
       type: xldeploy.Undeploy
       server: XL Deploy
-      deployedApplication: Environments/Kubernetes/rest-o-rant-api
----
-apiVersion: xl-release/v1
-kind: Configurations
-spec:
-  - type: xldeploy.XLDeployServer
-    name: XL Deploy
-    url: http://xl-deploy:4516
-    username: admin
-    password: admin
+      deployedApplication: Environments/Kubernetes/k8s-rest-o-rant-api

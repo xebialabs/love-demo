@@ -1,5 +1,5 @@
 # XL Deploy mounted plugins
-volumes/xld/plugins
+docker/volumes/xld/plugins
 
 # use glob syntax.
 syntax: glob
