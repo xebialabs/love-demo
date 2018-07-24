@@ -33,7 +33,7 @@ Install the XL command-line client using the following command:
 
 Download the XL client command line with this command:
 
-	curl -o xlcurl -o xl https://s3.amazonaws.com/xl-cli/com/xebialabs/xl-cli/8.2.0-alpha.1/xl-cli-8.2.0-alpha.1-darwin_amd64_xl.bin
+	curl -o xl https://s3.amazonaws.com/xl-cli/com/xebialabs/xl-cli/8.2.0-alpha.1/xl-cli-8.2.0-alpha.1-darwin_amd64_xl.bin
 
 Make the binary executable:
 
