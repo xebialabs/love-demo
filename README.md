@@ -25,7 +25,7 @@ This will start the servers on default ports (XLD: 4516; XLR: 5516) with admin/a
 Store the `deployit-license.lic` and `xl-release-license.lic` license files in `~/.xl-config/` and they will be picked up by the containers.
 
 
-### Command-line 
+### Command-line
 
 Install the XL command-line client using the following command:
 
@@ -53,20 +53,19 @@ Will send the contents of the YAML file the appropriate server, XL Release or XL
 For more information, see
 
     xl --help
-    
+
 ### Run the Hello world example
 
 Execute the following command:
 
 	xl apply -f demo/HelloWorld.yaml
-	
+
 Open XL Deploy and locate an empty application called **HelloWorld** under **Applications**.
 
-    
-## Demos 
+
+## Demos
 
 The following demos are available. Click on the links to see the READMEs with further instructions.
 
 * [Rest-o-rant Kubernetes](demo/rest-o-rant/) -- Set up a sample pipeline in Kubernetes.
 * [AWS Provisioning](demo/aws-provisioning/) -- _not working yet_
-
