@@ -38,7 +38,7 @@ https://docs.aws.amazon.com/cli/latest/userguide/cli-config-files.html
 Once you've configured the AWS command line interface, use the `awsconfig2xld.py` script in the `config` directory to create XL YAML files that will create the AWS environment in XL Deploy.
 
 ```
-$ ./config/awsconfig2xld.py > /tmp/AWSConfig.yaml
+$ config/awsconfig2xld.py > /tmp/AWSConfig.yaml
 ```
 
 Now send this file to XL Deploy using

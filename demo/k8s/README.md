@@ -14,7 +14,7 @@ Make sure you have a running minikube environment locally.
 Use the `kubeconfig2xld.py`  in the `config` directory to create XL YAML files that will create the Kubernetes environment in XL Deploy.
 
 ```
-$ ./config/kubeconfig2xld.py > /tmp/KubeConfig.yaml
+$ config/kubeconfig2xld.py > /tmp/KubeConfig.yaml
 ```
 
 Now send this file to XL Deploy using
