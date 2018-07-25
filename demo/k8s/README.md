@@ -3,8 +3,8 @@
 This demos show you how to run a Kubernetes pipeline in XL Release and XL Deploy.
 
 ## Prerequisites
- * Python 3.6
- * Minikube
+* Minikube
+* Python 3.6 or up
 
 
 ## Step 1. Configure Minikube in XL Deploy

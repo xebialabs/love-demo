@@ -8,10 +8,10 @@ The demos show you how to import infrastructure, environments, deployment packag
 
 ### Required software
 
- * Docker
- * Git
- * Python 3.6 (for the Kubernetes demo scenarios)
- * Minikube (for the Kubernetes demo scenarios)
+* Docker
+* Git
+* Python 3.6 or up (for the Kubernetes and AWS ECS demo scenarios)
+* Minikube (for the Kubernetes demo scenarios)
 
 
 ### Licenses
