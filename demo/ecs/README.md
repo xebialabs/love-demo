@@ -11,8 +11,17 @@ As of July 25th 2018, this demo depends on a SNAPSHOT build of the AWS plugin, w
 
 ## Step 0. Use SNAPSHOT version of AWS plugin for XL Deploy
 
-**MANUAL STEP:**<br/>
-Replace `xld-aws-plugin-8.1.0.xldp` with the latest `xld-aws-plugin-8.1.1-SNAPSHOT.xldp` from the `master` branch of the `xld-aws-plugin` repository
+**MANUAL STEPS:**<br/>
+
+1. Stop the xl-deploy service:
+```
+docker-compose stop xl-deploy
+```
+2.  Replace `xld-aws-plugin-8.1.0.xldp` with the `xld-aws-plugin-8.1.1-SNAPSHOT.xldp` file provided in the `docker/volumes/xld` directory.
+3. Start the xl-deploy service:
+```
+docker-compose start xl-deploy
+```
 
 ## Step 1. Configure AWS in XL Deploy
 
