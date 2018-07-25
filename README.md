@@ -91,3 +91,4 @@ Open XL Deploy and locate an empty application called **HelloWorld** under **App
 The following demos are available. Click on the links to see the READMEs with further instructions.
 
 * [Kubernetes](demo/k8s/) -- Set up a sample pipeline in Kubernetes.
+* [Amazon ECS](demo/ecs/) -- Shows you how to deploy to ECS with XL Deploy.
