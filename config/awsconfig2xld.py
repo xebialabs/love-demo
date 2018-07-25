@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
+import getpass
 import sys
 import configparser
-import yaml
 import os
+import yaml
 
 #
 # Util
@@ -56,7 +57,8 @@ def aws_config_to_environment(configfile, infrastructure):
                 'name': 'AWS Dictionary',
                 'type': 'udm.Dictionary',
                 'entries': {
-                    'region': config['default']['region']
+                    'region': config['default']['region'],
+                    'username': getpass.getuser()
                 }
             },
             {

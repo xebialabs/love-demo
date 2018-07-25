@@ -13,51 +13,51 @@ spec:
 # ECS cluster (no instances, FARGATE only)
         - name: ror-ecs-cluster
           type: aws.ecs.ClusterSpec
-          clusterName: ror-ecs-cluster
+          clusterName: '{{username}}-ror-ecs-cluster'
           region: '{{region}}'
 
 # Networking
         - name: ror-ecs-vpc
           type: aws.vpc.VPCSpec
-          vpcName: ror-ecs-vpc
+          vpcName: '{{username}}-ror-ecs-vpc'
           region: '{{region}}'
           cidrBlock: 10.0.0.0/16
           createInternetGateway: true
-          internetGatewayName: ror-ecs-igw
+          internetGatewayName: '{{username}}-ror-ecs-igw'
         - name: ror-ecs-subnet-ipv4-az-1a
           type: aws.vpc.SubnetSpec
-          subnetName: ror-ecs-subnet-ipv4-az-1a
+          subnetName: '{{username}}-ror-ecs-subnet-ipv4-az-1a'
           region: '{{region}}'
           availabilityZone: '{{region}}a'
-          vpc: Name:ror-ecs-vpc
+          vpc: 'Name:{{username}}-ror-ecs-vpc'
           cidrBlock: 10.0.0.0/24
         - name: ror-ecs-subnet-ipv4-az-1b
           type: aws.vpc.SubnetSpec
-          subnetName: ror-ecs-subnet-ipv4-az-1b
+          subnetName: '{{username}}-ror-ecs-subnet-ipv4-az-1b'
           region: '{{region}}'
           availabilityZone: '{{region}}b'
-          vpc: Name:ror-ecs-vpc
+          vpc: 'Name:{{username}}-ror-ecs-vpc'
           cidrBlock: 10.0.1.0/24
         - name: ror-ecs-route-table
           type: aws.vpc.RouteTableSpec
-          routeTableName: ror-ecs-route-table
+          routeTableName: '{{username}}-ror-ecs-route-table'
           region: '{{region}}'
-          vpc: Name:ror-ecs-vpc
+          vpc: 'Name:{{username}}-ror-ecs-vpc'
           is_main: true
           subnets:
-          - 'Name:ror-ecs-subnet-ipv4-az-1a'
-          - 'Name:ror-ecs-subnet-ipv4-az-1b'
+          - 'Name:{{username}}-ror-ecs-subnet-ipv4-az-1a'
+          - 'Name:{{username}}-ror-ecs-subnet-ipv4-az-1b'
           routes:
           - name: route1
             type: aws.vpc.RouteSpec
             ipv4Address: 0.0.0.0/0
-            gatewayId: Name:ror-ecs-igw
+            gatewayId: 'Name:{{username}}-ror-ecs-igw'
         - name: ror-ecs-security-group
           type: aws.vpc.SecurityGroupSpec
-          securityGroupName: ror-ecs-security-group
+          securityGroupName: '{{username}}-ror-ecs-security-group'
           description: Created by XL Deploy
           region: '{{region}}'
-          vpc: Name:ror-ecs-vpc
+          vpc: 'Name:{{username}}-ror-ecs-vpc'
           inboundRules:
           - name: inbound
             type: aws.vpc.SecurityGroupInboundRuleSpec
