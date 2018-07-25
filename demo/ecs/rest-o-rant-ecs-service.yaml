@@ -23,11 +23,11 @@ spec:
           subnets:
           # - Name:ror-subnet-ipv4-az-1a
           # - Name:ror-subnet-ipv4-az-1b
-          - subnet-3f108a77
-          - subnet-ddf77dbb
+          - subnet-be1389f6
+          - subnet-3a8f055c
           securityGroups:
           # - Name:ror-security-group
-          - sg-c640c7ba
+          - sg-9b77f0e7
           containerDefinitions:
           # - name: rest-o-rant-web
           #   containerName: rest-o-rant-web
