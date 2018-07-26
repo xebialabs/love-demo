@@ -23,12 +23,12 @@ spec:
           # FIXME: Add these lines when the xld-aws-plugin supports the Name:-syntax for the subnets property
           # - Name:ror-subnet-ipv4-az-1a
           # - Name:ror-subnet-ipv4-az-1b
-          - subnet-be1389f6
-          - subnet-3a8f055c
+          - subnet-REPLACEME
+          - subnet-REPLACEME
           securityGroups:
           # FIXME: Add this line when the xld-aws-plugin supports the Name:-syntax for the securityGroups property
           # - Name:ror-security-group
-          - sg-9b77f0e7
+          - sg-REPLACEME
           containerDefinitions:
           - name: rest-o-rant-web
             containerName: rest-o-rant-web
