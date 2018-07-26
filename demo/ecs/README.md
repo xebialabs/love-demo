@@ -58,14 +58,21 @@ $ xl apply -f demo/ecs/rest-o-rant-ecs-fargate-cluster.yaml
 ## Step 3. Provision the cluster in XL Deploy
 
 1. Go to the XL Deploy UI running on http://localhost:4516.
+
 2. Deploy the version `1.0` of the `rest-o-rant-ecs-fargate-cluster` application in the directory `Applications/AWS` to the `AWS` environment.
 
 ## Step 4. Import the REST-o-rant application definition:
 
 **MANUAL STEP:**</br>
-Change the `subnets` and `securitygroups` in the `demo/ecs/rest-o-rant-ecs-service.yaml` to refer to the subnets and security groups created by the previous step.
+1. On your command line, run the get-subnet-and-security-group-ids script to retrieve the IDs for the security groups and the subnets:
 
-Import the REST-o-rant application definition into XL Deploy:
+```
+$ demo/ecs/get-security-group-and-subnet-ids
+```
+
+2. Replace the lines that say `REPLACEME` in the `demo/ecs/rest-o-rant-ecs-service.yaml` file with the lines printed by that previous script.
+
+3. Import the REST-o-rant application definition into XL Deploy:
 
 ```
 $ xl apply -f demo/ecs/rest-o-rant-ecs-service.yaml
