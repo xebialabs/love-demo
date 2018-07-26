@@ -76,15 +76,10 @@ $ xl apply -f demo/ecs/rest-o-rant-ecs-service.yaml
 1. Go to the XL Deploy UI running on http://localhost:4516.
 2. Deploy the version `1.0` of the `rest-o-rant-ecs-service` application in the directory `Applications/AWS` to the `AWS` environment.
 
-## Step 6. Access the rest-o-rant-app REST API
+## Step 6. Access the rest-o-rant application
 
-1. Go to the AWS console
-2. Go to the ECS section of the AWS console
-3. Go to the region to which you've deployed the ECS Fargate cluster
-4. Click on the `ror-ecs-cluster`
-5. Click on the `rest-o-rant-service`
-6. Select the Tasks tab
-7. Click on the first task
-8. Copy the public IP
-9. Open a new browser window and access:<br/>
-http://PUBLICIP:8080/rest-o-rant-api/findrestaurants
+1. On your command line, run the open-rest-o-rant-web script to print the URLs of the rest-o-rant-web and rest-o-rant-api endpoints. On macOS, it will also open the rest-o-rant-web application in your browser:
+
+```
+$ demo/ecs/open-rest-o-rant-web
+```
