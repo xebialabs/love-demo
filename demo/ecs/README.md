@@ -47,46 +47,22 @@ Now send this file to XL Deploy using
 $ xl apply -f /tmp/AWSConfig.yaml
 ```
 
-## Step 2. Import the REST-o-rant cluster definition:
+## Step 2. Import the REST-o-rant YAML definition:
 
 Import the REST-o-rant ECS/Fargate cluster definition for AWS into XL Deploy:
 
 ```
 $ xl apply -f demo/ecs/rest-o-rant-ecs-fargate-cluster.yaml
-```
-
-## Step 3. Provision the cluster in XL Deploy
-
-1. Go to the XL Deploy UI running on http://localhost:4516.
-
-2. Deploy the version `1.0` of the `rest-o-rant-ecs-fargate-cluster` application in the directory `Applications/AWS` to the `AWS` environment.
-
-## Step 4. Import the REST-o-rant application definition:
-
-**MANUAL STEP:**</br>
-1. On your command line, run the get-subnet-and-security-group-ids script to retrieve the IDs for the security groups and the subnets:
-
-```
-$ demo/ecs/get-security-group-and-subnet-ids
-```
-
-2. Replace the lines that say `REPLACEME` in the `demo/ecs/rest-o-rant-ecs-service.yaml` file with the lines printed by that previous script.
-
-3. Import the REST-o-rant application definition into XL Deploy:
-
-```
 $ xl apply -f demo/ecs/rest-o-rant-ecs-service.yaml
+$ xl apply -f demo/ecs/rest-o-rant-ecs-pipeline.yaml
 ```
 
-## Step 5. Deploy the app in XL Deploy:
+## Step 3. Start the release pipeline
 
-1. Go to the XL Deploy UI running on http://localhost:4516.
-2. Deploy the version `1.0` of the `rest-o-rant-ecs-service` application in the directory `Applications/AWS` to the `AWS` environment.
+1. Go to the XL Release UI running on http://localhost:5516.
 
-## Step 6. Access the rest-o-rant application
+2. Go to the Templates page under the Design tab.
 
-1. On your command line, run the open-rest-o-rant-web script to print the URLs of the rest-o-rant-web and rest-o-rant-api endpoints. On macOS, it will also open the rest-o-rant-web application in your browser:
+3. Start a release from the "REST-o-rant on ECS" template.
 
-```
-$ demo/ecs/open-rest-o-rant-web
-```
+4. Follow the instructions.
