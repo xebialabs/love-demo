@@ -21,14 +21,6 @@ spec:
       server: XL Deploy
       deploymentPackage: AWS/rest-o-rant-ecs-fargate-cluster/1.0
       deploymentEnvironment: Environments/AWS
-    - name: FIX REST-o-rant
-      type: xlrelease.Task
-      description: |
-        Run this command:
-        ```
-        demo/ecs/get-security-group-and-subnet-ids
-        ```
-        and fix the security groups and subnets in the `rest-o-rant-service` deployable of the `AWS/rest-o-rant-ecs-service/1.0` application in XL Deploy
     - name: Deploy rest-o-rant application
       type: xldeploy.Deploy
       server: XL Deploy
