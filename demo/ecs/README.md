@@ -23,7 +23,7 @@ $ cp demo/ecs/xld-aws-plugin-8.1.1-SNAPSHOT.xldp docker/volumes/xld/plugins/
 $ docker-compose restart xl-deploy
 ```
 
-## Step 1. Configure AWS in XL Deploy
+## Step 1 - Configure AWS in XL Deploy
 
 Make sure you have setup the AWS command line interface installed and configured correctly as per [these instructions](https://docs.aws.amazon.com/cli/latest/userguide/tutorial-ec2-ubuntu.html#configure-cli).
 
@@ -43,7 +43,7 @@ Now send this file to XL Deploy using
 $ xl apply -f /tmp/AWSConfig.yaml
 ```
 
-## Step 2. Import the REST-o-rant YAML definition:
+## Step 2 - Import the REST-o-rant YAML definition:
 
 Import the REST-o-rant ECS/Fargate cluster definition for AWS into XL Deploy:
 
@@ -53,7 +53,7 @@ $ xl apply -f demo/ecs/rest-o-rant-ecs-service.yaml
 $ xl apply -f demo/ecs/rest-o-rant-ecs-pipeline.yaml
 ```
 
-## Step 3. Start the release pipeline
+## Step 3 - Start the release pipeline
 
 1. Go to the XL Release UI running on http://localhost:5516.
 
