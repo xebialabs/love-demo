@@ -1,7 +1,7 @@
 This directory contains the `ecs` demo scenario split up into parts for
 the demo of Team Developer Love sprint number 1.
 
-## Step 0 - Configure AWS in XL Deploy
+## Step 3 - Configure AWS in XL Deploy
 
 Make sure you have setup the AWS command line interface installed and configured correctly as per [these instructions](https://docs.aws.amazon.com/cli/latest/userguide/tutorial-ec2-ubuntu.html#configure-cli).
 
@@ -22,52 +22,52 @@ $ xl apply -f /tmp/AWSConfig.yaml
 ```
 
 
-## Step 1 - Provision an ECS cluster and deploy an ECS service
+## Step 4 - Provision an ECS cluster and deploy an ECS service
 
 1. Apply the YAML files that define the ECS cluster and service:
 ```
-$ xl apply -f demo/ecs-in-steps/step-1/rest-o-rant-ecs-fargate-cluster.yaml
-$ xl apply -f demo/ecs-in-steps/step-1/rest-o-rant-ecs-service.yaml
+$ xl apply -f demo/ecs-in-steps/step-4/rest-o-rant-ecs-fargate-cluster.yaml
+$ xl apply -f demo/ecs-in-steps/step-4/rest-o-rant-ecs-service.yaml
 ```
 
 1. Provision the cluster by deploying `Applications/AWS/rest-o-rant-ecs-fargate-cluster/1.0` to `Environments/AWS`
 1. Deploy the service by deploying `Applications/AWS/rest-o-rant-ecs-service/1.0` to `Environments/AWS`
 
-## Step 2 - Add a container  to the ECS service
+## Step 5 - Add a container to the ECS service
 
 1. Apply the new YAML file that defines the updated ECS service:
 ```
-$ xl apply -f demo/ecs-in-steps/step-2/rest-o-rant-ecs-service.yaml
+$ xl apply -f demo/ecs-in-steps/step-5/rest-o-rant-ecs-service.yaml
 ```
 
 1. Update the service by redeploying `Applications/AWS/rest-o-rant-ecs-service/1.0` to `Environments/AWS`
 
-## Step 3 - Add a port mapping to the ECS service
+## Step 6 - Add a port mapping to the ECS service
 
 1. Apply the new YAML file that defines the updated ECS service:
 ```
-$ xl apply -f demo/ecs-in-steps/step-3/rest-o-rant-ecs-service.yaml
+$ xl apply -f demo/ecs-in-steps/step-6/rest-o-rant-ecs-service.yaml
 ```
 
 1. Update the service by redeploying `Applications/AWS/rest-o-rant-ecs-service/1.0` to `Environments/AWS`
 
-## Step 4 - Add a simple pipeline
+## Step 7 - Add a simple pipeline
 
 1. Undeploy `rest-o-rant-ecs-service/1.0` from `Environments/AWS`
 1. Apply the YAML file that defines the pipeline:
 ```
-$ xl apply -f demo/ecs-in-steps/step-4/rest-o-rant-ecs-pipeline.yaml
+$ xl apply -f demo/ecs-in-steps/step-7/rest-o-rant-ecs-pipeline.yaml
 ```
 
 1. Run the pipeline from XL Release.
 
 
-## Step 5 - Add proviosing and a simpler manual step to the pipeline
+## Step 8 - Add proviosing and a simpler manual step to the pipeline
 
 1. Deprovision the ECS cluster by undeploying `rest-o-rant-ecs-fargate-cluster/1.0` from `Environments/AWS`
 1. Apply the new YAML file that defines the updated pipeline:
 ```
-$ xl apply -f demo/ecs-in-steps/step-4/rest-o-rant-ecs-pipeline.yaml
+$ xl apply -f demo/ecs-in-steps/step-8/rest-o-rant-ecs-pipeline.yaml
 ```
 
 1. Run the pipeline from XL Release once more.

@@ -1,13 +1,13 @@
 apiVersion: xl-deploy/v1alpha1
 kind: Applications
 spec:
-- name: Applications/AWS
+- name: AWS
   type: core.Directory
   children:
     - name: rest-o-rant-ecs-service
       type: udm.Application
       children:
-      - name: 1.0
+      - name: '1.0'
         type: udm.DeploymentPackage
         deployables:
         - name: rest-o-rant-service
@@ -33,11 +33,6 @@ spec:
             softMemoryLimit: 256
             environment:
               API_ENDPOINT: http://localhost:8080/rest-o-rant-api
-            portMappings:
-            - name: port-mapping-80
-              type: aws.ecs.PortSpec
-              hostPort: 80
-              containerPort: 80
           - name: rest-o-rant-api
             containerName: rest-o-rant-api
             type: aws.ecs.ContainerDefinitionSpec

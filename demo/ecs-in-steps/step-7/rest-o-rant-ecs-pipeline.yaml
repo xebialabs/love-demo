@@ -19,8 +19,8 @@ spec:
     - name: Deploy rest-o-rant application
       type: xldeploy.Deploy
       server: XL Deploy
-      deploymentPackage:  AWS/rest-o-rant-ecs-service/1.0
-      deploymentEnvironment: Environments/AWS
+      deploymentPackage:  REST-o-rant/AWS/rest-o-rant-ecs-service/1.0
+      deploymentEnvironment: Environments/REST-o-rant/AWS
   - name: Test
     type: xlrelease.Phase
     tasks:
@@ -48,4 +48,4 @@ spec:
     - name: Undeploy REST-o-rant
       type: xldeploy.Undeploy
       server: XL Deploy
-      deployedApplication: Environments/AWS/rest-o-rant-ecs-service
+      deployedApplication: Environments/REST-o-rant/AWS/rest-o-rant-ecs-service
