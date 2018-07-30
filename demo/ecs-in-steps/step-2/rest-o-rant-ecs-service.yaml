@@ -1,0 +1,46 @@
+apiVersion: xl-deploy/v1alpha1
+kind: Applications
+spec:
+- name: Applications/AWS
+  type: core.Directory
+  children:
+    - name: rest-o-rant-ecs-service
+      type: udm.Application
+      children:
+      - name: 1.0
+        type: udm.DeploymentPackage
+        deployables:
+        - name: rest-o-rant-service
+          type: aws.ecs.ServiceSpec
+          serviceName: rest-o-rant-service
+          desiredCount: 1
+          launchType: FARGATE
+          networkMode: awsvpc
+          assignPublicIp: ENABLED
+          cpu: 512
+          memory: 1024
+          subnets:
+          - 'Name:{{username}}-ror-ecs-subnet-ipv4-az-1a'
+          - 'Name:{{username}}-ror-ecs-subnet-ipv4-az-1b'
+          securityGroups:
+          - 'Name:{{username}}-ror-ecs-security-group'
+          containerDefinitions:
+          - name: rest-o-rant-web
+            containerName: rest-o-rant-web
+            type: aws.ecs.ContainerDefinitionSpec
+            image: xebialabsunsupported/rest-o-rant-web:v1
+            cpu: 128
+            softMemoryLimit: 256
+            environment:
+              API_ENDPOINT: http://localhost:8080/rest-o-rant-api
+          - name: rest-o-rant-api
+            containerName: rest-o-rant-api
+            type: aws.ecs.ContainerDefinitionSpec
+            image: xebialabsunsupported/rest-o-rant-api:v1
+            cpu: 384
+            softMemoryLimit: 768
+            portMappings:
+            - name: port-mapping-8080
+              type: aws.ecs.PortSpec
+              hostPort: 8080
+              containerPort: 8080
