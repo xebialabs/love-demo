@@ -17,6 +17,7 @@ The demos show you how to import infrastructure, environments, deployment packag
 ### Licenses
 
 1. Create a directory called `.xl-config` in your home directory.
+   (_Note:_ let's rename to `.xebialabs`)
 2. Put your XL Deploy licence file (`deployit-license.lic`) in that directory.
 3. Put your XL Release licence file (`xl-release-license.lic`) in that directory.
 
