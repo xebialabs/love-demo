@@ -1,55 +1,58 @@
 apiVersion: xl-release/v1
 kind: Templates
 spec:
-- name: REST-o-rant on ECS
-  type: xlrelease.Release
-  description: |
-    This XL Release template shows how to deploy an undeploy an application to AWS ECS using XL Deploy.
-  tags:
-  - REST-o-rant
-  - ECS
-  phases:
-  - name: Deploy
-    color: '#ff9e3b'
-    type: xlrelease.Phase
-    tasks:
-    - name: Ready to go?
-      type: xlrelease.GateTask
-      team: Release Admin
-    - name: Provision ECS cluster (with Fargate support)
-      type: xldeploy.Deploy
-      server: XL Deploy
-      deploymentPackage: AWS/rest-o-rant-ecs-fargate-cluster/1.0
-      deploymentEnvironment: Environments/AWS
-    - name: Deploy rest-o-rant application
-      type: xldeploy.Deploy
-      server: XL Deploy
-      deploymentPackage:  AWS/rest-o-rant-ecs-service/1.0
-      deploymentEnvironment: Environments/AWS
-  - name: Test
-    type: xlrelease.Phase
-    tasks:
-    - name: Test REST-o-rant
-      type: xlrelease.Task
-      team: Release Admin
-      description: |
-        The REST-o-rant app is now live on ECS!
-        Check out the web site and complete this task when done.
+- name: REST-o-rant
+  type: xlrelease.Folder
+  children:
+  - name: REST-o-rant on ECS
+    type: xlrelease.Release
+    description: |
+      This XL Release template shows how to deploy an undeploy an application to AWS ECS using XL Deploy.
+    tags:
+    - REST-o-rant
+    - ECS
+    phases:
+    - name: Deploy
+      color: '#ff9e3b'
+      type: xlrelease.Phase
+      tasks:
+      - name: Ready to go?
+        type: xlrelease.GateTask
+        team: Release Admin
+      - name: Provision ECS cluster (with Fargate support)
+        type: xldeploy.Deploy
+        server: XL Deploy
+        deploymentPackage: REST-o-rant/rest-o-rant-ecs-fargate-cluster/1.0
+        deploymentEnvironment: Environments/AWS
+      - name: Deploy rest-o-rant application
+        type: xldeploy.Deploy
+        server: XL Deploy
+        deploymentPackage:  REST-o-rant/rest-o-rant-ecs-service/1.0
+        deploymentEnvironment: Environments/AWS
+    - name: Test
+      type: xlrelease.Phase
+      tasks:
+      - name: Test REST-o-rant
+        type: xlrelease.Task
+        team: Release Admin
+        description: |
+          The REST-o-rant app is now live on ECS!
+          Check out the web site and complete this task when done.
 
-        Open the web site by running this command:
-        ```
-        demo/ecs/open-rest-o-rant-web
-        ```
-      team: Release admin
-  - name: Clean up
-    color: '#999999'
-    type: xlrelease.Phase
-    tasks:
-    - name: Undeploy REST-o-rant
-      type: xldeploy.Undeploy
-      server: XL Deploy
-      deployedApplication: Environments/AWS/rest-o-rant-ecs-service
-    - name: Deprovision ECS cluster
-      type: xldeploy.Undeploy
-      server: XL Deploy
-      deployedApplication: Environments/AWS/rest-o-rant-ecs-fargate-cluster
+          Open the web site by running this command:
+          ```
+          demo/ecs/open-rest-o-rant-web
+          ```
+        team: Release admin
+    - name: Clean up
+      color: '#999999'
+      type: xlrelease.Phase
+      tasks:
+      - name: Undeploy REST-o-rant
+        type: xldeploy.Undeploy
+        server: XL Deploy
+        deployedApplication: Environments/AWS/rest-o-rant-ecs-service
+      - name: Deprovision ECS cluster
+        type: xldeploy.Undeploy
+        server: XL Deploy
+        deployedApplication: Environments/AWS/rest-o-rant-ecs-fargate-cluster

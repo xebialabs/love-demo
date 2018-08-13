@@ -35,7 +35,7 @@ def aws_credentials_to_infrastructure(credentialsfile):
         'kind': 'Infrastructure',
         'spec': [
             {
-                'name': 'Infrastructure/aws',
+                'name': 'aws',
                 'type': 'aws.Cloud',
                 'accesskey': credentials['default']['aws_access_key_id'],
                 'accessSecret': credentials['default']['aws_secret_access_key']
@@ -65,10 +65,10 @@ def aws_config_to_environment(configfile, infrastructure):
                 'name': 'AWS',
                 'type': 'udm.Environment',
                 'members': [
-                    infrastructure['spec'][0]['name']
+                    '~Infrastructure/' + infrastructure['spec'][0]['name']
                 ],
                 'dictionaries': [
-                    'Environments/AWS Dictionary'
+                    '~Environments/AWS Dictionary'
                 ]
             }
         ]

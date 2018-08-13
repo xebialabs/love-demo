@@ -1,13 +1,13 @@
 apiVersion: xl-deploy/v1alpha1
 kind: Applications
 spec:
-- name: Applications/AWS
+- name: REST-o-rant
   type: core.Directory
   children:
     - name: rest-o-rant-ecs-service
       type: udm.Application
       children:
-      - name: 1.0
+      - name: '1.0'
         type: udm.DeploymentPackage
         deployables:
         - name: rest-o-rant-service

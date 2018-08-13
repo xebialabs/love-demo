@@ -1,0 +1,12 @@
+xl-deploy:
+  applications-home: Applications/Food
+  environments-home: Environments/FoodCloud
+  infrastructure-home: Infrastructure/Cloud
+  password: WhC6eqT8NlLKJXB8J6mNxKXrTxx55cQyauNm8mpLmJc=
+  url: http://localhost:14516/
+  username: kate
+xl-release:
+  home: Food
+  password: xZPVPnHkRAUSpjFxz6RRIYbtwBKtbUXHXYGBMqjq1TA=
+  url: http://localhost:15516/
+  username: kate

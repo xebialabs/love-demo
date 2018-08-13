@@ -1,0 +1,33 @@
+#!/bin/bash
+
+resolvelink() {
+  _dir=`dirname "$1"`
+  _dest=`readlink "$1"`
+  case "$_dest" in
+  /* ) echo "$_dest" ;;
+  *  ) echo "$_dir/$_dest" ;;
+  esac
+}
+
+absdirname ()
+{
+  _dir="`dirname \"$1\"`"
+  cd "$_dir"
+  echo "`pwd`"
+}
+
+
+if [ -z "$XL_DEPLOY_CLI_HOME" ] ; then
+  echo "Set XL_DEPLOY_CLI_HOME to point to the XL Deploy CLI home directory (the directory that contains bin/cli.sh)"
+  exit 1
+fi
+
+self="$0"
+if [ -h "$self" ]; then
+  self=`resolvelink "$self"`
+fi
+DEMO_PROD_DIR=`absdirname "$self"`
+
+${XL_DEPLOY_CLI_HOME}/bin/cli.sh -q -username admin -password 3dm1n -port 14516 -f $DEMO_PROD_DIR/setup-xl-deploy.py
+
+${DEMO_PROD_DIR}/setup-xl-release.sh
