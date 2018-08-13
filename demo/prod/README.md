@@ -23,20 +23,37 @@ $ export XL_DEPLOY_CLI_CONFIG=.../xl-deploy-8.1.0-cli
 $ ./setup-prod
 ```
 
-4.  Configure the CLI to user these credentials:
+## Step 3 - Connect to the "Dev" instance of the XL DevOps Platform
+
+```
+$ rm ~/.xebialabs/config.yaml
+$ unset XL_CONFIG
+```
+
+## Step 4 - Generate and apply the YAML files for the REST-o-rant application (see also the demo for Team Developer Love sprint 1)
+
+```
+$ ../../config/awsconfig2xld.py > /tmp/AWSConfig.yaml
+$ xl apply -f /tmp/AWSConfig.yaml
+$ xl apply -f ../ecs/rest-o-rant-ecs-fargate-cluster.yaml
+$ xl apply -f ../ecs/rest-o-rant-ecs-service.yaml
+$ xl apply -f ../ecs/rest-o-rant-ecs-pipeline.yaml
+```
+
+## Step 6 - Configure the CLI to connect to the "Prod" instance of the XL DevOps platform
 
 ```
 $ export XL_CONFIG=`pwd`/prod-config.yaml
 ```
-
-## Step 3 - Import AWS credentials for the developer user
+  
+## Step 7 - Import AWS credentials to the home directory configured for the user `kate`
 
 ```
 $ ../../config/awsconfig2xld.py > /tmp/AWSConfig.yaml
 $ xl apply -f /tmp/AWSConfig.yaml
 ```
 
-## Step 4 - import ECS files into the right home directories:
+## Step 8 - Apply YAML files to the the home directory configured for the user `kate`
 ```
 $ xl apply -f ../ecs/rest-o-rant-ecs-fargate-cluster.yaml
 $ xl apply -f ../ecs/rest-o-rant-ecs-service.yaml
