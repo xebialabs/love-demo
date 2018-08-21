@@ -43,7 +43,6 @@ spec:
           ```
           demo/ecs/open-rest-o-rant-web
           ```
-        team: Release admin
     - name: Clean up
       color: '#999999'
       type: xlrelease.Phase
