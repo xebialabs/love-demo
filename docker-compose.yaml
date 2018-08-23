@@ -29,7 +29,7 @@ services:
     depends_on:
     - xl-deploy
     - xl-release
-    command: ["apply", "-v", "--xl-deploy-url", "http://xl-deploy:4516/", "--xl-deploy-username", "admin", "--xl-deploy-password", "admin", "--xl-release-url", "http://xl-release:5516/", "--xl-release-username", "admin", "--xl-release-password", "admin", "-f", "/data/config/configure-xl-devops-platform.yaml"]
+    command: ["apply", "-v", "--xl-deploy-url", "http://xl-deploy:4516/", "--xl-release-url", "http://xl-release:5516/", "-f", "/data/config/configure-xl-devops-platform.yaml"]
     volumes:
     - .:/data:ro
 
