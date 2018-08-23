@@ -2,10 +2,10 @@ FROM alpine:3.7
 
 RUN apk add --no-cache curl
 
-COPY resources/xl /usr/local/bin/xl
-RUN chmod +x /usr/local/bin/xl
+RUN curl --fail-early -o /usr/local/bin/xl https://s3.amazonaws.com/xl-cli/bin/8.2.0-workshop.1/linux-amd64/xl && \
+    chmod +x /usr/local/bin/xl
 
-RUN curl -o /usr/local/bin/wait-for https://raw.githubusercontent.com/eficode/wait-for/master/wait-for && \
+RUN curl --fail-early -o /usr/local/bin/wait-for https://raw.githubusercontent.com/eficode/wait-for/master/wait-for && \
     chmod +x /usr/local/bin/wait-for
 
 USER 10001
