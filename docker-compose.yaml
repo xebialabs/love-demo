@@ -1,7 +1,7 @@
 version: '2.3'
 services:
   xl-deploy:
-    image: xl-docker.xebialabs.com:443/xl-deploy:8.2.0-alpha.38
+    image: xebialabsunsupported/xl-deploy:8.5.0-alpha.2
     ports:
     - "4516:4516"
     volumes:
@@ -13,7 +13,7 @@ services:
     - ADMIN_PASSWORD=admin
 
   xl-release:
-    image: xl-docker.xebialabs.com:443/xl-release:8.1.1-alpha.13
+    image: xebialabsunsupported/xl-release:8.5.0-alpha.2
     ports:
     - "5516:5516"
     depends_on:
@@ -29,11 +29,10 @@ services:
     depends_on:
     - xl-deploy
     - xl-release
-    command: ["apply", "--url", "http://admin:admin@xl-release:5516/ascode", "-f", "/data/config/link-xl-release-to-xl-deploy.yaml"]
+    command: ["apply", "-v", "--xl-deploy-url", "http://xl-deploy:4516/", "--xl-deploy-username", "admin", "--xl-deploy-password", "admin", "--xl-release-url", "http://xl-release:5516/", "--xl-release-username", "admin", "--xl-release-password", "admin", "-f", "/data/config/configure-xl-devops-platform.yaml"]
     volumes:
     - .:/data:ro
 
-#  hopefully we can use this later (to internally expose docker) when the xld-docker-plugin is upgraded to latest api.
   dockerproxy:
     image: tecnativa/docker-socket-proxy:latest
     privileged: true
