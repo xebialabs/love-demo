@@ -1,0 +1,56 @@
+apiVersion: xl-deploy/v1alpha1
+kind: Environments
+spec:
+  - name: Docker
+    type: core.Directory
+    children:
+      - name: Docker Engine on Host
+        type: udm.Environment
+        members:
+          - Infrastructure/host-docker
+---
+apiVersion: xl-deploy/v1alpha1
+kind: Applications
+spec:
+- name: REST-o-rant
+  type: core.Directory
+  children:
+    - name: rest-o-rant-api-docker
+      type: udm.Application
+      children:
+      - name: '1.0'
+        type: udm.DeploymentPackage
+        deployables:
+          - name: rest-o-rant-network
+            type: docker.NetworkSpec
+            networkName: rest-o-rant
+            driver: bridge
+          - name: rest-o-rant-api
+            type: docker.ContainerSpec
+            image: xebialabsunsupported/rest-o-rant-api
+            networks:
+            - rest-o-rant
+            showLogsAfter: 5
+    - name: rest-o-rant-web-docker
+      type: udm.Application
+      children:
+      - name: '1.0'
+        type: udm.DeploymentPackage
+        applicationDependencies:
+          rest-o-rant-api-docker: '1.0.0'
+        undeployDependencies: true
+        orchestrator:
+        - sequential-by-dependency
+        deployables:
+          - name: rest-o-rant-web-docker
+            type: docker.ContainerSpec
+            image: xebialabsunsupported/rest-o-rant-web
+            networks:
+            - rest-o-rant
+            showLogsAfter: 5
+            portBindings:
+            - name: ports
+              type: docker.PortSpec
+              hostPort: 80
+              containerPort: 80
+              protocol: tcp
