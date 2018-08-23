@@ -24,7 +24,7 @@ you'll need to have the following software installed on your machine before you 
 ```
 $ git clone git@github.com:xebialabs/devops-as-code-demo.git
 $ cd devops-as-code-demo
-$ git checkout devops-as-code-workshop-1
+$ git checkout -q devops-as-code-workshop-1
 ```
 
 # Start up the XL DevOps Platform
