@@ -76,7 +76,7 @@ $ sudo mv xl /usr/local/bin
 1. Go to the XL Deploy UI.
 1. In the Explorer tree, expand `Applications` and then `rest-o-rant-web-docker`
 1. Click on the three little dots on the right of `1.0` and select **Deploy**.
-1. Select the *Docker Engine on Host* environment.
+1. Select the *Local Docker Engine* environment.
 1. Click *Continue* in the top right corner.
 1. Click *Deploy* in the top right corner.
 1. Wait for the deployment to finish.

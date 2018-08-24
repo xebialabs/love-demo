@@ -1,7 +1,7 @@
 apiVersion: xl-deploy/v1alpha1
 kind: Infrastructure
 spec:
-- name: host-docker
+- name: local-docker
   type: docker.Engine
   dockerHost: http://dockerproxy:2375
 ---

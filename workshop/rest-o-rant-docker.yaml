@@ -1,10 +1,10 @@
 apiVersion: xl-deploy/v1alpha1
 kind: Environments
 spec:
-- name: Docker Engine on Host
+- name: Local Docker Engine
   type: udm.Environment
   members:
-  - Infrastructure/host-docker
+  - Infrastructure/local-docker
 ---
 apiVersion: xl-deploy/v1alpha1
 kind: Applications
