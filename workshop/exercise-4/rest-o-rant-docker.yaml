@@ -1,18 +1,10 @@
 apiVersion: xl-deploy/v1alpha1
-kind: Environments
-spec:
-- name: Local Docker Engine
-  type: udm.Environment
-  members:
-  - Infrastructure/local-docker
----
-apiVersion: xl-deploy/v1alpha1
 kind: Applications
 spec:
 - name: rest-o-rant-api-docker
   type: udm.Application
   children:
-  - name: '1.0'
+  - name: '1.1'
     type: udm.DeploymentPackage
     deployables:
     - name: rest-o-rant-network
@@ -31,7 +23,7 @@ spec:
   - name: '1.0'
     type: udm.DeploymentPackage
     applicationDependencies:
-      rest-o-rant-api-docker: '1.0'
+      rest-o-rant-api-docker: '1.1'
     undeployDependencies: true
     orchestrator:
     - sequential-by-dependency
