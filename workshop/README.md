@@ -9,20 +9,18 @@ This workshop will teach you:
 
 ## Prerequisites
 
-you'll need to have the following software installed on your machine before you begin:
-* Git
-* Docker
-  * Mac: https://docs.docker.com/docker-for-mac/
-  * Windows: https://docs.docker.com/docker-for-windows/
-  * Linux: Refer to the instructions for your Linux distribution on how to install Docker
+You'll need to have Docker installed on your machine before you begin:
+* Mac: https://docs.docker.com/docker-for-mac/
+* Windows: https://docs.docker.com/docker-for-windows/
+* Linux: Refer to the instructions for your Linux distribution on how to install Docker
 
 # Get the workshop
 
-1) Clone this repository with Git:
+1) Download and extract the workshop zip:
 ```
-$ git clone git@github.com:xebialabs/devops-as-code-demo.git
-$ cd devops-as-code-demo
-$ git checkout -q devops-as-code-workshop-1
+$ wget https://github.com/xebialabs/devops-as-code-demo/archive/devops-as-code-workshop-1.zip
+$ unzip devops-as-code-workshop-1.zip
+$ cd devops-as-code-demo-devops-as-code-workshop-1
 ```
 
 # Start up the XL DevOps Platform
