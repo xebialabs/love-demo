@@ -17,6 +17,10 @@ spec:
       networks:
       - rest-o-rant
       showLogsAfter: 5
+---
+apiVersion: xl-deploy/v1alpha1
+kind: Applications
+spec:
 - name: rest-o-rant-web-docker
   type: udm.Application
   children:
