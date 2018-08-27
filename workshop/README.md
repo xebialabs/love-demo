@@ -34,7 +34,7 @@ $ docker-compose up --build
 
 3) Wait for XL Deploy and XL Release to have started up. This will have occurred when the following line is shown in the logs:
 ```
-devops-as-code-demo-devops-as-code-workshop-1_xl-cli_1
+devops-as-code-demo-devops-as-code-workshop-1_xl-cli_1 exited with code 0
 ```
 
 1) Open the XL Deploy GUI at http://localhost:4516/ and login with the username `admin` and password `admin`. Verify that the about box reports the version to be **8.5.0-alpha.2**.
