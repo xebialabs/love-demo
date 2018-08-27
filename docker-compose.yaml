@@ -1,7 +1,7 @@
 version: '2.3'
 services:
   xl-deploy:
-    image: xebialabsunsupported/xl-deploy:8.5.0-alpha.2
+    image: xebialabsunsupported/xl-deploy:8.5.0-alpha.3
     ports:
     - "4516:4516"
     volumes:
@@ -13,7 +13,7 @@ services:
     - ADMIN_PASSWORD=admin
 
   xl-release:
-    image: xebialabsunsupported/xl-release:8.5.0-alpha.2
+    image: xebialabsunsupported/xl-release:8.5.0-alpha.3
     ports:
     - "5516:5516"
     depends_on:

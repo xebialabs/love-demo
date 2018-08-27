@@ -18,9 +18,9 @@ You'll need to have Docker installed on your machine before you begin:
 
 1) Download and extract the workshop zip:
 ```
-$ curl -LO https://github.com/xebialabs/devops-as-code-demo/archive/devops-as-code-workshop-1.zip
-$ unzip devops-as-code-workshop-1.zip
-$ cd devops-as-code-demo-devops-as-code-workshop-1
+$ curl -LO https://github.com/xebialabs/devops-as-code-demo/archive/workshop-1.zip
+$ unzip workshop-1.zip
+$ cd devops-as-code-demo-workshop-1
 ```
 
 # Start up the XL DevOps Platform
@@ -34,12 +34,12 @@ $ docker-compose up --build
 
 3) Wait for XL Deploy and XL Release to have started up. This will have occurred when the following line is shown in the logs:
 ```
-devops-as-code-demo-devops-as-code-workshop-1_xl-cli_1 exited with code 0
+devops-as-code-demo-workshop-1_xl-cli_1 exited with code 0
 ```
 
-1) Open the XL Deploy GUI at http://localhost:4516/ and login with the username `admin` and password `admin`. Verify that the about box reports the version to be **8.5.0-alpha.2**.
+1) Open the XL Deploy GUI at http://localhost:4516/ and login with the username `admin` and password `admin`. Verify that the about box reports the version to be **8.5.0-alpha.3**.
 
-2) Open the XL Release GUI at http://localhost:5516/ and login with the username `admin` and password `admin`. Verify that the about box reports the version to be **8.5.0-alpha.2**.
+2) Open the XL Release GUI at http://localhost:5516/ and login with the username `admin` and password `admin`. Verify that the about box reports the version to be **8.5.0-alpha.3**.
 
 # Install the XL CLI
 
@@ -47,21 +47,21 @@ devops-as-code-demo-devops-as-code-workshop-1_xl-cli_1 exited with code 0
 
 ## Mac
 ```
-$ curl -o xl https://s3.amazonaws.com/xl-cli/bin/8.2.0-workshop.1/darwin-amd64/xl
+$ curl -LO https://s3.amazonaws.com/xl-cli/bin/8.2.0-alpha.9/darwin-amd64/xl
 $ chmod +x xl
 $ sudo mv xl /usr/local/bin
 ```
 
 ## Linux
 ```
-$ curl -o xl https://s3.amazonaws.com/xl-cli/bin/8.2.0-workshop.1/linux-amd64/xl
+$ curl -LO https://s3.amazonaws.com/xl-cli/bin/8.2.0-alpha.9/linux-amd64/xl
 $ chmod +x xl
 $ sudo mv xl /usr/local/bin
 ```
 
 ## Windows
 ```
-> curl -o xl.exe https://s3.amazonaws.com/xl-cli/bin/8.2.0-workshop.1/windows-amd64/xl.exe
+> curl -LO https://s3.amazonaws.com/xl-cli/bin/8.2.0-alpha.9/windows-amd64/xl.exe
 ```
 
 2) Test the CLI by running the following the following command:
