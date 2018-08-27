@@ -18,7 +18,7 @@ You'll need to have Docker installed on your machine before you begin:
 
 1) Download and extract the workshop zip:
 ```
-$ wget https://github.com/xebialabs/devops-as-code-demo/archive/devops-as-code-workshop-1.zip
+$ curl -LO https://github.com/xebialabs/devops-as-code-demo/archive/devops-as-code-workshop-1.zip
 $ unzip devops-as-code-workshop-1.zip
 $ cd devops-as-code-demo-devops-as-code-workshop-1
 ```
