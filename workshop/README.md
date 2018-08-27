@@ -92,7 +92,7 @@ Use "xl [command] --help" for more information about a command.
 
 # Exercise 1: Review the XL DevOps Platform running on Docker
 
-When the XL DevOps Platform was started up by [the Docker Compose file](https://github.com/xebialabs/devops-as-code-demo/blob/devops-as-code-workshop-1/docker-compose.yaml), four containers were started:
+When the XL DevOps Platform was started up by [the Docker Compose file](https://github.com/xebialabs/devops-as-code-demo/blob/workshop-1/docker-compose.yaml), four containers were started:
 * `xl-deploy` runs XL Deploy.
 * `xl-release` runs XL Release.
 * `dockerproxy` is where XL Deploy will deploy to. It's a proxy for the Docker engine on your local machine, the same that runs XL Release and XL Deploy..
