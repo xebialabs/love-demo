@@ -13,7 +13,7 @@ As of July 25th 2018, this demo depends on a SNAPSHOT build of the AWS plugin, w
 
 **MANUAL STEPS:**<br/>
 
-1. Replace `xld-aws-plugin-8.1.0.xldp` with the `xld-aws-plugin-8.1.1-SNAPSHOT.xldp` file provided in the `demo/ecs` directory.
+1. Replace `xld-aws-plugin-8.1.0.xldp` with the `xld-aws-plugin-8.1.1-SNAPSHOT.xldp` file provided in the `demo/ecs-in-steps` directory.
 ```
 $ rm docker/volumes/xld/plugins/xld-aws-plugin-8.1.0.xldp
 $ cp demo/ecs/xld-aws-plugin-8.1.1-SNAPSHOT.xldp docker/volumes/xld/plugins/
