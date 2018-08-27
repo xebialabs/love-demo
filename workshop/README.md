@@ -96,7 +96,7 @@ When the XL DevOps Platform was started up by [the Docker Compose file](https://
 * `xl-deploy` runs XL Deploy.
 * `xl-release` runs XL Release.
 * `dockerproxy` is where XL Deploy will deploy to. It's a proxy for the Docker engine on your local machine, the same that runs XL Release and XL Deploy..
-* `xl-cli` runs the XL CLI to apply the [`configure-xl-devops-platform.yaml`](https://github.com/xebialabs/devops-as-code-demo/blob/devops-as-code-workshop-1/config/configure-xl-devops-platform.yaml) YAML file. This XL YAML file adds two configurations:
+* `xl-cli` runs the XL CLI to apply the [`configure-xl-devops-platform.yaml`](https://github.com/xebialabs/devops-as-code-demo/blob/workshop-1/config/configure-xl-devops-platform.yaml) YAML file. This XL YAML file adds two configurations:
   * It adds an XL Deploy configuration to XL Release so that the latter can find the former.
   * It adds a `docker.Engine` configuration to XL Deploy so that XL Deploy can deploy to the Docker engine (via the Docker proxy).
 
