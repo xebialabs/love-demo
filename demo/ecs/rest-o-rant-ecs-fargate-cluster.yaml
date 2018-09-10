@@ -7,7 +7,7 @@ spec:
     - name: rest-o-rant-ecs-fargate-cluster
       type: udm.Application
       children:
-      - name: '1.0'
+      - name: '2.0'
         type: udm.DeploymentPackage
         deployables:
 # ECS cluster (no instances, FARGATE only)

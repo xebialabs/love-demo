@@ -16,7 +16,7 @@ spec:
           desiredCount: 1
           launchType: FARGATE
           networkMode: awsvpc
-          assignPublicIp: ENABLED
+          assignPublicIp: true
           cpu: 512
           memory: 1024
           subnets:
@@ -34,7 +34,6 @@ spec:
             portMappings:
             - name: port-mapping-80
               type: aws.ecs.PortSpec
-              hostPort: 80
               containerPort: 80
             environment:
               API_ENDPOINT: http://localhost:8080/rest-o-rant-api
@@ -47,5 +46,4 @@ spec:
             portMappings:
             - name: port-mapping-8080
               type: aws.ecs.PortSpec
-              hostPort: 8080
               containerPort: 8080
