@@ -25,6 +25,7 @@ services:
     - ../../docker/volumes/xlr/conf/xl-release-license.lic:/opt/xebialabs/xl-release-server/conf/xl-release-license.lic:ro
     - ../../docker/volumes/xlr/hotfix:/opt/xebialabs/xl-release-server/hotfix:ro
     - ./plugins/:/opt/xebialabs/xl-release-server/plugins/:ro
+    - ~/Code/xlr-jenkins-pipeline-radar-plugin/ext:/opt/xebialabs/xl-release-server/ext:rw
     environment:
     - ADMIN_PASSWORD=admin
 
@@ -35,7 +36,7 @@ services:
     - xl-release
     command: ["apply", "-v", "--xl-deploy-url", "http://xl-deploy:4516/", "--xl-release-url", "http://xl-release:5516/", "-f", "/data/config/configure-xl-devops-platform.yaml"]
     volumes:
-    - .:/data:ro
+    - ../..:/data:ro
 
   dockerproxy:
     image: tecnativa/docker-socket-proxy:latest
