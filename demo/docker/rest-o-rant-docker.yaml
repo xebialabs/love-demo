@@ -1,5 +1,5 @@
 ---
-apiVersion: xl-deploy/v1alpha1
+apiVersion: xl-deploy/v1beta1
 kind: Infrastructure
 spec:
   - name: Docker
@@ -10,7 +10,7 @@ spec:
         dockerHost: http://dockerproxy:2375
 
 ---
-apiVersion: xl-deploy/v1alpha1
+apiVersion: xl-deploy/v1beta1
 kind: Environments
 spec:
   - name: Docker
@@ -21,7 +21,7 @@ spec:
         members:
           - ~Infrastructure/Docker/host-docker
 ---
-apiVersion: xl-deploy/v1alpha1
+apiVersion: xl-deploy/v1beta1
 kind: Applications
 spec:
 - name: REST-o-rant
