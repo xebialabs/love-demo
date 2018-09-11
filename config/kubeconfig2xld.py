@@ -57,7 +57,7 @@ def k8_config_to_infrastructure(file):
 
     # Build CI for XL Deploy
     infrastructure = {
-        'apiVersion': 'xl-deploy/v1alpha1',
+        'apiVersion': 'xl-deploy/v1beta1',
         'kind': 'Infrastructure',
         'spec': []
     }
@@ -89,7 +89,7 @@ def k8_config_to_infrastructure(file):
 
 def k8_environment(infrastructure):
     environment = {
-        'apiVersion': 'xl-deploy/v1alpha1',
+        'apiVersion': 'xl-deploy/v1beta1',
         'kind': 'Environments',
         'spec': [
             {
