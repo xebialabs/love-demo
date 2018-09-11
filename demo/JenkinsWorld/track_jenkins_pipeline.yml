@@ -1,0 +1,96 @@
+
+apiVersion: xl-release/v1beta1
+kind: Templates
+spec:
+- directory: JenkinsWorld
+  children:
+  - name: Track Jenkins pipeline
+    type: xlrelease.Release
+    scheduledStartDate: 2018-08-17
+    variables:
+    - key: pipeline
+      type: xlrelease.StringVariable
+      label: Jenkins pipeline
+      description: The name of the pipeline to track in Jenkins
+    - key: branch
+      type: xlrelease.StringVariable
+      label: Branch
+      description: Branch of the pipeline in Jenkins
+      value: master
+    - key: buildNumber
+      type: xlrelease.StringVariable
+      label: Build number
+      description: Build number of the pipeline build in Jenkins
+    - key: pipelineData
+      type: xlrelease.StringVariable
+      requiresValue: false
+      showOnReleaseStart: false
+    - key: pipeline.check.codecoverage
+      type: xlrelease.BooleanVariable
+      requiresValue: false
+      label: Check code coverage
+      description: Scans the pipeline for Code Coverage
+      value: true
+    - key: pipeline.check.apitests
+      type: xlrelease.BooleanVariable
+      requiresValue: false
+      label: Check API tests
+      description: Scans the pipeline for API tests
+      value: true
+    - key: pipeline.check.uitests
+      type: xlrelease.BooleanVariable
+      requiresValue: false
+      label: Check UI tests
+      description: Scans the pipeline for UI tests
+      value: true
+    - key: pipeline.check.integrationtests
+      type: xlrelease.BooleanVariable
+      requiresValue: false
+      label: Check integration tests
+      description: Scan pipeline for integration tests
+      value: true
+    - key: deliveryStrategy
+      type: xlrelease.StringVariable
+      label: Delivery strategy
+      description: Action to perform when the pipeline completes successfully
+      valueProvider:
+        type: xlrelease.ListOfStringValueProviderConfiguration
+        values:
+        - Start Feature Delivery Process
+        - Add Feature to Release Train
+        - No Action
+    tags:
+    - Pipeline radar
+    abortOnFailure: true
+#    scriptUsername: admin
+#    scriptUserPassword: {b64}7hPJSB4On6N0yvB+aIUhFQ==
+    phases:
+    - name: Connect to Jenkins
+      type: xlrelease.Phase
+      color: '#999999'
+      tasks:
+      - name: Import pipeline
+        type: xlrelease.SequentialGroup
+        tasks:
+        - name: 'Track Jenkins pipeline job #${buildNumber}'
+          type: jenkins.PipelineTracker
+          pipelineName: ${pipeline}
+          branch: ${branch}
+          buildNumber: ${buildNumber}
+          pipelineData: variable('pipelineData')
+        - name: Register release
+          type: release.RegisterRelease
+          targetRelease: ${branch}
+          tag: Pipelines
+          title: Jenkins pipeline ${buildNumber}
+        - name: Check compliance
+          type: jenkins.Compliance
+          codeCoverage: variable('pipeline.check.codecoverage')
+          apiTests: variable('pipeline.check.apitests')
+          uiTests: variable('pipeline.check.uitests')
+          integrationTests: variable('pipeline.check.integrationtests')
+          pipelineData: ${pipelineData}
+    - name: Feature delivery
+      type: xlrelease.Phase
+      color: '#08B153'
+     

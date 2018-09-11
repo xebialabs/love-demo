@@ -1,0 +1,182 @@
+
+apiVersion: xl-release/v1beta1
+kind: Templates
+spec:
+- directory: JenkinsWorld
+  children:
+  - name: Feature delivery process
+    type: xlrelease.Release
+    scheduledStartDate: 2018-08-06T07:00:00
+    variables:
+    - key: jenkinsPipeline
+      type: xlrelease.StringVariable
+      label: Jenkins pipeline
+      description: The name of the pipeline in Jenkins
+    - key: branch
+      type: xlrelease.StringVariable
+      label: Branch
+      description: Pipeline branch in Jenkins
+      value: master
+    - key: buildNumber
+      type: xlrelease.StringVariable
+      label: Build number
+      description: The build number in Jenkins
+    - key: jiraTicket
+      type: xlrelease.StringVariable
+      requiresValue: false
+      showOnReleaseStart: false
+#    scriptUsername: admin
+#    scriptUserPassword: {b64}7hPJSB4On6N0yvB+aIUhFQ==
+    phases:
+    - name: Dev
+      type: xlrelease.Phase
+      color: '#08B153'
+      tasks:
+      - name: Wait for successful pipeline build
+        type: xlrelease.GateTask
+
+      - name: Jenkins pipelines
+        type: xlrelease.ParallelGroup
+        tags:
+        - Pipelines
+      - name: Code Quality
+        type: xlrelease.SequentialGroup
+        tasks:
+        - name: Run SonarQube
+          type: jenkins.Build
+          taskFailureHandlerEnabled: true
+          taskRecoverOp: SKIP_TASK
+
+        - name: Quality Gates
+          type: xlrelease.ParallelGroup
+          tasks:
+          - name: 'Quality Gate: Test Coverage'
+            type: sonar.checkCompliance
+            taskFailureHandlerEnabled: true
+            taskRecoverOp: SKIP_TASK
+
+          - name: 'Quality Gate: UI Components'
+            type: sonar.checkCompliance
+            taskFailureHandlerEnabled: true
+            taskRecoverOp: SKIP_TASK
+
+          - name: 'Quality Gate: Code Documentation'
+            type: sonar.checkCompliance
+            taskFailureHandlerEnabled: true
+            taskRecoverOp: SKIP_TASK
+
+      - name: Fortify Security Analysis
+        type: fortify.checkCompliance
+        taskFailureHandlerEnabled: true
+        taskRecoverOp: SKIP_TASK
+
+      - name: Code Compliance Check
+        type: blackduck.checkCompliance
+        taskFailureHandlerEnabled: true
+        taskRecoverOp: SKIP_TASK
+
+    - name: QA
+      type: xlrelease.Phase
+      color: '#FD8D10'
+      tasks:
+      - name: Open JIRA Request for QA
+        type: jira.CreateIssue
+        project: SAN
+        title: ${release.title}
+        description: |
+          Release process for feature ${release.title} has started.
+          
+          ${release.title} will be deployed to TEST.
+          
+          Put this ticket in progress to approve testing cycle.
+        issueId: variable('jiraTicket')
+      - name: Wait for approval for deployment to test
+        type: jira.CheckQuery
+        taskFailureHandlerEnabled: true
+        taskRecoverOp: SKIP_TASK
+        query: issue = ${jiraTicket}
+        expectedStatus: In Progress
+        pollInterval: 10
+      - name: Deploy to Test Environment
+        type: xldeploy.Deploy
+        taskFailureHandlerEnabled: true
+        taskRecoverOp: SKIP_TASK
+#        retryCounter:
+#          currentContinueRetrial:0
+#          currentPollingTrial:0
+      - name: Update change request
+        type: jira.UpdateIssue
+        issueId: ${jiraTicket}
+        comment: The feature has been deployed and is ready for testing.
+      - name: Perform tests
+        type: xlrelease.ParallelGroup
+        tasks:
+        - name: Do API tests
+          type: xlrelease.ScriptTask
+          script: |
+            import time
+            time.sleep(5) 
+        - name: Do Performance tests
+          type: xlrelease.ScriptTask
+          script: |
+            import time
+            time.sleep(15) 
+      - name: Approve test results
+        type: xlrelease.GateTask
+        owner: admin
+      - name: Close ticket
+        type: jira.UpdateIssue
+        issueId: ${jiraTicket}
+        comment: Feature was tested.
+    - name: Merge Feature
+      type: xlrelease.Phase
+      color: '#0099CC'
+      tasks:
+      - name: Send notification
+        type: xlrelease.NotificationTask
+        taskFailureHandlerEnabled: true
+        taskRecoverOp: SKIP_TASK
+        addresses:
+        - hsiemelink@xebialabs.com
+        subject: Jenkins pipeline ${buildNumber} has started
+        body: Jenkins build is being tracked in XL Release!
+      - name: Merge pull request
+        type: github.MergePullRequest
+        taskFailureHandlerEnabled: true
+        taskRecoverOp: SKIP_TASK
+
+      - name: Register feature in Release Train
+        type: release.RegisterRelease
+        targetRelease: Release Train
+        tag: Features
+        title: ${release.title}
+    extensions:
+    - name: Dashboard
+      type: xlrelease.Dashboard
+      owner: admin
+      tiles:
+      - name: Release progress
+        type: xlrelease.ReleaseProgressTile
+
+      - name: Release health
+        type: xlrelease.ReleaseHealthTile
+        col: 0
+      - name: Release timeline
+        type: xlrelease.TimelineTile
+        width: 1
+        row: 0
+        col: 2
+      - name: Sonar Summary
+        type: sonar.SonarSummaryTile
+        row: 1
+        col: 0
+        resource: xl-release
+        metrics:
+          bugs:Bugs
+          code_smells:Code Smells
+          coverage:Coverage
+        supportedScopes:
+        - release
+        - folder
+        - global
+     

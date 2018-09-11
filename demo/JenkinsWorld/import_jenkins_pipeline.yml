@@ -1,0 +1,37 @@
+
+apiVersion: xl-release/v1beta1
+kind: Templates
+spec:
+- directory: JenkinsWorld
+  children:
+  - name: Import Jenkins pipelines
+    type: xlrelease.Release
+    scheduledStartDate: 2018-08-17T07:00:00
+    variables:
+    - key: jenkinsFolder
+      type: xlrelease.StringVariable
+      label: Jenkins pipeline folder
+      description: Look for pipelines in this folder on the Jenkins server
+    - key: targetFolder
+      type: xlrelease.StringVariable
+      label: XL Release target folder
+      description: Create tracker templates in this folder on the XL Release server
+    - key: masterTemplate
+      type: xlrelease.StringVariable
+      label: Master template
+      description: Master template to base release templates on
+      # no DSL renderer found for release.TemplateSelector
+      # valueProvider:
+      #  type: release.TemplateSelector
+#    scriptUsername: admin
+#    scriptUserPassword: {b64}7hPJSB4On6N0yvB+aIUhFQ==
+    phases:
+    - name: Import
+      type: xlrelease.Phase
+      tasks:
+      - name: Import pipelines from Jenkins
+        type: jenkins.ScanPipelines
+        jenkinsFolder: ${jenkinsFolder}
+        targetFolder: ${targetFolder}
+        masterTemplate: ${masterTemplate}
+     

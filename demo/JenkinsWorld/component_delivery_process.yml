@@ -1,0 +1,126 @@
+
+apiVersion: xl-release/v1beta1
+kind: Templates
+spec:
+- directory: JenkinsWorld
+  children:
+  - name: Component delivery process
+    type: xlrelease.Release
+    scheduledStartDate: 2018-08-16
+    variables:
+    - key: jenkinsPipeline
+      type: xlrelease.StringVariable
+      label: Jenkins pipeline
+      description: The name of the pipeline in Jenkins
+    - key: branch
+      type: xlrelease.StringVariable
+      label: Branch
+      description: Pipeline branch in Jenkins
+      value: master
+    - key: buildNumber
+      type: xlrelease.StringVariable
+      label: Build number
+      description: The build number in Jenkins
+    - key: jiraTicket
+      type: xlrelease.StringVariable
+      requiresValue: false
+      showOnReleaseStart: false
+    phases:
+    - name: Dev
+      type: xlrelease.Phase
+      color: '#08B153'
+      tasks:
+      - name: Wait for features
+        type: xlrelease.GateTask
+
+      - name: Features
+        type: xlrelease.ParallelGroup
+        tags:
+        - Features
+      - name: Register release
+        type: release.RegisterRelease
+        targetRelease: Cool store
+        title: ${release.title}
+    - name: Acceptance
+      type: xlrelease.Phase
+      color: '#FD8D10'
+      tasks:
+      - name: Open JIRA Request for QA
+        type: jira.CreateIssue
+        project: SAN
+        title: ${release.title}
+        description: |
+          Release process for ${release.title} has started.
+          
+          ${release.title} has been deployed to TEST.
+          
+          Put this ticket in progress to approve testing cycle.
+        issueId: variable('jiraTicket')
+      - name: Wait for approval for deployment to test
+        type: jira.CheckQuery
+        query: issue = ${jiraTicket}
+        expectedStatus: In Progress
+        pollInterval: 10
+      - name: Deploy to TEST
+        type: xldeploy.Deploy
+        taskFailureHandlerEnabled: true
+        taskRecoverOp: SKIP_TASK
+      - name: Add comment to change request
+        type: jira.UpdateIssue
+        issueId: ${jiraTicket}
+        comment: Tests have passed successfully.
+      - name: Perform Automated Testing
+        type: xlrelease.ParallelGroup
+        tasks:
+        - name: UI tests
+          type: xlrelease.ScriptTask
+          script: |
+            import time
+            time.sleep(5) 
+        - name: Integration tests
+          type: xlrelease.ScriptTask
+          script: |
+            import time
+            time.sleep(15) 
+      - name: Close JIRA ticket
+        type: jira.UpdateIssue
+        issueId: ${jiraTicket}
+        newStatus: Resolved
+        comment: ${release.title} was deployed to PROD.
+    - name: Publish component
+      type: xlrelease.Phase
+      color: '#0099CC'
+      tasks:
+      - name: Publish component artifact
+        type: xlrelease.Task
+
+    extensions:
+    - name: Dashboard
+      type: xlrelease.Dashboard
+      owner: admin
+      tiles:
+      - name: Release progress
+        type: xlrelease.ReleaseProgressTile
+
+      - name: Release health
+        type: xlrelease.ReleaseHealthTile
+        col: 0
+      - name: Release timeline
+        type: xlrelease.TimelineTile
+        width: 1
+        row: 0
+        col: 2
+      - name: Sonar Summary
+        type: sonar.SonarSummaryTile
+        row: 1
+        col: 0
+        resource: xl-release
+        metrics:
+          bugs:Bugs
+          code_smells:Code Smells
+          coverage:Coverage
+        supportedScopes:
+        - release
+        - folder
+        - global
+     
