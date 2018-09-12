@@ -1,0 +1,17 @@
+apiVersion: xl-release/v1beta1
+kind: Configurations
+spec:
+- name: Jenkins localhost
+  type: jenkins.Server
+  url: http://jenkins:8080/
+  username: admin
+  password: admin
+---
+apiVersion: xl-release/v1beta1
+kind: Configurations
+spec:
+- name: Jira Server
+  type: jira.Server
+  url: https://xebialabs.atlassian.net/
+  username: hsiemelink
+  password: secret
