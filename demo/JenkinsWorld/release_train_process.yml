@@ -6,7 +6,7 @@ spec:
   children:
   - name: Release train process
     type: xlrelease.Release
-    scheduledStartDate: '2018-08-16T07:00:00+0000'
+    scheduledStartDate: '2018-08-16'
     variables:
     - key: jenkinsPipeline
       type: xlrelease.StringVariable

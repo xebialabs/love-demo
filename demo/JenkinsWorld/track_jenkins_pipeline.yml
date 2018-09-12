@@ -6,7 +6,7 @@ spec:
   children:
   - name: Track Jenkins pipeline
     type: xlrelease.Release
-    scheduledStartDate: '2018-08-17T07:00:00+0000'
+    scheduledStartDate: '2018-08-17'
     variables:
     - key: pipeline
       type: xlrelease.StringVariable
