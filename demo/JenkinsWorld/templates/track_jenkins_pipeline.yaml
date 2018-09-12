@@ -7,6 +7,45 @@ spec:
   - name: Track Jenkins pipeline
     type: xlrelease.Release
     scheduledStartDate: '2018-08-17'
+
+    releaseTriggers:
+    - name: Track Jenkins Pipeline
+      type: jenkins.Trigger
+      releaseTitle: 'Jenkins pipeline #${buildNumber}'
+      enabled: false
+      jenkinsServer: Jenkins localhost
+      pipeline: dummy
+      variables:
+      - key: pipeline
+        type: xlrelease.StringVariable
+        value: ${pipeline}
+      - key: branch
+        type: xlrelease.StringVariable
+        value: ${branch}
+      - key: buildNumber
+        type: xlrelease.StringVariable
+        value: ${buildNumber}
+      - key: pipelineData
+        type: xlrelease.StringVariable
+
+      - key: pipeline.check.codecoverage
+        type: xlrelease.BooleanVariable
+        value: true
+      - key: pipeline.check.apitests
+        type: xlrelease.BooleanVariable
+        value: true
+      - key: pipeline.check.uitests
+        type: xlrelease.BooleanVariable
+        value: true
+      - key: pipeline.check.integrationtests
+        type: xlrelease.BooleanVariable
+        value: true
+      - key: deliveryStrategy
+        type: xlrelease.StringVariable
+        value: Start Feature Delivery Process
+      pipelineName: '[PIPELINE_NAME]'
+      branchName: '[BRANCH_NAME]'
+
     variables:
     - key: pipeline
       type: xlrelease.StringVariable
@@ -64,6 +103,7 @@ spec:
     abortOnFailure: true
     scriptUsername: admin
     scriptUserPassword: admin
+
     phases:
     - name: Connect to Jenkins
       type: xlrelease.Phase
@@ -94,40 +134,3 @@ spec:
     - name: Feature delivery
       type: xlrelease.Phase
       color: '#08B153'
-    releaseTriggers:
-    - name: Track Jenkins Pipeline
-      type: jenkins.Trigger
-      releaseTitle: 'Jenkins pipeline #${buildNumber}'
-      enabled: false
-      jenkinsServer: Jenkins localhost
-      pipeline: dummy
-      variables:
-      - key: pipeline
-        type: xlrelease.StringVariable
-        value: ${pipeline}
-      - key: branch
-        type: xlrelease.StringVariable
-        value: ${branch}
-      - key: buildNumber
-        type: xlrelease.StringVariable
-        value: ${buildNumber}
-      - key: pipelineData
-        type: xlrelease.StringVariable
-
-      - key: pipeline.check.codecoverage
-        type: xlrelease.BooleanVariable
-        value: true
-      - key: pipeline.check.apitests
-        type: xlrelease.BooleanVariable
-        value: true
-      - key: pipeline.check.uitests
-        type: xlrelease.BooleanVariable
-        value: true
-      - key: pipeline.check.integrationtests
-        type: xlrelease.BooleanVariable
-        value: true
-      - key: deliveryStrategy
-        type: xlrelease.StringVariable
-        value: Start Feature Delivery Process
-      pipelineName: '[PIPELINE_NAME]'
-      branchName: '[BRANCH_NAME]'
