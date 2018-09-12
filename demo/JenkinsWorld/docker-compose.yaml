@@ -16,8 +16,7 @@ services:
     - ADMIN_PASSWORD=admin
 
   xl-release:
-    # image: xebialabsunsupported/xl-release:8.5.0-alpha.11
-    image: xl-docker.xebialabs.com:443/xl-release:8.5.0-alpha.11
+    image: xebialabsunsupported/xl-release:8.5.0-alpha.11
     ports:
     - "5516:5516"
     depends_on:
