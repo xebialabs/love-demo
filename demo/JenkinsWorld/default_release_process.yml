@@ -6,7 +6,7 @@ spec:
   children:
   - name: Default release process
     type: xlrelease.Release
-    scheduledStartDate: 2018-08-16T07:00:00
+    scheduledStartDate: '2018-08-16T07:00:00+0000'
     variables:
     - key: jenkinsPipeline
       type: xlrelease.StringVariable
@@ -25,7 +25,8 @@ spec:
       type: xlrelease.StringVariable
       requiresValue: false
       showOnReleaseStart: false
-
+#    scriptUsername: admin
+#    scriptUserPassword: {b64}0gJbY9MNOSu0CMHm7JebZw==
     phases:
     - name: Dev
       type: xlrelease.Phase
@@ -88,7 +89,7 @@ spec:
           ${release.title} has been deployed to TEST.
           
           Put this ticket in progress to approve testing cycle.
-        issueId: variable('jiraTicket')
+        issueId: ${jiraTicket}
       - name: Wait for approval for deployment to test
         type: jira.CheckQuery
         query: issue = ${jiraTicket}
@@ -98,6 +99,9 @@ spec:
         type: xldeploy.Deploy
         taskFailureHandlerEnabled: true
         taskRecoverOp: SKIP_TASK
+#        retryCounter:
+#          currentContinueRetrial:0
+#          currentPollingTrial:0
       - name: Add comment to change request
         type: jira.UpdateIssue
         issueId: ${jiraTicket}
@@ -164,7 +168,9 @@ spec:
         type: xldeploy.Deploy
         taskFailureHandlerEnabled: true
         taskRecoverOp: SKIP_TASK
-
+#        retryCounter:
+#          currentContinueRetrial:0
+#          currentPollingTrial:0
       - name: Add comment to request
         type: servicenow.CreateChangeRequest
         taskFailureHandlerEnabled: true
@@ -203,9 +209,27 @@ spec:
       - name: Update list of supported versions
         type: xlrelease.Task
 
+    releaseTriggers:
+    - name: Track Jenkins pipeline
+      type: jenkins.Trigger
+      releaseTitle: 'Release [PIPELINE_NAME] #${buildNumber}'
+      enabled: false
+      variables:
+      - key: jenkinsPipeline
+        type: xlrelease.StringVariable
+        value: ${pipeline}
+      - key: branch
+        type: xlrelease.StringVariable
+        value: ${branch}
+      - key: buildNumber
+        type: xlrelease.StringVariable
+        value: ${buildNumber}
+      pipelineName: [PIPELINE_NAME]
+      branchName: [BRANCH_NAME]
     extensions:
     - name: Dashboard
       type: xlrelease.Dashboard
+#      parentId: Applications/Folder4c6fbb2f2a3c4bffacf25703f841f620/Release84ddc7bf87f743c5837baf82cae19c19
       owner: admin
       tiles:
       - name: Release progress

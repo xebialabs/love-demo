@@ -6,7 +6,7 @@ spec:
   children:
   - name: Track Jenkins pipeline
     type: xlrelease.Release
-    scheduledStartDate: 2018-08-17
+    scheduledStartDate: '2018-08-17T07:00:00+0000'
     variables:
     - key: pipeline
       type: xlrelease.StringVariable
@@ -85,11 +85,46 @@ spec:
           title: Jenkins pipeline ${buildNumber}
         - name: Check compliance
           type: jenkins.Compliance
-          codeCoverage: variable('pipeline.check.codecoverage')
-          apiTests: variable('pipeline.check.apitests')
-          uiTests: variable('pipeline.check.uitests')
-          integrationTests: variable('pipeline.check.integrationtests')
+          codeCoverage: ${pipeline.check.codecoverage}
+          apiTests: ${pipeline.check.apitests}
+          uiTests: ${pipeline.check.uitests}
+          integrationTests: ${pipeline.check.integrationtests}
           pipelineData: ${pipelineData}
     - name: Feature delivery
       type: xlrelease.Phase
       color: '#08B153'
+    releaseTriggers:
+    - name: Track Jenkins Pipeline
+      type: jenkins.Trigger
+      releaseTitle: 'Jenkins pipeline #${buildNumber}'
+      enabled: false
+      variables:
+      - key: pipeline
+        type: xlrelease.StringVariable
+        value: ${pipeline}
+      - key: branch
+        type: xlrelease.StringVariable
+        value: ${branch}
+      - key: buildNumber
+        type: xlrelease.StringVariable
+        value: ${buildNumber}
+      - key: pipelineData
+        type: xlrelease.StringVariable
+
+      - key: pipeline.check.codecoverage
+        type: xlrelease.BooleanVariable
+        value: true
+      - key: pipeline.check.apitests
+        type: xlrelease.BooleanVariable
+        value: true
+      - key: pipeline.check.uitests
+        type: xlrelease.BooleanVariable
+        value: true
+      - key: pipeline.check.integrationtests
+        type: xlrelease.BooleanVariable
+        value: true
+      - key: deliveryStrategy
+        type: xlrelease.StringVariable
+        value: Start Feature Delivery Process
+      pipelineName: [PIPELINE_NAME]
+      branchName: [BRANCH_NAME]
