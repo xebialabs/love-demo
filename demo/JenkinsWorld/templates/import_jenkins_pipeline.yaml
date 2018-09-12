@@ -20,10 +20,6 @@ spec:
       type: xlrelease.StringVariable
       label: Master template
       description: Master template to base release templates on
-      valueProvider:
-          type: release.TemplateSelector
-          tags:
-          - Pipeline radar
     scriptUsername: admin
     scriptUserPassword: admin
     phases:
@@ -35,4 +31,3 @@ spec:
         jenkinsFolder: ${jenkinsFolder}
         targetFolder: ${targetFolder}
         masterTemplate: ${masterTemplate}
-     
