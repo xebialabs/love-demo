@@ -47,9 +47,9 @@ spec:
         title: ${release.title}
         description: |
           Release process for ${release.title} has started.
-          
+
           ${release.title} has been deployed to TEST.
-          
+
           Put this ticket in progress to approve testing cycle.
         issueId: ${jiraTicket}
       - name: Wait for approval for deployment to test
@@ -75,12 +75,12 @@ spec:
           type: xlrelease.ScriptTask
           script: |
             import time
-            time.sleep(5) 
+            time.sleep(5)
         - name: Integration tests
           type: xlrelease.ScriptTask
           script: |
             import time
-            time.sleep(15) 
+            time.sleep(15)
       - name: Close JIRA ticket
         type: jira.UpdateIssue
         issueId: ${jiraTicket}
@@ -170,52 +170,3 @@ spec:
 
       - name: Update list of supported versions
         type: xlrelease.Task
-
-    releaseTriggers:
-    - name: Track Jenkins pipeline
-      type: jenkins.Trigger
-      releaseTitle: 'Release [PIPELINE_NAME] #${buildNumber}'
-      enabled: false
-      variables:
-      - key: jenkinsPipeline
-        type: xlrelease.StringVariable
-        value: ${pipeline}
-      - key: branch
-        type: xlrelease.StringVariable
-        value: ${branch}
-      - key: buildNumber
-        type: xlrelease.StringVariable
-        value: ${buildNumber}
-      pipelineName: [PIPELINE_NAME]
-      branchName: [BRANCH_NAME]
-    extensions:
-    - name: Dashboard
-      type: xlrelease.Dashboard
-#      parentId: Applications/Folder4c6fbb2f2a3c4bffacf25703f841f620/Release84ddc7bf87f743c5837baf82cae19c19
-      owner: admin
-      tiles:
-      - name: Release progress
-        type: xlrelease.ReleaseProgressTile
-
-      - name: Release health
-        type: xlrelease.ReleaseHealthTile
-        col: 0
-      - name: Release timeline
-        type: xlrelease.TimelineTile
-        width: 1
-        row: 0
-        col: 2
-      - name: Sonar Summary
-        type: sonar.SonarSummaryTile
-        row: 1
-        col: 0
-        resource: xl-release
-        metrics:
-          bugs:Bugs
-          code_smells:Code Smells
-          coverage:Coverage
-        supportedScopes:
-        - release
-        - folder
-        - global
-     

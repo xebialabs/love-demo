@@ -74,6 +74,7 @@ spec:
         tasks:
         - name: 'Track Jenkins pipeline job #${buildNumber}'
           type: jenkins.PipelineTracker
+          jenkinsServer: Jenkins localhost
           pipelineName: ${pipeline}
           branch: ${branch}
           buildNumber: ${buildNumber}
@@ -98,6 +99,8 @@ spec:
       type: jenkins.Trigger
       releaseTitle: 'Jenkins pipeline #${buildNumber}'
       enabled: false
+      jenkinsServer: Jenkins localhost
+      pipeline: dummy
       variables:
       - key: pipeline
         type: xlrelease.StringVariable
@@ -126,5 +129,5 @@ spec:
       - key: deliveryStrategy
         type: xlrelease.StringVariable
         value: Start Feature Delivery Process
-      pipelineName: [PIPELINE_NAME]
-      branchName: [BRANCH_NAME]
+      pipelineName: '[PIPELINE_NAME]'
+      branchName: '[BRANCH_NAME]'
