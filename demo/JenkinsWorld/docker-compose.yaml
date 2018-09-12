@@ -4,8 +4,7 @@
 version: '2.3'
 services:
   xl-deploy:
-    # image: xebialabsunsupported/xl-deploy:8.5.0-alpha.13
-    image: xl-docker.xebialabs.com:443/xl-deploy:8.5.0-alpha.15
+    image: xebialabsunsupported/xl-deploy:8.5.0-alpha.15
     ports:
     - "4516:4516"
     volumes:
@@ -17,7 +16,7 @@ services:
     - ADMIN_PASSWORD=admin
 
   xl-release:
-    # image: xebialabsunsupported/xl-release:8.5.0-alpha.9
+    # image: xebialabsunsupported/xl-release:8.5.0-alpha.11
     image: xl-docker.xebialabs.com:443/xl-release:8.5.0-alpha.11
     ports:
     - "5516:5516"

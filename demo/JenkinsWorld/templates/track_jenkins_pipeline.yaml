@@ -11,8 +11,6 @@ spec:
     abortOnFailure: true
     scriptUsername: admin
     scriptUserPassword: admin
-    tags:
-    - Pipeline radar
 
     variables:
     - key: pipeline
@@ -117,9 +115,6 @@ spec:
       - key: buildNumber
         type: xlrelease.StringVariable
         value: ${buildNumber}
-      - key: pipelineData
-        type: xlrelease.StringVariable
-
       - key: pipeline.check.codecoverage
         type: xlrelease.BooleanVariable
         value: true
