@@ -62,8 +62,8 @@ spec:
     tags:
     - Pipeline radar
     abortOnFailure: true
-#    scriptUsername: admin
-#    scriptUserPassword: {b64}7hPJSB4On6N0yvB+aIUhFQ==
+    scriptUsername: admin
+    scriptUserPassword: admin
     phases:
     - name: Connect to Jenkins
       type: xlrelease.Phase
@@ -77,7 +77,7 @@ spec:
           pipelineName: ${pipeline}
           branch: ${branch}
           buildNumber: ${buildNumber}
-          pipelineData: variable('pipelineData')
+          pipelineData: ${pipelineData}
         - name: Register release
           type: release.RegisterRelease
           targetRelease: ${branch}
@@ -93,4 +93,3 @@ spec:
     - name: Feature delivery
       type: xlrelease.Phase
       color: '#08B153'
-     
