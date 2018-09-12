@@ -64,3 +64,13 @@ services:
       - TASKS=1
       - VERSION=1
       - VOLUMES=1
+
+  jenkins:
+    image: jenkinsci/blueocean:latest
+    ports:
+    - 8080:8080
+    - 50000:50000
+    volumes:
+    - ./jenkins_home:/var/jenkins_home
+    environment:
+    - JAVA_OPTS=-Djenkins.install.runSetupWizard=false

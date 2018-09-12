@@ -37,3 +37,6 @@ s101plugin.state
 
 # Mac
 .DS_Store
+
+# Jenkins Docker storage
+jenkins_home
