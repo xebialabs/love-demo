@@ -1,0 +1,18 @@
+
+apiVersion: xl-release/v1beta1
+kind: Templates
+spec:
+- directory: Set up
+  children:
+  - name: Manual Demo Setup
+    type: xlrelease.Release
+    description: |
+      Follow the steps in this template after starting up.
+
+    phases:
+    - name: Set up
+      type: xlrelease.Phase
+      tasks:
+      - name: Fix variable order
+        type: xlrelease.Task
+        team: Release Admin
