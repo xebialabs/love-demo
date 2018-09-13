@@ -87,11 +87,12 @@ spec:
           title: Jenkins pipeline ${buildNumber}
         - name: Check compliance
           type: jenkins.Compliance
-          codeCoverage: ${pipeline.check.codecoverage}
-          apiTests: ${pipeline.check.apitests}
-          uiTests: ${pipeline.check.uitests}
-          integrationTests: ${pipeline.check.integrationtests}
           pipelineData: ${pipelineData}
+          variableMapping:
+            pythonScript.codeCoverage: ${pipeline.check.codecoverage}
+            pythonScript.apiTests: ${pipeline.check.apitests}
+            pythonScript.uiTests: ${pipeline.check.uitests}
+            pythonScript.integrationTests: ${pipeline.check.integrationtests}
     - name: Feature delivery
       type: xlrelease.Phase
       color: '#08B153'

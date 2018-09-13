@@ -20,6 +20,10 @@ spec:
       type: xlrelease.StringVariable
       label: Master template
       description: Master template to base release templates on
+    - key: enableTrigger
+      type: xlrelease.BooleanVariable
+      label: Enable trigger
+      description: If enabled, the created templates will start polling the Jenkins server right away to. Otherwise, go to Triggers section on the created template and enable the trigger by hand.
     scriptUsername: admin
     scriptUserPassword: admin
     phases:
@@ -31,3 +35,5 @@ spec:
         jenkinsFolder: ${jenkinsFolder}
         targetFolder: ${targetFolder}
         masterTemplate: ${masterTemplate}
+        variableMapping:
+          pythonScript.enableTrigger: ${enableTrigger}
