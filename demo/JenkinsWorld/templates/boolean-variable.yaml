@@ -1,0 +1,19 @@
+apiVersion: xl-release/v1beta1
+kind: Templates
+spec:
+- directory: Test
+  children:
+  - name: Template with boolean variable
+    type: xlrelease.Release
+    variables:
+    - key: rollbackOnFailure
+      type: xlrelease.BooleanVariable
+      label: Rollback on failure?
+    phases:
+    - name: Test
+      type: xlrelease.Phase
+      tasks:
+      - name: Test boolean
+        type: xldeploy.Deploy
+        variableMapping:
+          pythonScript.rollbackOnFailure: ${rollbackOnFailure}

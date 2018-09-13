@@ -70,20 +70,28 @@ Here's an example of the parameters:
 
 ## Import projects into XL Release
 
-Create the following folder structure in XL Release
+You should have the following folder structure in XL Release:
 
 ```
 Cool Store
 +-- Address book
 +-- Shopping cart
 +-- Wish list
+JenkinsWorld
+Samples & Tutorials
+Set up
 ```
 
 Use the template **JenkinsWorld/Import Jenkins Pipelines** to import the projects from Jenkins. You need to run it for each of the three subprojects, but not for the main Cool Store project.
 
 For the **Master template** variable, fill in `JenkinsWorld/Track Jenkins pipeline`.
 
-Templates will be created in the folders you created above.
+For example:
+
+![Jenkins Branch Source](doc/import-jenkins-release-variables.png)
+
+
+Templates will be created in the folders beneath Cool Store.
 
 ### Dry run
 
