@@ -2,12 +2,23 @@
 apiVersion: xl-release/v1beta1
 kind: Templates
 spec:
+- directory: Cool Store
+  children:
+  - directory: Address book
+    children:
+  - directory: Shopping cart
+    children:
+  - directory: Wish list
+    children:
+
 - directory: Set up
   children:
   - name: Manual Demo Setup
     type: xlrelease.Release
     description: |
       Follow the steps in this template after starting up.
+    scriptUsername: admin
+    scriptUserPassword: admin
 
     phases:
     - name: Set up
