@@ -8,15 +8,14 @@ This is the setup for the JenkinsWorld 2018 demo in San Francisco.
 
 First, set up Docker and the XL client using the first step of the [DevOps as Code workshop](https://github.com/xebialabs/devops-as-code-demo/tree/workshop-1/workshop).
 
-Note: the `xl` client used there is an older version, use [8.5.0-alpha.2](https://s3.amazonaws.com/xl-cli/bin/8.5.0-alpha.2/darwin-amd64/xl). Tell [Hes](mailto:hsiemelink@xebialabs.com) if you run into trouble. The Dev ♥︎ team is working on a proper release process in the meanwhile, so we won't have issues here.
+Note: Download the latest XL CLI: [8.5.0-alpha.2](https://s3.amazonaws.com/xl-cli/bin/8.5.0-alpha.2/darwin-amd64/xl). 
+
+Tell [Hes](mailto:hsiemelink@xebialabs.com) if you run into trouble. The Dev ♥︎ team is working on a proper release process in the meanwhile, so we won't have issues here.
 
 ### Run XL Release and Jenkins
 
-#### Jenkins pipeline radar
-Check out [xlr-jenkins-pipeline-radar-plugin](https://github.com/xebialabs/xlr-jenkins-pipeline-radar-plugin/) into `~/Code`. (This weird step will disappear soon)
-
 #### Start Docker
-Now start docker from the `demo/JenkinsWorld` directory
+Start docker from the `demo/JenkinsWorld` directory
 
 ```
 $ cd demo/JenkinsWorld
@@ -25,11 +24,13 @@ $ docker-compose up -d
 
 This will start
 
-* XL Release on http://localhost:5516
+* XL Release on http://localhost:5516.
 * XL Deploy on http://localhost:4516
 * Jenkins on http://localhost:8080
 * Docker proxy for local XL Deploy deployments
 * XL-CLI task container to link XL Release to XL Deploy
+
+Use admin/admin credentials for XL Release, XL Deploy and Jenkins.
 
 ### Configure XL Release templates
 
@@ -53,11 +54,19 @@ _This is work in progress_
 
 Create a folder called **Cool Store** in Jenkins.
 
+In order to do this, you first need to [create a personal access token in GitHub](https://github.com/settings/tokens).
+
+You can use this token as a credential in Jenkins.
+
 Import the following projects from GitHub as multibranch projects in the **Cool Store** folder
 
 * [demo-address-book](https://github.com/xebialabs/demo-address-book)
 * [demo-shopping-cart](https://github.com/xebialabs/demo-shopping-cart)
 * [demo-wish-list](https://github.com/xebialabs/demo-wish-list)
+
+Here's an example of the parameters:
+
+![Jenkins Branch Source](doc/jenkins-branch-source.png)
 
 ## Import projects into XL Release
 
