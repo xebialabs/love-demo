@@ -86,6 +86,8 @@ Use the template **JenkinsWorld/Import Jenkins Pipelines** to import the project
 
 For the **Master template** variable, fill in `JenkinsWorld/Track Jenkins pipeline`.
 
+Enable the trigger.
+
 For example:
 
 ![Jenkins Branch Source](doc/import-jenkins-release-variables.png)
@@ -95,11 +97,35 @@ Templates will be created in the folders beneath Cool Store.
 
 ### Dry run
 
-Enable the trigger on any tracker template and kick off a manual build in Jenkins.
+Kick off a manual build in Jenkins of **Address book/COOL-113**
 
 This should create a release in XL Release.
 
+Go to the **Cool Store/Address book** folder and select the **Releases** tab. The Jenkins build should appear here. Make sure to select active releases.
+
+![Jenkins Branch Source](doc/jenkins-build-running.png)
+
+Clicking on the build will show the stages:
+
+![Jenkins Branch Source](doc/jenkins-shadow-pipeline.png)
+
+This corresponds with the BlueOcean view in Jenkins:
+
+![Jenkins Branch Source](doc/jenkins-blue-ocean.png)
+
+
 ## Set up Release trains
 
-...
+### Product delivery
+
+Create a release:
+
+| | |
+|---|---|
+|Template|JenkinsWorld/Release train process|
+|Release name|Cool Store September delivery|
+|Use folder|Cool Store|
+
+
+
 
