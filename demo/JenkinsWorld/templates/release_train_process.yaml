@@ -8,19 +8,6 @@ spec:
     type: xlrelease.Release
     scheduledStartDate: '2018-08-16'
     variables:
-    - key: jenkinsPipeline
-      type: xlrelease.StringVariable
-      label: Jenkins pipeline
-      description: The name of the pipeline in Jenkins
-    - key: branch
-      type: xlrelease.StringVariable
-      label: Branch
-      description: Pipeline branch in Jenkins
-      value: master
-    - key: buildNumber
-      type: xlrelease.StringVariable
-      label: Build number
-      description: The build number in Jenkins
     - key: jiraTicket
       type: xlrelease.StringVariable
       requiresValue: false
@@ -61,9 +48,6 @@ spec:
         type: xldeploy.Deploy
         taskFailureHandlerEnabled: true
         taskRecoverOp: SKIP_TASK
-#        retryCounter:
-#          currentContinueRetrial:0
-#          currentPollingTrial:0
       - name: Add comment to change request
         type: jira.UpdateIssue
         issueId: ${jiraTicket}
