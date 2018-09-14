@@ -1,0 +1,33 @@
+apiVersion: xl-deploy/v1beta1
+kind: Applications
+spec:
+- name: Applications/PetClinic
+  type: core.Directory
+  children:
+    - name: PetPortal-from-YAML
+      type: udm.Application
+      children:
+      - name: '1.0'
+        type: udm.DeploymentPackage
+        deployables:
+          - name: petclinic
+            type: jee.Ear
+            file: !file 1.0/PetClinic-1.0.ear
+          - name: sql
+            type: sql.SqlScripts
+            file: !file 1.0/sql
+          - name: www
+            type: www.WebContent
+            file: !file 1.0/PetPortal_pages
+      - name: '2.0'
+        type: udm.DeploymentPackage
+        deployables:
+          - name: petclinic
+            type: jee.Ear
+            file: !file 2.0/PetClinic-2.0.ear
+          - name: sql
+            type: sql.SqlScripts
+            file: !file 2.0/sql
+          - name: www
+            type: www.WebContent
+            file: !file 2.0/PetPortal_pages
