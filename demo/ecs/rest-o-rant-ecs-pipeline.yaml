@@ -1,4 +1,4 @@
-apiVersion: xl-release/v1
+apiVersion: xl-release/v1beta1
 kind: Templates
 spec:
 - name: REST-o-rant
