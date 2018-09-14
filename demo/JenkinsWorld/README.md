@@ -42,14 +42,6 @@ Run the following script that will add the templates by calling `xl apply -f` in
 
 Check XL Release for the Jenkins World folder.
 
-### Clean up the templates
-
-There are still some rough edges in the YAML import.
-
-Run a release from the template **Manual Demo Setup** in the **Set up** folder.
-
-_This is work in progress_
-
 ## Configure Jenkins
 
 Create a folder called **Cool Store** in Jenkins.
@@ -68,7 +60,7 @@ Here's an example of the parameters:
 
 ![Jenkins Branch Source](doc/jenkins-branch-source.png)
 
-## Import projects into XL Release
+## Set up release train
 
 You should have the following folder structure in XL Release:
 
@@ -82,20 +74,24 @@ Samples & Tutorials
 Set up
 ```
 
-Use the template **JenkinsWorld/Import Jenkins Pipelines** to import the projects from Jenkins. You need to run it for each of the three subprojects, but not for the main Cool Store project.
+Run a release from the template **Set up/Set up Cool Store release train**
 
-For the **Master template** variable, fill in `JenkinsWorld/Track Jenkins pipeline`.
+This will create several releases and link them together using Gate tasks.
 
-Enable the trigger.
+You will end up with something like this on the Relationship view of the **Cool Store September delivery** release:
 
-For example:
+Wait on the **Jenkins has GitHub projects** task.
 
-![Jenkins Branch Source](doc/import-jenkins-release-variables.png)
+Go to the **Cool Store September delivery** and select the relationship viewer. 
+
+You should see something like this:
+
+![Jenkins Branch Source](doc/cool-store-relations-up-to-features.png)
 
 
-Templates will be created in the folders beneath Cool Store.
+### Import Jenkins projects
 
-### Dry run
+Continue the Set up release and the release train will be connected to the Release train.
 
 Kick off a manual build in Jenkins of **Address book/COOL-113**
 
@@ -113,22 +109,6 @@ This corresponds with the BlueOcean view in Jenkins:
 
 ![Jenkins Branch Source](doc/jenkins-blue-ocean.png)
 
-
-## Set up Release trains
-
-The set up release will create various releases in the folders.
-
-We will link all release togethers using Gate tasks.
-
-In Cool Store, add nested Gate tasks inside the **Features** parallel group that link to Address book, Shopping cart and Wish list...
-
-Then rinse and repeat one level deeper for each COOL release.
-
-You will end up with something like this on the Relationship view of the **Cool Store September delivery** release:
-
-![Jenkins Branch Source](doc/cool-store-relations-up-to-features.png)
-
-**TODO**: *automate this*. The release should be able to register themselves with the higher level and release creation should be automated in the Set up template using CreateReleaseTasks
 
 
 
