@@ -4,7 +4,7 @@
 version: '2.3'
 services:
   xl-deploy:
-    image: xebialabsunsupported/xl-deploy:8.5.0-alpha.15
+    image: xebialabsunsupported/xl-deploy:8.5.0-alpha.17
     ports:
     - "4516:4516"
     volumes:
@@ -16,7 +16,7 @@ services:
     - ADMIN_PASSWORD=admin
 
   xl-release:
-    image: xebialabsunsupported/xl-release:8.5.0-alpha.11
+    image: xebialabsunsupported/xl-release:8.5.0-alpha.14
     ports:
     - "5516:5516"
     depends_on:
@@ -25,6 +25,7 @@ services:
     - ../../docker/volumes/xlr/conf/xl-release-license.lic:/opt/xebialabs/xl-release-server/conf/xl-release-license.lic:ro
     - ../../docker/volumes/xlr/hotfix:/opt/xebialabs/xl-release-server/hotfix:ro
     - ./plugins/:/opt/xebialabs/xl-release-server/plugins/:ro
+    # - ~/Code/xlr-jenkins-pipeline-radar-plugin/src/main/resources:/opt/xebialabs/xl-release-server/ext:rw
     environment:
     - ADMIN_PASSWORD=admin
 

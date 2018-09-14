@@ -125,8 +125,8 @@ spec:
         taskRecoverOp: SKIP_TASK
         addresses:
         - hsiemelink@xebialabs.com
-        subject: Jenkins pipeline ${buildNumber} has started
-        body: Jenkins build is being tracked in XL Release!
+        subject: Feature ${release.title} is complete
+        body: Feature ${release.title} is complete and will be merged.
       - name: Merge pull request
         type: github.MergePullRequest
         taskFailureHandlerEnabled: true

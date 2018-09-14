@@ -24,6 +24,78 @@ spec:
     - name: Set up
       type: xlrelease.Phase
       tasks:
+      - name: Create Release train releases
+        type: xlrelease.SequentialGroup
+        tasks:
+        - name: Cool Store Release
+          type: xlrelease.CreateReleaseTask
+          newReleaseTitle: Cool Store September delivery
+          templateId: JenkinsWorld/Release train process
+          folderId: Cool Store
+        - name: Address book
+          type: xlrelease.SequentialGroup
+          tasks:
+          - name: Address book
+            type: xlrelease.CreateReleaseTask
+            newReleaseTitle: Address book
+            templateId: JenkinsWorld/Component delivery process
+            folderId: Cool Store/Address book
+          - name: COOL-113
+            type: xlrelease.CreateReleaseTask
+            newReleaseTitle: COOL-113
+            templateId: JenkinsWorld/Feature delivery process
+            folderId: Cool Store/Address book
+          - name: COOL-269
+            type: xlrelease.CreateReleaseTask
+            newReleaseTitle: COOL-269
+            templateId: JenkinsWorld/Feature delivery process
+            folderId: Cool Store/Address book
+          - name: COOL-300
+            type: xlrelease.CreateReleaseTask
+            newReleaseTitle: COOL-300
+            templateId: JenkinsWorld/Feature delivery process
+            folderId: Cool Store/Address book
+        - name: Shopping cart
+          type: xlrelease.SequentialGroup
+          tasks:
+          - name: Shopping cart
+            type: xlrelease.CreateReleaseTask
+            newReleaseTitle: Shopping cart
+            templateId: JenkinsWorld/Component delivery process
+            folderId: Cool Store/Shopping cart
+          - name: COOL-169
+            type: xlrelease.CreateReleaseTask
+            newReleaseTitle: COOL-169
+            templateId: JenkinsWorld/Feature delivery process
+            folderId: Cool Store/Shopping cart
+          - name: COOL-234
+            type: xlrelease.CreateReleaseTask
+            newReleaseTitle: COOL-169
+            templateId: JenkinsWorld/Feature delivery process
+            folderId: Cool Store/Shopping cart
+        - name: Wish list
+          type: xlrelease.SequentialGroup
+          tasks:
+          - name: Wish list
+            type: xlrelease.CreateReleaseTask
+            newReleaseTitle: Wish list
+            templateId: JenkinsWorld/Component delivery process
+            folderId: Cool Store/Wish list
+          - name: COOL-235
+            type: xlrelease.CreateReleaseTask
+            newReleaseTitle: COOL-235
+            templateId: JenkinsWorld/Feature delivery process
+            folderId: Cool Store/Wish list
+          - name: COOL-268
+            type: xlrelease.CreateReleaseTask
+            newReleaseTitle: COOL-268
+            templateId: JenkinsWorld/Feature delivery process
+            folderId: Cool Store/Wish list
+          - name: COOL-301
+            type: xlrelease.CreateReleaseTask
+            newReleaseTitle: COOL-301
+            templateId: JenkinsWorld/Feature delivery process
+            folderId: Cool Store/Wish list
       - name: Fix variable order
         type: xlrelease.Task
         team: Release Admin

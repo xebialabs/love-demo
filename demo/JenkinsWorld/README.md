@@ -116,16 +116,19 @@ This corresponds with the BlueOcean view in Jenkins:
 
 ## Set up Release trains
 
-### Product delivery
+The set up release will create various releases in the folders.
 
-Create a release:
+We will link all release togethers using Gate tasks.
 
-| | |
-|---|---|
-|Template|JenkinsWorld/Release train process|
-|Release name|Cool Store September delivery|
-|Use folder|Cool Store|
+In Cool Store, add nested Gate tasks inside the **Features** parallel group that link to Address book, Shopping cart and Wish list...
 
+Then rinse and repeat one level deeper for each COOL release.
+
+You will end up with something like this on the Relationship view of the **Cool Store September delivery** release:
+
+![Jenkins Branch Source](doc/cool-store-relations-up-to-features.png)
+
+**TODO**: *automate this*. The release should be able to register themselves with the higher level and release creation should be automated in the Set up template using CreateReleaseTasks
 
 
 

@@ -21,7 +21,6 @@ spec:
       type: xlrelease.StringVariable
       label: Branch
       description: Branch of the pipeline in Jenkins
-      value: master
     - key: buildNumber
       type: xlrelease.StringVariable
       label: Build number
