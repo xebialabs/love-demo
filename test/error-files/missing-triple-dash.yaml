@@ -13,8 +13,7 @@ spec:
   type: udm.Environment
   members:
   - Infrastructure/local-docker
----
-apiVersion: xl-deploy/v2beta1
+apiVersion: xl-deploy/v1beta1
 spec:
 - name: Local Docker Engine
   type: udm.Environment
