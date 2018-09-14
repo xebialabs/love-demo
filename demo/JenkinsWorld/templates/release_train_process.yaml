@@ -12,18 +12,20 @@ spec:
       type: xlrelease.StringVariable
       requiresValue: false
       showOnReleaseStart: false
+
     phases:
     - name: Dev
       type: xlrelease.Phase
       color: '#08B153'
       tasks:
-      - name: Wait for features
+      - name: Wait for components
         type: xlrelease.GateTask
 
-      - name: Features
+      - name: Components
         type: xlrelease.ParallelGroup
         tags:
-        - Features
+        - Components
+
     - name: Acceptance
       type: xlrelease.Phase
       color: '#FD8D10'

@@ -17,17 +17,16 @@ spec:
       type: xlrelease.Phase
       color: '#08B153'
       tasks:
+      - name: Register component in release
+        type: release.RegisterRelease
+        targetReleaseTag: Cool store
+        targetTaskTag: Components
       - name: Wait for features
         type: xlrelease.GateTask
-
       - name: Features
         type: xlrelease.ParallelGroup
         tags:
         - Features
-      - name: Register release
-        type: release.RegisterRelease
-        targetRelease: Cool store
-        title: ${release.title}
     - name: Acceptance
       type: xlrelease.Phase
       color: '#FD8D10'

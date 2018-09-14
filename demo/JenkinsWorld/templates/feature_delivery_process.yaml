@@ -6,19 +6,28 @@ spec:
   children:
   - name: Feature delivery process
     type: xlrelease.Release
-    scheduledStartDate: '2018-08-16'
+    scriptUsername: admin
+    scriptUserPassword: admin
+
     variables:
+    - key: targetComponent
+      type: xlrelease.StringVariable
+      label: Component
+      description: The name of the component that this feature is in
     - key: jiraTicket
       type: xlrelease.StringVariable
       requiresValue: false
       showOnReleaseStart: false
-    scriptUsername: admin
-    scriptUserPassword: admin
+
     phases:
     - name: Dev
       type: xlrelease.Phase
       color: '#08B153'
       tasks:
+      - name: Register feature in component
+        type: release.RegisterRelease
+        targetReleaseTag: ${targetComponent}
+        targetTaskTag: Features
       - name: Wait for successful pipeline build
         type: xlrelease.GateTask
 
@@ -88,9 +97,6 @@ spec:
         type: xldeploy.Deploy
         taskFailureHandlerEnabled: true
         taskRecoverOp: SKIP_TASK
-#        retryCounter:
-#          currentContinueRetrial:0
-#          currentPollingTrial:0
       - name: Update change request
         type: jira.UpdateIssue
         issueId: ${jiraTicket}
@@ -135,5 +141,5 @@ spec:
       - name: Register feature in Release Train
         type: release.RegisterRelease
         targetRelease: Release Train
-        tag: Features
+        targetTaskTag: Features
         title: ${release.title}

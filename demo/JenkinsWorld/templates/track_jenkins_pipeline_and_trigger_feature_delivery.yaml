@@ -114,7 +114,7 @@ spec:
         type: release.RegisterRelease
         precondition: releaseVariables['deliveryStrategy'] == "Add Feature to Release Train"
         targetRelease: Release train
-        tag: Features
+        targetTaskTag: Features
         title: 'Feature #${buildNumber}'
     releaseTriggers:
     - name: Track Jenkins Pipeline

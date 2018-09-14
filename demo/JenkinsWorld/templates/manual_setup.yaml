@@ -32,6 +32,8 @@ spec:
           newReleaseTitle: Cool Store September delivery
           templateId: JenkinsWorld/Release train process
           folderId: Cool Store
+          releaseTags:
+          - Cool Store
         - name: Address book
           type: xlrelease.SequentialGroup
           tasks:
@@ -40,21 +42,36 @@ spec:
             newReleaseTitle: Address book
             templateId: JenkinsWorld/Component delivery process
             folderId: Cool Store/Address book
+            releaseTags:
+            - Address book
           - name: COOL-113
             type: xlrelease.CreateReleaseTask
             newReleaseTitle: COOL-113
             templateId: JenkinsWorld/Feature delivery process
             folderId: Cool Store/Address book
+            templateVariables:
+            - key: targetComponent
+              type: xlrelease.StringVariable
+              value: Address book
           - name: COOL-269
             type: xlrelease.CreateReleaseTask
             newReleaseTitle: COOL-269
             templateId: JenkinsWorld/Feature delivery process
             folderId: Cool Store/Address book
+            templateVariables:
+            - key: targetComponent
+              type: xlrelease.StringVariable
+              value: Address book
           - name: COOL-300
             type: xlrelease.CreateReleaseTask
             newReleaseTitle: COOL-300
             templateId: JenkinsWorld/Feature delivery process
             folderId: Cool Store/Address book
+            templateVariables:
+            - key: targetComponent
+              type: xlrelease.StringVariable
+              value: Address book
+
         - name: Shopping cart
           type: xlrelease.SequentialGroup
           tasks:
@@ -63,16 +80,27 @@ spec:
             newReleaseTitle: Shopping cart
             templateId: JenkinsWorld/Component delivery process
             folderId: Cool Store/Shopping cart
+            releaseTags:
+            - Shopping cart
           - name: COOL-169
             type: xlrelease.CreateReleaseTask
             newReleaseTitle: COOL-169
             templateId: JenkinsWorld/Feature delivery process
             folderId: Cool Store/Shopping cart
+            templateVariables:
+            - key: targetComponent
+              type: xlrelease.StringVariable
+              value: Shopping cart
           - name: COOL-234
             type: xlrelease.CreateReleaseTask
             newReleaseTitle: COOL-169
             templateId: JenkinsWorld/Feature delivery process
             folderId: Cool Store/Shopping cart
+            templateVariables:
+            - key: targetComponent
+              type: xlrelease.StringVariable
+              value: Shopping cart
+
         - name: Wish list
           type: xlrelease.SequentialGroup
           tasks:
@@ -81,21 +109,32 @@ spec:
             newReleaseTitle: Wish list
             templateId: JenkinsWorld/Component delivery process
             folderId: Cool Store/Wish list
+            releaseTags:
+            - Wish list
           - name: COOL-235
             type: xlrelease.CreateReleaseTask
             newReleaseTitle: COOL-235
             templateId: JenkinsWorld/Feature delivery process
             folderId: Cool Store/Wish list
+            templateVariables:
+            - key: targetComponent
+              type: xlrelease.StringVariable
+              value: Wish list
           - name: COOL-268
             type: xlrelease.CreateReleaseTask
             newReleaseTitle: COOL-268
             templateId: JenkinsWorld/Feature delivery process
             folderId: Cool Store/Wish list
+            templateVariables:
+            - key: targetComponent
+              type: xlrelease.StringVariable
+              value: Wish list
           - name: COOL-301
             type: xlrelease.CreateReleaseTask
             newReleaseTitle: COOL-301
             templateId: JenkinsWorld/Feature delivery process
             folderId: Cool Store/Wish list
-      - name: Fix variable order
-        type: xlrelease.Task
-        team: Release Admin
+            templateVariables:
+            - key: targetComponent
+              type: xlrelease.StringVariable
+              value: Wish list

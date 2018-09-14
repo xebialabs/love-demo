@@ -82,7 +82,7 @@ spec:
         - name: Register release
           type: release.RegisterRelease
           targetRelease: ${branch}
-          tag: Pipelines
+          targetTaskTag: Pipelines
           title: Jenkins pipeline ${buildNumber}
         - name: Check compliance
           type: jenkins.Compliance
