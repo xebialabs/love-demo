@@ -12,13 +12,11 @@ Set variable:
 ---
 # Get dashboard data
 Http GET: /dashboards/${dashboardId}
-Set variable:
-  dashboard: ${result}
+Set variable: dashboard
 ---
 # Read template dashboard
 Read file: dashboards/template_dashboard.yaml
-Set variable:
-  templateDashboard: ${result}
+Set variable: templateDashboard
 ---
 # Create updated dashboard
 Join:
