@@ -1,0 +1,30 @@
+columns: 5
+tiles:
+- col: 0
+  configurationUri: include/ReportTile/report-tile-config-view.html
+  description: My tile
+  detailsUri: null
+  embedded: true
+  properties:
+    filters: []
+    title: Avg. release duration
+  row: 0
+  sizeX: null
+  sizeY: null
+  title: Avg. release duration
+  type: xlrelease.AvgReleaseDurationTile
+  uri: include/Tiles/avg-release-duration-tile-view.html
+- col: null
+  configurationUri: include/ReportTile/report-tile-config-view.html
+  description: My tile
+  detailsUri: null
+  embedded: true
+  properties:
+    filters: []
+    title: Avg. release duration
+  row: null
+  sizeX: null
+  sizeY: null
+  title: Avg. release duration
+  type: xlrelease.AvgReleaseDurationTile
+  uri: include/Tiles/avg-release-duration-tile-view.html

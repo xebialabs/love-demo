@@ -1,0 +1,33 @@
+Http endpoint: ${xlreleaseUrl}
+---
+# Get Cool Store folder
+Http GET: /api/v1/folders/find?byPath=Cool Store
+Set variable:
+  folderId: ${result.id}
+---
+# Get Cool Store dashboard
+Http GET: /dashboards?parentId=${folderId}
+Set variable:
+  dashboardId: ${result[0][id]}
+---
+# Get dashboard data
+Http GET: /dashboards/${dashboardId}
+Set variable:
+  dashboard: ${result}
+---
+# Read template dashboard
+Read file: dashboards/template_dashboard.yaml
+Set variable:
+  templateDashboard: ${result}
+---
+# Create updated dashboard
+Join:
+  updatedDashboard:
+  - ${dashboard}
+  - ${templateDashboard}
+  - metadata: {}
+---
+# Send updated dashboard to server
+Http PUT:
+  path: /dashboards/${dashboardId}
+  body: ${updatedDashboard}
