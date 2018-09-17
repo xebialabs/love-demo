@@ -1,0 +1,10 @@
+Http endpoint: ${xlreleaseUrl}
+---
+Read file: ${file}
+Set variable: release
+---
+Http POST:
+  path: /fixtures/release
+  body: ${release}
+---
+Http GET: /fixtures/archive/${release.id}
