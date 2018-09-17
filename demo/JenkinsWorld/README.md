@@ -17,10 +17,8 @@ Tell [Hes](mailto:hsiemelink@xebialabs.com) if you run into trouble. The Dev ♥
 #### Start Docker
 Start docker from the `demo/JenkinsWorld` directory
 
-```
-$ cd demo/JenkinsWorld
-$ docker-compose up -d
-```
+    $ cd demo/JenkinsWorld
+    $ docker-compose up -d
 
 This will start
 
@@ -36,9 +34,7 @@ Use admin/admin credentials for XL Release, XL Deploy and Jenkins.
 
 Run the following script that will add the templates by calling `xl apply -f` in the right order.
 
-```
-./setup.sh
-```
+    ./setup.sh
 
 Check XL Release for the Jenkins World folder.
 
@@ -64,15 +60,13 @@ Here's an example of the parameters:
 
 You should have the following folder structure in XL Release:
 
-```
-Cool Store
-+-- Address book
-+-- Shopping cart
-+-- Wish list
-JenkinsWorld
-Samples & Tutorials
-Set up
-```
+    Cool Store
+    +-- Address book
+    +-- Shopping cart
+    +-- Wish list
+    JenkinsWorld
+    Samples & Tutorials
+    Set up
 
 Run a release from the template **Set up/Set up Cool Store release train**
 
@@ -113,17 +107,19 @@ This corresponds with the BlueOcean view in Jenkins:
 
 Clone https://github.com/Hes-Siemelink/yay and run `python setup.py install`. (This is a utility to run YAML scripts to chain REST calls.)
 
+Create a file `~/.yay/default-variables.yaml` with the following contents:
+
+    xlreleaseUrl: http://admin:admin@localhost:5516
+    
 ### Import historical data
 
 Run `./insert.sh`
 
 ### Import Cool Store dashboard
 
-Run the follwoing command:
+Run the following command:
 
-```
-python -m yay dashboards/add_dashboards.yay folder="Cool Store" file=dashboards/cool_store_dashboard.yaml
-```
+    python -m yay dashboards/add_dashboards.yay folder="Cool Store" file=dashboards/cool_store_dashboard.yaml
 
 Go to the Cool Store folder. It should display a dashboard.
 

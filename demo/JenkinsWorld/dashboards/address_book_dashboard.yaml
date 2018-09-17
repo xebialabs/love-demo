@@ -1,0 +1,145 @@
+columns: 4
+description: null
+id: ${dashboardId}
+owner: admin
+parentId: ${folderId}
+roleEditors:
+- Folder Owner
+roleViewers:
+- Folder Owner
+rows: 20
+tiles:
+- col: 0
+  configurationUri: include/ReportTile/report-tile-config-view.html
+  description: null
+  detailsUri: null
+  embedded: true
+  id: ${dashboardId}/Tilec4f840da45474ea1921e4231683fc36d
+  properties:
+    filters:
+    - id: '-1'
+      operator: CONTAINS_ALL
+      tags:
+      - Jenkins pipeline
+      - Cool Store/Address book
+      type: xlrelease.TagsFilter
+    - id: '-1'
+      timeFrame: LAST_SIX_MONTHS
+      type: xlrelease.DateFilter
+    title: Jenkins Pipeline Value Stream
+  row: 1
+  sizeX: 4
+  sizeY: 1
+  title: Jenkins Pipeline Value Stream
+  type: rvs.ReleaseValueStreamTile
+  uri: include/ReleaseValueStreamTile/view-tile.html
+- col: 0
+  configurationUri: include/FortifyOnDemandSummaryTile/fortify-on-demand-config-view.html
+  description: null
+  detailsUri: null
+  embedded: true
+  id: ${dashboardId}/Tiled526e0b5aecf4baea7068a5b0a120cca
+  properties:
+    fortifyOnDemandServer: Configuration47ae3af11b634a04b56015d5214254c3
+    metrics:
+      value: {}
+      variable: null
+    projectName: Address Book
+    projectVersion: COOL-234
+    title: Fortify Scan
+  row: 0
+  sizeX: 2
+  sizeY: null
+  title: Fortify Scan
+  type: fortifyOnDemand.FortifyOnDemandSummaryTile
+  uri: include/FortifyOnDemandSummaryTile/fortify-on-demand-query-summary-view.html
+- col: 2
+  configurationUri: include/ReportTile/report-tile-config-view.html
+  description: null
+  detailsUri: null
+  embedded: true
+  id: ${dashboardId}/Tile8f9823d6df744b8483fb42055471726e
+  properties:
+    filters:
+    - id: '-1'
+      operator: CONTAINS_ALL
+      tags:
+      - jenkins pipeline
+      - cool store/address book
+      type: xlrelease.TagsFilter
+    - id: '-1'
+      timeFrame: LAST_SIX_MONTHS
+      type: xlrelease.DateFilter
+    title: Average Jenkins pipeline duration
+  row: 0
+  sizeX: null
+  sizeY: null
+  title: Average Jenkins pipeline duration
+  type: xlrelease.AvgReleaseDurationTile
+  uri: include/Tiles/avg-release-duration-tile-view.html
+- col: 2
+  configurationUri: include/ReportTile/report-tile-config-view.html
+  description: null
+  detailsUri: null
+  embedded: true
+  id: ${dashboardId}/Tilee1d91e131a6344078a402aa1917eabb8
+  properties:
+    filters:
+    - id: '-1'
+      operator: CONTAINS_ALL
+      tags:
+      - jenkins pipeline
+      - cool store/address book
+      type: xlrelease.TagsFilter
+    - id: '-1'
+      timeFrame: LAST_SIX_MONTHS
+      type: xlrelease.DateFilter
+    title: Jenkins pipeline duration
+  row: 2
+  sizeX: 2
+  sizeY: 1
+  title: Jenkins pipeline duration
+  type: xlrelease.AvgReleaseDurationByMonthTile
+  uri: include/Tiles/avg-release-duration-by-month-tile-view.html
+- col: 0
+  configurationUri: include/ReportTile/report-tile-config-view.html
+  description: null
+  detailsUri: null
+  embedded: true
+  id: ${dashboardId}/Tileec248b48fccd4607be91073163c083ef
+  properties:
+    filters:
+    - id: '-1'
+      operator: CONTAINS_ALL
+      tags:
+      - jenkins pipeline
+      - cool store/address book
+      type: xlrelease.TagsFilter
+    - id: '-1'
+      timeFrame: LAST_SIX_MONTHS
+      type: xlrelease.DateFilter
+    reportSize: '10'
+    title: Top 10 longest Jenkins pipeline stages
+  row: 2
+  sizeX: 2
+  sizeY: 2
+  title: Top 10 longest Jenkins pipeline stages
+  type: xlrelease.LongestPhasesTile
+  uri: include/Tiles/longest-phases-tile-view.html
+- col: 3
+  configurationUri: include/ReportTile/report-tile-config-view.html
+  description: null
+  detailsUri: null
+  embedded: true
+  id: ${dashboardId}/Tilefb5d932be52c4b70b6f6cd4583bdca49
+  properties:
+    filters: []
+    title: Number of Jenkins pipelines
+  row: 0
+  sizeX: null
+  sizeY: null
+  title: Number of Jenkins pipelines
+  type: xlrelease.CompletedReleasesTile
+  uri: include/Tiles/completed-releases-tile-view.html
+title: Dashboard
+

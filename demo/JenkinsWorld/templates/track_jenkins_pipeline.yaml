@@ -11,6 +11,9 @@ spec:
     abortOnFailure: true
     scriptUsername: admin
     scriptUserPassword: admin
+    tags:
+    - Jenkins pipeline
+    - '[PIPELINE_NAME]'
 
     variables:
     - key: pipeline
