@@ -90,7 +90,7 @@ spec:
             value: Shopping cart
         - name: COOL-234
           type: xlrelease.CreateReleaseTask
-          newReleaseTitle: COOL-169
+          newReleaseTitle: COOL-234
           templateId: JenkinsWorld/Feature delivery process
           folderId: Cool Store/Shopping cart
           templateVariables:
