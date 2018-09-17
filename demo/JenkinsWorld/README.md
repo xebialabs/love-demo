@@ -111,15 +111,7 @@ Create a file `~/.yay/default-variables.yaml` with the following contents:
 
     xlreleaseUrl: http://admin:admin@localhost:5516
     
-### Import historical data
-
 Run `./insert.sh`
-
-### Import Cool Store dashboard
-
-Run the following command:
-
-    python -m yay dashboards/add_dashboards.yay folder="Cool Store" file=dashboards/cool_store_dashboard.yaml
 
 Go to the Cool Store folder. It should display a dashboard.
 

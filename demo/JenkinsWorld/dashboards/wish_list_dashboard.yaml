@@ -21,7 +21,7 @@ tiles:
       operator: CONTAINS_ALL
       tags:
       - Jenkins pipeline
-      - Cool Store/Address book
+      - Cool Store/Wish list
       type: xlrelease.TagsFilter
     - id: '-1'
       timeFrame: LAST_SIX_MONTHS
@@ -44,7 +44,7 @@ tiles:
     metrics:
       value: {}
       variable: null
-    projectName: Address Book
+    projectName: Wish List
     projectVersion: COOL-234
     title: Fortify Scan
   row: 0
@@ -65,7 +65,7 @@ tiles:
       operator: CONTAINS_ALL
       tags:
       - jenkins pipeline
-      - cool store/address book
+      - cool store/wish list
       type: xlrelease.TagsFilter
     - id: '-1'
       timeFrame: LAST_SIX_MONTHS
@@ -89,7 +89,7 @@ tiles:
       operator: CONTAINS_ALL
       tags:
       - jenkins pipeline
-      - cool store/address book
+      - cool store/wish list
       type: xlrelease.TagsFilter
     - id: '-1'
       timeFrame: LAST_SIX_MONTHS
@@ -113,7 +113,7 @@ tiles:
       operator: CONTAINS_ALL
       tags:
       - jenkins pipeline
-      - cool store/address book
+      - cool store/wish list
       type: xlrelease.TagsFilter
     - id: '-1'
       timeFrame: LAST_SIX_MONTHS

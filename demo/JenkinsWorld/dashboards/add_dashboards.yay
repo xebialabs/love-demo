@@ -10,6 +10,15 @@ Http GET: /dashboards?parentId=${folderId}
 Set variable:
   dashboardId: ${result[0][id]}
 ---
+# Get Fortify server
+Http GET: /api/v1/config/byTypeAndTitle?configurationType=fortifyOnDemand.Server&title=Fortify
+Replace:
+  part: Configuration/Custom/
+  in: ${result[0][id]}
+  with: ''
+Set variable:
+  fortifyId: ${result}
+---
 # Read template dashboard
 Read file: ${file}
 Set variable: templateDashboard
