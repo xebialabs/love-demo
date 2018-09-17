@@ -1,0 +1,1 @@
+find releases -type f -name "*.yaml" -exec python -m yay releases/insert_release.yay folder="Cool Store" file={} \;

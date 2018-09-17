@@ -45,169 +45,169 @@ calendarLinkToken: '-8159041944688113440'
 calendarPublished: false
 createdFromTrigger: false
 dueDate: '2018-10-18T11:17:36.505Z'
-endDate: '2018-07-15T16:42:59.677Z'
+endDate: '2018-05-18T12:42:59.677Z'
 extensions:
-- id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/progress
+- id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/progress
   phasesProgress:
-    ? Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase3aa5b2c2d3954931842a8f793138ead7
+    ? Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase3aa5b2c2d3954931842a8f793138ead7
     : 5;0
-    ? Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase55b91c9a441249dca967595f2a7de824
+    ? Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase55b91c9a441249dca967595f2a7de824
     : 8;0
-    ? Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase6affe3aaa9b54451892ad49f2535374f
+    ? Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase6affe3aaa9b54451892ad49f2535374f
     : 6;0
-    ? Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phaseb408789c5c30495dbb6233e780b17845
+    ? Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phaseb408789c5c30495dbb6233e780b17845
     : 7;0
-    ? Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phasec65871846b804acbb2a0bab5756d12a8
+    ? Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phasec65871846b804acbb2a0bab5756d12a8
     : 7;0
   totalRemainingTasks: 33
   totalTasks: 33
   type: xlrelease.ReleaseProgress
-- id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Risk
+- id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Risk
   riskAssessments:
   - headline: Release is on track
     id: '1218339763'
     messages: []
-    risk: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Risk
+    risk: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Risk
     riskAssessorId: Applications/ReleaseStatusFailedRiskAssessor
     score: 0
     type: xlrelease.RiskAssessment
   - headline: Release is on track
     id: '517248032'
     messages: []
-    risk: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Risk
+    risk: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Risk
     riskAssessorId: Applications/TaskWithFourFiveOrSixFlagsNeedsAttentionRiskAssessor
     score: 0
     type: xlrelease.RiskAssessment
   - headline: Release is on track
     id: '1571816022'
     messages: []
-    risk: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Risk
+    risk: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Risk
     riskAssessorId: Applications/ReleaseFlaggedAtRiskAssessor
     score: 0
     type: xlrelease.RiskAssessment
   - headline: Release is on track
     id: '1773140263'
     messages: []
-    risk: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Risk
+    risk: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Risk
     riskAssessorId: Applications/TaskRetriesRiskAssessor2Retries
     score: 0
     type: xlrelease.RiskAssessment
   - headline: Release is on track
     id: '1385667674'
     messages: []
-    risk: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Risk
+    risk: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Risk
     riskAssessorId: Applications/TaskRetriesRiskAssessor
     score: 0
     type: xlrelease.RiskAssessment
   - headline: Release is on track
     id: '1759016892'
     messages: []
-    risk: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Risk
+    risk: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Risk
     riskAssessorId: Applications/TaskRetriesRiskAssessorMoreThan5Retries
     score: 0
     type: xlrelease.RiskAssessment
   - headline: Release is on track
     id: '900164163'
     messages: []
-    risk: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Risk
+    risk: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Risk
     riskAssessorId: Applications/OneTaskOverDueRiskAssessor
     score: 0
     type: xlrelease.RiskAssessment
   - headline: Release is on track
     id: '592960273'
     messages: []
-    risk: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Risk
+    risk: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Risk
     riskAssessorId: Applications/TaskRetriesRiskAssessor4Retries
     score: 0
     type: xlrelease.RiskAssessment
   - headline: Release is on track
     id: '1305273965'
     messages: []
-    risk: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Risk
+    risk: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Risk
     riskAssessorId: Applications/TaskWithMoreThanSixFlagsAtRiskRiskAssessor
     score: 0
     type: xlrelease.RiskAssessment
   - headline: Release is on track
     id: '1711410687'
     messages: []
-    risk: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Risk
+    risk: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Risk
     riskAssessorId: Applications/ReleaseFlaggedAttentionNeededRiskAssessor
     score: 0
     type: xlrelease.RiskAssessment
   - headline: Release is on track
     id: '1752794638'
     messages: []
-    risk: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Risk
+    risk: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Risk
     riskAssessorId: Applications/TaskWithOneFlagAtRiskRiskAssessor
     score: 0
     type: xlrelease.RiskAssessment
   - headline: Release is on track
     id: '1969964867'
     messages: []
-    risk: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Risk
+    risk: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Risk
     riskAssessorId: Applications/TaskWithMoreThanSixFlagsNeedsAttentionRiskAssessor
     score: 0
     type: xlrelease.RiskAssessment
   - headline: Release is on track
     id: '1597913101'
     messages: []
-    risk: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Risk
+    risk: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Risk
     riskAssessorId: Applications/TaskRetriesRiskAssessor5Retries
     score: 0
     type: xlrelease.RiskAssessment
   - headline: Release is on track
     id: '690338784'
     messages: []
-    risk: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Risk
+    risk: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Risk
     riskAssessorId: Applications/TaskWithOneFlagNeedsAttentionRiskAssessor
     score: 0
     type: xlrelease.RiskAssessment
   - headline: Release is on track
     id: '222826812'
     messages: []
-    risk: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Risk
+    risk: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Risk
     riskAssessorId: Applications/TaskRetriesRiskAssessor3Retries
     score: 0
     type: xlrelease.RiskAssessment
   - headline: Release is on track
     id: '573968009'
     messages: []
-    risk: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Risk
+    risk: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Risk
     riskAssessorId: Applications/TaskWithTwoOrThreeFlagsAtRiskRiskAssessor
     score: 0
     type: xlrelease.RiskAssessment
   - headline: Release is on track
     id: '216446098'
     messages: []
-    risk: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Risk
+    risk: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Risk
     riskAssessorId: Applications/TaskWithTwoOrThreeFlagsNeedsAttentionRiskAssessor
     score: 0
     type: xlrelease.RiskAssessment
   - headline: Release is on track
     id: '144237653'
     messages: []
-    risk: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Risk
+    risk: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Risk
     riskAssessorId: Applications/MoreThanOneTaskOverDueRiskAssessor
     score: 0
     type: xlrelease.RiskAssessment
   - headline: Release is on track
     id: '1167381899'
     messages: []
-    risk: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Risk
+    risk: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Risk
     riskAssessorId: Applications/TaskWithFourFiveOrSixFlagsAtRiskRiskAssessor
     score: 0
     type: xlrelease.RiskAssessment
   - headline: Release is on track
     id: '1472514550'
     messages: []
-    risk: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Risk
+    risk: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Risk
     riskAssessorId: Applications/ReleaseStatusFailingRiskAssessor
     score: 0
     type: xlrelease.RiskAssessment
   - headline: Release is on track
     id: '1849669048'
     messages: []
-    risk: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Risk
+    risk: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Risk
     riskAssessorId: Applications/ReleaseDueDateRiskAssessor
     score: 0
     type: xlrelease.RiskAssessment
@@ -215,7 +215,7 @@ extensions:
   totalScore: 0
   type: xlrelease.Risk
 flagStatus: OK
-id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74
+id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72
 maxConcurrentReleases: 100
 memberViewers: []
 originTemplateId: Applications/Folder8aee3b2b359943b4adefcd3abf4c1b59/Releaseadbd6fbe28574263b85f0e33d6017657
@@ -225,16 +225,16 @@ phases:
 - color: '#08B153'
   endDate: '2018-09-17T16:42:59.685Z'
   flagStatus: OK
-  id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase3aa5b2c2d3954931842a8f793138ead7
+  id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase3aa5b2c2d3954931842a8f793138ead7
   overdueNotified: false
-  release: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74
+  release: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72
   startDate: '2018-09-16T17:10:36.812Z'
   status: ABORTED
   tasks:
   - attachments: []
     comments: []
     conditions: []
-    container: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase3aa5b2c2d3954931842a8f793138ead7
+    container: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase3aa5b2c2d3954931842a8f793138ead7
     delayDuringBlackout: false
     dependencies: []
     dueSoonNotified: false
@@ -244,7 +244,7 @@ phases:
     flagStatus: OK
     hasBeenDelayed: false
     hasBeenFlagged: false
-    id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase3aa5b2c2d3954931842a8f793138ead7/Taskca188d7ca9b146988c1aa5170ac22c14
+    id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase3aa5b2c2d3954931842a8f793138ead7/Taskca188d7ca9b146988c1aa5170ac22c14
     locked: false
     overdueNotified: false
     postponedDueToBlackout: false
@@ -259,7 +259,7 @@ phases:
     watchers: []
   - attachments: []
     comments: []
-    container: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase3aa5b2c2d3954931842a8f793138ead7
+    container: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase3aa5b2c2d3954931842a8f793138ead7
     delayDuringBlackout: false
     dueSoonNotified: false
     endDate: '2018-09-17T16:42:59.689Z'
@@ -268,7 +268,7 @@ phases:
     flagStatus: OK
     hasBeenDelayed: false
     hasBeenFlagged: false
-    id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase3aa5b2c2d3954931842a8f793138ead7/Task0d96efb1b93c428f8f2931d7aad28666
+    id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase3aa5b2c2d3954931842a8f793138ead7/Task0d96efb1b93c428f8f2931d7aad28666
     links: []
     locked: false
     overdueNotified: false
@@ -282,14 +282,14 @@ phases:
     - attachments: []
       comments: []
       conditions: []
-      container: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase3aa5b2c2d3954931842a8f793138ead7/Task0d96efb1b93c428f8f2931d7aad28666
+      container: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase3aa5b2c2d3954931842a8f793138ead7/Task0d96efb1b93c428f8f2931d7aad28666
       delayDuringBlackout: false
       dependencies:
       - archivedAsResolved: false
-        gateTask: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase3aa5b2c2d3954931842a8f793138ead7/Task0d96efb1b93c428f8f2931d7aad28666/Task8621137a8e764f60a0bceba19efc4a5f
-        id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase3aa5b2c2d3954931842a8f793138ead7/Task0d96efb1b93c428f8f2931d7aad28666/Task8621137a8e764f60a0bceba19efc4a5f/Dependencyda4adaa365a249e1a23efd1e94ba3b1a
-        target: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Folder3f85be4341d84cb7866a588a09f7e69f/Release8d74a717980b46a5b5c2a96fa17d9103
-        targetId: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Folder3f85be4341d84cb7866a588a09f7e69f/Release8d74a717980b46a5b5c2a96fa17d9103
+        gateTask: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase3aa5b2c2d3954931842a8f793138ead7/Task0d96efb1b93c428f8f2931d7aad28666/Task8621137a8e764f60a0bceba19efc4a5f
+        id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase3aa5b2c2d3954931842a8f793138ead7/Task0d96efb1b93c428f8f2931d7aad28666/Task8621137a8e764f60a0bceba19efc4a5f/Dependencyda4adaa365a249e1a23efd1e94ba3b1a
+        target: Applications/${folderId}/Folder3f85be4341d84cb7866a588a09f7e69f/Release8d74a717980b46a5b5c2a96fa17d9103
+        targetId: Applications/${folderId}/Folder3f85be4341d84cb7866a588a09f7e69f/Release8d74a717980b46a5b5c2a96fa17d9103
         type: xlrelease.Dependency
       dueSoonNotified: false
       endDate: '2018-09-17T16:42:59.689Z'
@@ -298,7 +298,7 @@ phases:
       flagStatus: OK
       hasBeenDelayed: false
       hasBeenFlagged: false
-      id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase3aa5b2c2d3954931842a8f793138ead7/Task0d96efb1b93c428f8f2931d7aad28666/Task8621137a8e764f60a0bceba19efc4a5f
+      id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase3aa5b2c2d3954931842a8f793138ead7/Task0d96efb1b93c428f8f2931d7aad28666/Task8621137a8e764f60a0bceba19efc4a5f
       locked: false
       overdueNotified: false
       postponedDueToBlackout: false
@@ -314,14 +314,14 @@ phases:
     - attachments: []
       comments: []
       conditions: []
-      container: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase3aa5b2c2d3954931842a8f793138ead7/Task0d96efb1b93c428f8f2931d7aad28666
+      container: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase3aa5b2c2d3954931842a8f793138ead7/Task0d96efb1b93c428f8f2931d7aad28666
       delayDuringBlackout: false
       dependencies:
       - archivedAsResolved: false
-        gateTask: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase3aa5b2c2d3954931842a8f793138ead7/Task0d96efb1b93c428f8f2931d7aad28666/Task8951f5f683204492a804ed7438ed580d
-        id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase3aa5b2c2d3954931842a8f793138ead7/Task0d96efb1b93c428f8f2931d7aad28666/Task8951f5f683204492a804ed7438ed580d/Dependency074ad0dfc8af49a1b2cd16ead27fafd3
-        target: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Folder4e35ff83bab84474b3b29197d8128df5/Release05bb0b70741542f5ac3bcf6a3c6b9f42
-        targetId: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Folder4e35ff83bab84474b3b29197d8128df5/Release05bb0b70741542f5ac3bcf6a3c6b9f42
+        gateTask: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase3aa5b2c2d3954931842a8f793138ead7/Task0d96efb1b93c428f8f2931d7aad28666/Task8951f5f683204492a804ed7438ed580d
+        id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase3aa5b2c2d3954931842a8f793138ead7/Task0d96efb1b93c428f8f2931d7aad28666/Task8951f5f683204492a804ed7438ed580d/Dependency074ad0dfc8af49a1b2cd16ead27fafd3
+        target: Applications/${folderId}/Folder4e35ff83bab84474b3b29197d8128df5/Release05bb0b70741542f5ac3bcf6a3c6b9f42
+        targetId: Applications/${folderId}/Folder4e35ff83bab84474b3b29197d8128df5/Release05bb0b70741542f5ac3bcf6a3c6b9f42
         type: xlrelease.Dependency
       dueSoonNotified: false
       endDate: '2018-09-17T16:42:59.689Z'
@@ -330,7 +330,7 @@ phases:
       flagStatus: OK
       hasBeenDelayed: false
       hasBeenFlagged: false
-      id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase3aa5b2c2d3954931842a8f793138ead7/Task0d96efb1b93c428f8f2931d7aad28666/Task8951f5f683204492a804ed7438ed580d
+      id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase3aa5b2c2d3954931842a8f793138ead7/Task0d96efb1b93c428f8f2931d7aad28666/Task8951f5f683204492a804ed7438ed580d
       locked: false
       overdueNotified: false
       postponedDueToBlackout: false
@@ -346,14 +346,14 @@ phases:
     - attachments: []
       comments: []
       conditions: []
-      container: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase3aa5b2c2d3954931842a8f793138ead7/Task0d96efb1b93c428f8f2931d7aad28666
+      container: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase3aa5b2c2d3954931842a8f793138ead7/Task0d96efb1b93c428f8f2931d7aad28666
       delayDuringBlackout: false
       dependencies:
       - archivedAsResolved: false
-        gateTask: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase3aa5b2c2d3954931842a8f793138ead7/Task0d96efb1b93c428f8f2931d7aad28666/Task8182d2636619455bac8f6eaca3bef660
-        id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase3aa5b2c2d3954931842a8f793138ead7/Task0d96efb1b93c428f8f2931d7aad28666/Task8182d2636619455bac8f6eaca3bef660/Dependencyd5284c8bc4c5470c9d88e3efabe0b72f
-        target: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Folderf84aa65c5cdf4d10820d0647ac08057b/Releasebed0b4585a904df78cce5f58d965281b
-        targetId: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Folderf84aa65c5cdf4d10820d0647ac08057b/Releasebed0b4585a904df78cce5f58d965281b
+        gateTask: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase3aa5b2c2d3954931842a8f793138ead7/Task0d96efb1b93c428f8f2931d7aad28666/Task8182d2636619455bac8f6eaca3bef660
+        id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase3aa5b2c2d3954931842a8f793138ead7/Task0d96efb1b93c428f8f2931d7aad28666/Task8182d2636619455bac8f6eaca3bef660/Dependencyd5284c8bc4c5470c9d88e3efabe0b72f
+        target: Applications/${folderId}/Folderf84aa65c5cdf4d10820d0647ac08057b/Releasebed0b4585a904df78cce5f58d965281b
+        targetId: Applications/${folderId}/Folderf84aa65c5cdf4d10820d0647ac08057b/Releasebed0b4585a904df78cce5f58d965281b
         type: xlrelease.Dependency
       dueSoonNotified: false
       endDate: '2018-09-17T16:42:59.689Z'
@@ -362,7 +362,7 @@ phases:
       flagStatus: OK
       hasBeenDelayed: false
       hasBeenFlagged: false
-      id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase3aa5b2c2d3954931842a8f793138ead7/Task0d96efb1b93c428f8f2931d7aad28666/Task8182d2636619455bac8f6eaca3bef660
+      id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase3aa5b2c2d3954931842a8f793138ead7/Task0d96efb1b93c428f8f2931d7aad28666/Task8182d2636619455bac8f6eaca3bef660
       locked: false
       overdueNotified: false
       postponedDueToBlackout: false
@@ -385,15 +385,15 @@ phases:
 - color: '#FD8D10'
   endDate: '2018-09-17T16:42:59.689Z'
   flagStatus: OK
-  id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase55b91c9a441249dca967595f2a7de824
+  id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase55b91c9a441249dca967595f2a7de824
   overdueNotified: false
-  release: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74
+  release: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72
   startDate: '2018-09-17T16:42:59.689Z'
   status: ABORTED
   tasks:
   - attachments: []
     comments: []
-    container: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase55b91c9a441249dca967595f2a7de824
+    container: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase55b91c9a441249dca967595f2a7de824
     delayDuringBlackout: false
     description: 'Release process for ${release.title} has started.
 
@@ -411,13 +411,13 @@ phases:
     flagStatus: OK
     hasBeenDelayed: false
     hasBeenFlagged: false
-    id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase55b91c9a441249dca967595f2a7de824/Task84848d4d9a3244ea87412d0b55b2e7f9
+    id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase55b91c9a441249dca967595f2a7de824/Task84848d4d9a3244ea87412d0b55b2e7f9
     locked: false
     overdueNotified: false
     postponedDueToBlackout: false
     pythonScript:
-      customScriptTask: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase55b91c9a441249dca967595f2a7de824/Task84848d4d9a3244ea87412d0b55b2e7f9
-      id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase55b91c9a441249dca967595f2a7de824/Task84848d4d9a3244ea87412d0b55b2e7f9/PythonScript
+      customScriptTask: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase55b91c9a441249dca967595f2a7de824/Task84848d4d9a3244ea87412d0b55b2e7f9
+      id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase55b91c9a441249dca967595f2a7de824/Task84848d4d9a3244ea87412d0b55b2e7f9/PythonScript
       issueId: ${jiraTicket}
       issueType: Task
       jiraServer: Configuration/Custom/Configuration9b24f9f67ba14a258c9b612a298cc519
@@ -434,7 +434,7 @@ phases:
     watchers: []
   - attachments: []
     comments: []
-    container: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase55b91c9a441249dca967595f2a7de824
+    container: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase55b91c9a441249dca967595f2a7de824
     delayDuringBlackout: false
     dueSoonNotified: false
     endDate: '2018-09-17T16:42:59.689Z'
@@ -443,14 +443,14 @@ phases:
     flagStatus: OK
     hasBeenDelayed: false
     hasBeenFlagged: false
-    id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase55b91c9a441249dca967595f2a7de824/Taskedb2e0f2c866487b9750732195aded13
+    id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase55b91c9a441249dca967595f2a7de824/Taskedb2e0f2c866487b9750732195aded13
     locked: false
     overdueNotified: false
     postponedDueToBlackout: false
     pythonScript:
-      customScriptTask: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase55b91c9a441249dca967595f2a7de824/Taskedb2e0f2c866487b9750732195aded13
+      customScriptTask: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase55b91c9a441249dca967595f2a7de824/Taskedb2e0f2c866487b9750732195aded13
       expectedStatus: In Progress
-      id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase55b91c9a441249dca967595f2a7de824/Taskedb2e0f2c866487b9750732195aded13/PythonScript
+      id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase55b91c9a441249dca967595f2a7de824/Taskedb2e0f2c866487b9750732195aded13/PythonScript
       issues: {}
       jiraServer: Configuration/Custom/Configuration9b24f9f67ba14a258c9b612a298cc519
       pollInterval: 10
@@ -467,7 +467,7 @@ phases:
     watchers: []
   - attachments: []
     comments: []
-    container: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase55b91c9a441249dca967595f2a7de824
+    container: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase55b91c9a441249dca967595f2a7de824
     delayDuringBlackout: false
     dueSoonNotified: false
     endDate: '2018-09-17T16:42:59.689Z'
@@ -476,7 +476,7 @@ phases:
     flagStatus: OK
     hasBeenDelayed: false
     hasBeenFlagged: false
-    id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase55b91c9a441249dca967595f2a7de824/Task36d60f105ab44f79add47e47f259c68c
+    id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase55b91c9a441249dca967595f2a7de824/Task36d60f105ab44f79add47e47f259c68c
     locked: false
     overdueNotified: false
     postponedDueToBlackout: false
@@ -484,11 +484,11 @@ phases:
       cancelOnError: true
       connectionFailureCount: 0
       continueIfStepFails: false
-      customScriptTask: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase55b91c9a441249dca967595f2a7de824/Task36d60f105ab44f79add47e47f259c68c
+      customScriptTask: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase55b91c9a441249dca967595f2a7de824/Task36d60f105ab44f79add47e47f259c68c
       deployedApplicationProperties: ''
       displayStepLogs: true
       failOnPause: true
-      id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase55b91c9a441249dca967595f2a7de824/Task36d60f105ab44f79add47e47f259c68c/PythonScript
+      id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase55b91c9a441249dca967595f2a7de824/Task36d60f105ab44f79add47e47f259c68c/PythonScript
       numberOfContinueRetrials: 0
       numberOfPollingTrials: 0
       orchestrators: ''
@@ -511,7 +511,7 @@ phases:
     watchers: []
   - attachments: []
     comments: []
-    container: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase55b91c9a441249dca967595f2a7de824
+    container: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase55b91c9a441249dca967595f2a7de824
     delayDuringBlackout: false
     dueSoonNotified: false
     endDate: '2018-09-17T16:42:59.689Z'
@@ -520,14 +520,14 @@ phases:
     flagStatus: OK
     hasBeenDelayed: false
     hasBeenFlagged: false
-    id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase55b91c9a441249dca967595f2a7de824/Task0e89dc712e8a42fcad47f1c720d6584f
+    id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase55b91c9a441249dca967595f2a7de824/Task0e89dc712e8a42fcad47f1c720d6584f
     locked: false
     overdueNotified: false
     postponedDueToBlackout: false
     pythonScript:
       comment: Tests have passed successfully.
-      customScriptTask: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase55b91c9a441249dca967595f2a7de824/Task0e89dc712e8a42fcad47f1c720d6584f
-      id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase55b91c9a441249dca967595f2a7de824/Task0e89dc712e8a42fcad47f1c720d6584f/PythonScript
+      customScriptTask: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase55b91c9a441249dca967595f2a7de824/Task0e89dc712e8a42fcad47f1c720d6584f
+      id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase55b91c9a441249dca967595f2a7de824/Task0e89dc712e8a42fcad47f1c720d6584f/PythonScript
       issueId: ${jiraTicket}
       jiraServer: Configuration/Custom/Configuration9b24f9f67ba14a258c9b612a298cc519
       newStatus: ''
@@ -543,7 +543,7 @@ phases:
     watchers: []
   - attachments: []
     comments: []
-    container: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase55b91c9a441249dca967595f2a7de824
+    container: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase55b91c9a441249dca967595f2a7de824
     delayDuringBlackout: false
     dueSoonNotified: false
     endDate: '2018-09-17T16:42:59.689Z'
@@ -552,7 +552,7 @@ phases:
     flagStatus: OK
     hasBeenDelayed: false
     hasBeenFlagged: false
-    id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase55b91c9a441249dca967595f2a7de824/Task40cf5c94feb84f23bc946ea52ff5f225
+    id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase55b91c9a441249dca967595f2a7de824/Task40cf5c94feb84f23bc946ea52ff5f225
     links: []
     locked: false
     overdueNotified: false
@@ -564,7 +564,7 @@ phases:
     tasks:
     - attachments: []
       comments: []
-      container: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase55b91c9a441249dca967595f2a7de824/Task40cf5c94feb84f23bc946ea52ff5f225
+      container: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase55b91c9a441249dca967595f2a7de824/Task40cf5c94feb84f23bc946ea52ff5f225
       delayDuringBlackout: false
       dueSoonNotified: false
       endDate: '2018-09-17T16:42:59.689Z'
@@ -573,7 +573,7 @@ phases:
       flagStatus: OK
       hasBeenDelayed: false
       hasBeenFlagged: false
-      id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase55b91c9a441249dca967595f2a7de824/Task40cf5c94feb84f23bc946ea52ff5f225/Task6a63fddd01c54137a88a467b3a6a84c0
+      id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase55b91c9a441249dca967595f2a7de824/Task40cf5c94feb84f23bc946ea52ff5f225/Task6a63fddd01c54137a88a467b3a6a84c0
       ignoreScriptVariableInterpolation: false
       locked: false
       overdueNotified: false
@@ -594,7 +594,7 @@ phases:
       watchers: []
     - attachments: []
       comments: []
-      container: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase55b91c9a441249dca967595f2a7de824/Task40cf5c94feb84f23bc946ea52ff5f225
+      container: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase55b91c9a441249dca967595f2a7de824/Task40cf5c94feb84f23bc946ea52ff5f225
       delayDuringBlackout: false
       dueSoonNotified: false
       endDate: '2018-09-17T16:42:59.689Z'
@@ -603,7 +603,7 @@ phases:
       flagStatus: OK
       hasBeenDelayed: false
       hasBeenFlagged: false
-      id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase55b91c9a441249dca967595f2a7de824/Task40cf5c94feb84f23bc946ea52ff5f225/Task63129e76bb8a433697287073d99a51e7
+      id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase55b91c9a441249dca967595f2a7de824/Task40cf5c94feb84f23bc946ea52ff5f225/Task63129e76bb8a433697287073d99a51e7
       ignoreScriptVariableInterpolation: false
       locked: false
       overdueNotified: false
@@ -629,7 +629,7 @@ phases:
     watchers: []
   - attachments: []
     comments: []
-    container: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase55b91c9a441249dca967595f2a7de824
+    container: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase55b91c9a441249dca967595f2a7de824
     delayDuringBlackout: false
     dueSoonNotified: false
     endDate: '2018-09-17T16:42:59.689Z'
@@ -638,14 +638,14 @@ phases:
     flagStatus: OK
     hasBeenDelayed: false
     hasBeenFlagged: false
-    id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase55b91c9a441249dca967595f2a7de824/Task016c91ca639f4610a95b101c9b8c599b
+    id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase55b91c9a441249dca967595f2a7de824/Task016c91ca639f4610a95b101c9b8c599b
     locked: false
     overdueNotified: false
     postponedDueToBlackout: false
     pythonScript:
       comment: ${release.title} was deployed to PROD.
-      customScriptTask: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase55b91c9a441249dca967595f2a7de824/Task016c91ca639f4610a95b101c9b8c599b
-      id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase55b91c9a441249dca967595f2a7de824/Task016c91ca639f4610a95b101c9b8c599b/PythonScript
+      customScriptTask: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase55b91c9a441249dca967595f2a7de824/Task016c91ca639f4610a95b101c9b8c599b
+      id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase55b91c9a441249dca967595f2a7de824/Task016c91ca639f4610a95b101c9b8c599b/PythonScript
       issueId: ${jiraTicket}
       jiraServer: Configuration/Custom/Configuration9b24f9f67ba14a258c9b612a298cc519
       newStatus: Resolved
@@ -664,9 +664,9 @@ phases:
 - color: '#0099CC'
   endDate: '2018-09-17T16:42:59.689Z'
   flagStatus: OK
-  id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase6affe3aaa9b54451892ad49f2535374f
+  id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase6affe3aaa9b54451892ad49f2535374f
   overdueNotified: false
-  release: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74
+  release: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72
   startDate: '2018-09-17T16:42:59.689Z'
   status: ABORTED
   tasks:
@@ -675,7 +675,7 @@ phases:
     bcc: []
     cc: []
     comments: []
-    container: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase6affe3aaa9b54451892ad49f2535374f
+    container: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase6affe3aaa9b54451892ad49f2535374f
     delayDuringBlackout: false
     dueSoonNotified: false
     endDate: '2018-09-17T16:42:59.689Z'
@@ -684,7 +684,7 @@ phases:
     flagStatus: OK
     hasBeenDelayed: false
     hasBeenFlagged: false
-    id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase6affe3aaa9b54451892ad49f2535374f/Taske55bebb1fab944c8a089a02a64092137
+    id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase6affe3aaa9b54451892ad49f2535374f/Taske55bebb1fab944c8a089a02a64092137
     locked: false
     overdueNotified: false
     postponedDueToBlackout: false
@@ -700,7 +700,7 @@ phases:
     watchers: []
   - attachments: []
     comments: []
-    container: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase6affe3aaa9b54451892ad49f2535374f
+    container: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase6affe3aaa9b54451892ad49f2535374f
     delayDuringBlackout: false
     dueSoonNotified: false
     endDate: '2018-09-17T16:42:59.689Z'
@@ -709,7 +709,7 @@ phases:
     flagStatus: OK
     hasBeenDelayed: false
     hasBeenFlagged: false
-    id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase6affe3aaa9b54451892ad49f2535374f/Task79653c96a78a4bc3ba25b69c5ffda882
+    id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase6affe3aaa9b54451892ad49f2535374f/Task79653c96a78a4bc3ba25b69c5ffda882
     links: []
     locked: false
     overdueNotified: false
@@ -722,7 +722,7 @@ phases:
     - attachments: []
       comments: []
       conditions: []
-      container: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase6affe3aaa9b54451892ad49f2535374f/Task79653c96a78a4bc3ba25b69c5ffda882
+      container: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase6affe3aaa9b54451892ad49f2535374f/Task79653c96a78a4bc3ba25b69c5ffda882
       delayDuringBlackout: false
       dependencies: []
       dueSoonNotified: false
@@ -732,7 +732,7 @@ phases:
       flagStatus: OK
       hasBeenDelayed: false
       hasBeenFlagged: false
-      id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase6affe3aaa9b54451892ad49f2535374f/Task79653c96a78a4bc3ba25b69c5ffda882/Task885317333f6f4aee8ac3241bb228101d
+      id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase6affe3aaa9b54451892ad49f2535374f/Task79653c96a78a4bc3ba25b69c5ffda882/Task885317333f6f4aee8ac3241bb228101d
       locked: false
       overdueNotified: false
       postponedDueToBlackout: false
@@ -748,7 +748,7 @@ phases:
     - attachments: []
       comments: []
       conditions: []
-      container: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase6affe3aaa9b54451892ad49f2535374f/Task79653c96a78a4bc3ba25b69c5ffda882
+      container: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase6affe3aaa9b54451892ad49f2535374f/Task79653c96a78a4bc3ba25b69c5ffda882
       delayDuringBlackout: false
       dependencies: []
       dueSoonNotified: false
@@ -758,7 +758,7 @@ phases:
       flagStatus: OK
       hasBeenDelayed: false
       hasBeenFlagged: false
-      id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase6affe3aaa9b54451892ad49f2535374f/Task79653c96a78a4bc3ba25b69c5ffda882/Taskf60f0f1b40a34a529760270c3b1cd356
+      id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase6affe3aaa9b54451892ad49f2535374f/Task79653c96a78a4bc3ba25b69c5ffda882/Taskf60f0f1b40a34a529760270c3b1cd356
       locked: false
       overdueNotified: false
       postponedDueToBlackout: false
@@ -774,7 +774,7 @@ phases:
     - attachments: []
       comments: []
       conditions: []
-      container: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase6affe3aaa9b54451892ad49f2535374f/Task79653c96a78a4bc3ba25b69c5ffda882
+      container: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase6affe3aaa9b54451892ad49f2535374f/Task79653c96a78a4bc3ba25b69c5ffda882
       delayDuringBlackout: false
       dependencies: []
       dueSoonNotified: false
@@ -784,7 +784,7 @@ phases:
       flagStatus: OK
       hasBeenDelayed: false
       hasBeenFlagged: false
-      id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase6affe3aaa9b54451892ad49f2535374f/Task79653c96a78a4bc3ba25b69c5ffda882/Task1747e48a45634595875f6b5b89cb2b28
+      id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase6affe3aaa9b54451892ad49f2535374f/Task79653c96a78a4bc3ba25b69c5ffda882/Task1747e48a45634595875f6b5b89cb2b28
       locked: false
       overdueNotified: false
       postponedDueToBlackout: false
@@ -804,7 +804,7 @@ phases:
     watchers: []
   - attachments: []
     comments: []
-    container: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase6affe3aaa9b54451892ad49f2535374f
+    container: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase6affe3aaa9b54451892ad49f2535374f
     delayDuringBlackout: false
     dueSoonNotified: false
     endDate: '2018-09-17T16:42:59.689Z'
@@ -813,14 +813,14 @@ phases:
     flagStatus: OK
     hasBeenDelayed: false
     hasBeenFlagged: false
-    id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase6affe3aaa9b54451892ad49f2535374f/Taskc6ebdd72450c4f3a8e3cb59939f407d1
+    id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase6affe3aaa9b54451892ad49f2535374f/Taskc6ebdd72450c4f3a8e3cb59939f407d1
     locked: false
     overdueNotified: false
     postponedDueToBlackout: false
     pythonScript:
       connectionType: SCP
-      customScriptTask: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase6affe3aaa9b54451892ad49f2535374f/Taskc6ebdd72450c4f3a8e3cb59939f407d1
-      id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phase6affe3aaa9b54451892ad49f2535374f/Taskc6ebdd72450c4f3a8e3cb59939f407d1/PythonScript
+      customScriptTask: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase6affe3aaa9b54451892ad49f2535374f/Taskc6ebdd72450c4f3a8e3cb59939f407d1
+      id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phase6affe3aaa9b54451892ad49f2535374f/Taskc6ebdd72450c4f3a8e3cb59939f407d1/PythonScript
       port: 22
       remoteCharacterEncoding: UTF-8
       scriptIgnoreVariableInterpolation: false
@@ -840,16 +840,16 @@ phases:
 - color: '#0099CC'
   endDate: '2018-09-17T16:42:59.689Z'
   flagStatus: OK
-  id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phasec65871846b804acbb2a0bab5756d12a8
+  id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phasec65871846b804acbb2a0bab5756d12a8
   overdueNotified: false
-  release: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74
+  release: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72
   startDate: '2018-09-17T16:42:59.689Z'
   status: ABORTED
   tasks:
   - attachments: []
     comments: []
     conditions: []
-    container: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phasec65871846b804acbb2a0bab5756d12a8
+    container: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phasec65871846b804acbb2a0bab5756d12a8
     delayDuringBlackout: false
     dependencies: []
     dueSoonNotified: false
@@ -859,7 +859,7 @@ phases:
     flagStatus: OK
     hasBeenDelayed: false
     hasBeenFlagged: false
-    id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phasec65871846b804acbb2a0bab5756d12a8/Taskd6344acc84714f91b3c9a912b4f98ac4
+    id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phasec65871846b804acbb2a0bab5756d12a8/Taskd6344acc84714f91b3c9a912b4f98ac4
     locked: false
     overdueNotified: false
     postponedDueToBlackout: false
@@ -874,7 +874,7 @@ phases:
     watchers: []
   - attachments: []
     comments: []
-    container: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phasec65871846b804acbb2a0bab5756d12a8
+    container: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phasec65871846b804acbb2a0bab5756d12a8
     delayDuringBlackout: false
     dueSoonNotified: false
     endDate: '2018-09-17T16:42:59.689Z'
@@ -883,14 +883,14 @@ phases:
     flagStatus: OK
     hasBeenDelayed: false
     hasBeenFlagged: false
-    id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phasec65871846b804acbb2a0bab5756d12a8/Taskb5bfa9cdf2d94e1599bd41c180a3f72d
+    id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phasec65871846b804acbb2a0bab5756d12a8/Taskb5bfa9cdf2d94e1599bd41c180a3f72d
     locked: false
     overdueNotified: false
     postponedDueToBlackout: false
     pythonScript:
-      customScriptTask: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phasec65871846b804acbb2a0bab5756d12a8/Taskb5bfa9cdf2d94e1599bd41c180a3f72d
+      customScriptTask: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phasec65871846b804acbb2a0bab5756d12a8/Taskb5bfa9cdf2d94e1599bd41c180a3f72d
       data: {}
-      id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phasec65871846b804acbb2a0bab5756d12a8/Taskb5bfa9cdf2d94e1599bd41c180a3f72d/PythonScript
+      id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phasec65871846b804acbb2a0bab5756d12a8/Taskb5bfa9cdf2d94e1599bd41c180a3f72d/PythonScript
       type: servicenow.CreateChangeRequest
     startDate: '2018-09-17T16:42:59.689Z'
     status: ABORTED
@@ -904,7 +904,7 @@ phases:
     watchers: []
   - attachments: []
     comments: []
-    container: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phasec65871846b804acbb2a0bab5756d12a8
+    container: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phasec65871846b804acbb2a0bab5756d12a8
     delayDuringBlackout: false
     dueSoonNotified: false
     endDate: '2018-09-17T16:42:59.689Z'
@@ -913,14 +913,14 @@ phases:
     flagStatus: OK
     hasBeenDelayed: false
     hasBeenFlagged: false
-    id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phasec65871846b804acbb2a0bab5756d12a8/Task06d92800644249ee90038020ecf2beb4
+    id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phasec65871846b804acbb2a0bab5756d12a8/Task06d92800644249ee90038020ecf2beb4
     locked: false
     overdueNotified: false
     postponedDueToBlackout: false
     pythonScript:
-      customScriptTask: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phasec65871846b804acbb2a0bab5756d12a8/Task06d92800644249ee90038020ecf2beb4
+      customScriptTask: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phasec65871846b804acbb2a0bab5756d12a8/Task06d92800644249ee90038020ecf2beb4
       data: {}
-      id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phasec65871846b804acbb2a0bab5756d12a8/Task06d92800644249ee90038020ecf2beb4/PythonScript
+      id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phasec65871846b804acbb2a0bab5756d12a8/Task06d92800644249ee90038020ecf2beb4/PythonScript
       type: servicenow.CreateChangeRequest
     startDate: '2018-09-17T16:42:59.689Z'
     status: ABORTED
@@ -934,7 +934,7 @@ phases:
     watchers: []
   - attachments: []
     comments: []
-    container: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phasec65871846b804acbb2a0bab5756d12a8
+    container: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phasec65871846b804acbb2a0bab5756d12a8
     delayDuringBlackout: false
     dueSoonNotified: false
     endDate: '2018-09-17T16:42:59.689Z'
@@ -943,7 +943,7 @@ phases:
     flagStatus: OK
     hasBeenDelayed: false
     hasBeenFlagged: false
-    id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phasec65871846b804acbb2a0bab5756d12a8/Taskda9d3ecda42b4851b6fa3d114a94d42b
+    id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phasec65871846b804acbb2a0bab5756d12a8/Taskda9d3ecda42b4851b6fa3d114a94d42b
     locked: false
     overdueNotified: false
     postponedDueToBlackout: false
@@ -951,11 +951,11 @@ phases:
       cancelOnError: true
       connectionFailureCount: 0
       continueIfStepFails: false
-      customScriptTask: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phasec65871846b804acbb2a0bab5756d12a8/Taskda9d3ecda42b4851b6fa3d114a94d42b
+      customScriptTask: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phasec65871846b804acbb2a0bab5756d12a8/Taskda9d3ecda42b4851b6fa3d114a94d42b
       deployedApplicationProperties: ''
       displayStepLogs: true
       failOnPause: true
-      id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phasec65871846b804acbb2a0bab5756d12a8/Taskda9d3ecda42b4851b6fa3d114a94d42b/PythonScript
+      id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phasec65871846b804acbb2a0bab5756d12a8/Taskda9d3ecda42b4851b6fa3d114a94d42b/PythonScript
       numberOfContinueRetrials: 0
       numberOfPollingTrials: 0
       orchestrators: ''
@@ -978,7 +978,7 @@ phases:
     watchers: []
   - attachments: []
     comments: []
-    container: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phasec65871846b804acbb2a0bab5756d12a8
+    container: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phasec65871846b804acbb2a0bab5756d12a8
     delayDuringBlackout: false
     dueSoonNotified: false
     endDate: '2018-09-17T16:42:59.689Z'
@@ -987,14 +987,14 @@ phases:
     flagStatus: OK
     hasBeenDelayed: false
     hasBeenFlagged: false
-    id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phasec65871846b804acbb2a0bab5756d12a8/Taskd21af00baeff4864b9c3fab1714d480e
+    id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phasec65871846b804acbb2a0bab5756d12a8/Taskd21af00baeff4864b9c3fab1714d480e
     locked: false
     overdueNotified: false
     postponedDueToBlackout: false
     pythonScript:
-      customScriptTask: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phasec65871846b804acbb2a0bab5756d12a8/Taskd21af00baeff4864b9c3fab1714d480e
+      customScriptTask: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phasec65871846b804acbb2a0bab5756d12a8/Taskd21af00baeff4864b9c3fab1714d480e
       data: {}
-      id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phasec65871846b804acbb2a0bab5756d12a8/Taskd21af00baeff4864b9c3fab1714d480e/PythonScript
+      id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phasec65871846b804acbb2a0bab5756d12a8/Taskd21af00baeff4864b9c3fab1714d480e/PythonScript
       type: servicenow.CreateChangeRequest
     startDate: '2018-09-17T16:42:59.689Z'
     status: ABORTED
@@ -1008,7 +1008,7 @@ phases:
     watchers: []
   - attachments: []
     comments: []
-    container: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phasec65871846b804acbb2a0bab5756d12a8
+    container: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phasec65871846b804acbb2a0bab5756d12a8
     delayDuringBlackout: false
     dueSoonNotified: false
     endDate: '2018-09-17T16:42:59.689Z'
@@ -1017,14 +1017,14 @@ phases:
     flagStatus: OK
     hasBeenDelayed: false
     hasBeenFlagged: false
-    id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phasec65871846b804acbb2a0bab5756d12a8/Task51ee9a9f794644659f7931ec18ff1be6
+    id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phasec65871846b804acbb2a0bab5756d12a8/Task51ee9a9f794644659f7931ec18ff1be6
     locked: false
     overdueNotified: false
     postponedDueToBlackout: false
     pythonScript:
       connectionType: SCP
-      customScriptTask: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phasec65871846b804acbb2a0bab5756d12a8/Task51ee9a9f794644659f7931ec18ff1be6
-      id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phasec65871846b804acbb2a0bab5756d12a8/Task51ee9a9f794644659f7931ec18ff1be6/PythonScript
+      customScriptTask: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phasec65871846b804acbb2a0bab5756d12a8/Task51ee9a9f794644659f7931ec18ff1be6
+      id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phasec65871846b804acbb2a0bab5756d12a8/Task51ee9a9f794644659f7931ec18ff1be6/PythonScript
       port: 22
       remoteCharacterEncoding: UTF-8
       scriptIgnoreVariableInterpolation: false
@@ -1041,7 +1041,7 @@ phases:
     watchers: []
   - attachments: []
     comments: []
-    container: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phasec65871846b804acbb2a0bab5756d12a8
+    container: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phasec65871846b804acbb2a0bab5756d12a8
     delayDuringBlackout: false
     dueSoonNotified: false
     endDate: '2018-09-17T16:42:59.689Z'
@@ -1050,14 +1050,14 @@ phases:
     flagStatus: OK
     hasBeenDelayed: false
     hasBeenFlagged: false
-    id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phasec65871846b804acbb2a0bab5756d12a8/Task778255dd38414d479c0620941c081b28
+    id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phasec65871846b804acbb2a0bab5756d12a8/Task778255dd38414d479c0620941c081b28
     locked: false
     overdueNotified: false
     postponedDueToBlackout: false
     pythonScript:
-      customScriptTask: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phasec65871846b804acbb2a0bab5756d12a8/Task778255dd38414d479c0620941c081b28
+      customScriptTask: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phasec65871846b804acbb2a0bab5756d12a8/Task778255dd38414d479c0620941c081b28
       data: {}
-      id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phasec65871846b804acbb2a0bab5756d12a8/Task778255dd38414d479c0620941c081b28/PythonScript
+      id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phasec65871846b804acbb2a0bab5756d12a8/Task778255dd38414d479c0620941c081b28/PythonScript
       type: servicenow.CreateChangeRequest
     startDate: '2018-09-17T16:42:59.689Z'
     status: ABORTED
@@ -1074,15 +1074,15 @@ phases:
 - color: '#0099CC'
   endDate: '2018-09-17T16:42:59.689Z'
   flagStatus: OK
-  id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phaseb408789c5c30495dbb6233e780b17845
+  id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phaseb408789c5c30495dbb6233e780b17845
   overdueNotified: false
-  release: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74
+  release: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72
   startDate: '2018-09-17T16:42:59.689Z'
   status: ABORTED
   tasks:
   - attachments: []
     comments: []
-    container: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phaseb408789c5c30495dbb6233e780b17845
+    container: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phaseb408789c5c30495dbb6233e780b17845
     delayDuringBlackout: false
     dueSoonNotified: false
     endDate: '2018-09-17T16:42:59.689Z'
@@ -1091,7 +1091,7 @@ phases:
     flagStatus: OK
     hasBeenDelayed: false
     hasBeenFlagged: false
-    id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phaseb408789c5c30495dbb6233e780b17845/Taske0a580e903534af5b66731f47819b75a
+    id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phaseb408789c5c30495dbb6233e780b17845/Taske0a580e903534af5b66731f47819b75a
     locked: false
     overdueNotified: false
     postponedDueToBlackout: false
@@ -1109,7 +1109,7 @@ phases:
     watchers: []
   - attachments: []
     comments: []
-    container: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phaseb408789c5c30495dbb6233e780b17845
+    container: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phaseb408789c5c30495dbb6233e780b17845
     delayDuringBlackout: false
     dueSoonNotified: false
     endDate: '2018-09-17T16:42:59.689Z'
@@ -1118,7 +1118,7 @@ phases:
     flagStatus: OK
     hasBeenDelayed: false
     hasBeenFlagged: false
-    id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phaseb408789c5c30495dbb6233e780b17845/Taskc5be39204ee44f0784f34bcfa979d5db
+    id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phaseb408789c5c30495dbb6233e780b17845/Taskc5be39204ee44f0784f34bcfa979d5db
     locked: false
     overdueNotified: false
     postponedDueToBlackout: false
@@ -1133,7 +1133,7 @@ phases:
     watchers: []
   - attachments: []
     comments: []
-    container: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phaseb408789c5c30495dbb6233e780b17845
+    container: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phaseb408789c5c30495dbb6233e780b17845
     delayDuringBlackout: false
     dueSoonNotified: false
     endDate: '2018-09-17T16:42:59.689Z'
@@ -1142,7 +1142,7 @@ phases:
     flagStatus: OK
     hasBeenDelayed: false
     hasBeenFlagged: false
-    id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phaseb408789c5c30495dbb6233e780b17845/Task571d809327c348a48362befb0a39555e
+    id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phaseb408789c5c30495dbb6233e780b17845/Task571d809327c348a48362befb0a39555e
     links: []
     locked: false
     overdueNotified: false
@@ -1157,7 +1157,7 @@ phases:
       bcc: []
       cc: []
       comments: []
-      container: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phaseb408789c5c30495dbb6233e780b17845/Task571d809327c348a48362befb0a39555e
+      container: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phaseb408789c5c30495dbb6233e780b17845/Task571d809327c348a48362befb0a39555e
       delayDuringBlackout: false
       dueSoonNotified: false
       endDate: '2018-09-17T16:42:59.689Z'
@@ -1166,7 +1166,7 @@ phases:
       flagStatus: OK
       hasBeenDelayed: false
       hasBeenFlagged: false
-      id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phaseb408789c5c30495dbb6233e780b17845/Task571d809327c348a48362befb0a39555e/Task9b6576db1b964683b99355ac66aa42e8
+      id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phaseb408789c5c30495dbb6233e780b17845/Task571d809327c348a48362befb0a39555e/Task9b6576db1b964683b99355ac66aa42e8
       locked: false
       overdueNotified: false
       postponedDueToBlackout: false
@@ -1184,7 +1184,7 @@ phases:
       bcc: []
       cc: []
       comments: []
-      container: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phaseb408789c5c30495dbb6233e780b17845/Task571d809327c348a48362befb0a39555e
+      container: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phaseb408789c5c30495dbb6233e780b17845/Task571d809327c348a48362befb0a39555e
       delayDuringBlackout: false
       dueSoonNotified: false
       endDate: '2018-09-17T16:42:59.689Z'
@@ -1193,7 +1193,7 @@ phases:
       flagStatus: OK
       hasBeenDelayed: false
       hasBeenFlagged: false
-      id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phaseb408789c5c30495dbb6233e780b17845/Task571d809327c348a48362befb0a39555e/Task68b62829391f42d791cc6cbf7f226372
+      id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phaseb408789c5c30495dbb6233e780b17845/Task571d809327c348a48362befb0a39555e/Task68b62829391f42d791cc6cbf7f226372
       locked: false
       overdueNotified: false
       postponedDueToBlackout: false
@@ -1208,7 +1208,7 @@ phases:
       watchers: []
     - attachments: []
       comments: []
-      container: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phaseb408789c5c30495dbb6233e780b17845/Task571d809327c348a48362befb0a39555e
+      container: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phaseb408789c5c30495dbb6233e780b17845/Task571d809327c348a48362befb0a39555e
       delayDuringBlackout: false
       dueSoonNotified: false
       endDate: '2018-09-17T16:42:59.689Z'
@@ -1217,7 +1217,7 @@ phases:
       flagStatus: OK
       hasBeenDelayed: false
       hasBeenFlagged: false
-      id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phaseb408789c5c30495dbb6233e780b17845/Task571d809327c348a48362befb0a39555e/Taskffbf44580c3b4235a800d7468d9e5738
+      id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phaseb408789c5c30495dbb6233e780b17845/Task571d809327c348a48362befb0a39555e/Taskffbf44580c3b4235a800d7468d9e5738
       locked: false
       overdueNotified: false
       postponedDueToBlackout: false
@@ -1237,7 +1237,7 @@ phases:
     watchers: []
   - attachments: []
     comments: []
-    container: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phaseb408789c5c30495dbb6233e780b17845
+    container: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phaseb408789c5c30495dbb6233e780b17845
     delayDuringBlackout: false
     dueSoonNotified: false
     endDate: '2018-09-17T16:42:59.689Z'
@@ -1246,7 +1246,7 @@ phases:
     flagStatus: OK
     hasBeenDelayed: false
     hasBeenFlagged: false
-    id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Phaseb408789c5c30495dbb6233e780b17845/Task832bd44afb7846749555ca287911573d
+    id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Phaseb408789c5c30495dbb6233e780b17845/Task832bd44afb7846749555ca287911573d
     locked: false
     overdueNotified: false
     postponedDueToBlackout: false
@@ -1271,15 +1271,13 @@ roleViewers: []
 rootReleaseId: Applications/Foldera8db7bf5b42a499fa7db5433d15697a8/Releasef6ba2d8a981346538f95d5f25c17d27f
 runningTriggeredReleasesCount: 0
 scheduledStartDate: '2018-09-16T17:10:36.505Z'
-scriptUserPassword: '{b64}CqbrinK+Mdcg4PZEpOXoDA=='
-scriptUsername: admin
-startDate: '2018-07-14T17:10:36.812Z'
+startDate: '2018-05-16T17:10:36.812Z'
 startedFromTaskId: Applications/Foldera8db7bf5b42a499fa7db5433d15697a8/Releasef6ba2d8a981346538f95d5f25c17d27f/Phase2e3baec2320846cd90fbf36e595c79a3/Task4fe2b32fb7fe47eebe9de342df4d9692
 status: COMPLETED
 tags:
 - Cool Store
 teams:
-- id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Team635bfc712f764db7880dfb01430faf3e
+- id: Applications/${folderId}/Team635bfc712f764db7880dfb01430faf3e
   members:
   - admin
   permissions:
@@ -1295,7 +1293,7 @@ teams:
   roles: []
   teamName: Template Owner
   type: xlrelease.Team
-- id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Team5aea4ea476004ec298d21df9ad746269
+- id: Applications/${folderId}/Team5aea4ea476004ec298d21df9ad746269
   members:
   - admin
   permissions:
@@ -1310,7 +1308,7 @@ teams:
   roles: []
   teamName: Folder Owner
   type: xlrelease.Team
-- id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Team82a81431887c4d59850604a2ace37381
+- id: Applications/${folderId}/Team82a81431887c4d59850604a2ace37381
   members:
   - admin
   permissions:
@@ -1329,12 +1327,12 @@ teams:
   roles: []
   teamName: Release Admin
   type: xlrelease.Team
-title: Cool Store July delivery
+title: Cool Store May delivery
 totalRiskScore: '0000'
 tutorial: false
 type: xlrelease.Release
 variables:
-- id: Applications/Folder97854ccac9b34d9ea6e3eb9ff0c2e612/Release6fb788d0e9b448918d8cb6dce49bcb74/Variableb44b8de512a34c2795cc6339969d2057
+- id: Applications/${folderId}/Release6fb788d0e9b448918d8cb6dce49bcb72/Variableb44b8de512a34c2795cc6339969d2057
   key: jiraTicket
   requiresValue: false
   showOnReleaseStart: false

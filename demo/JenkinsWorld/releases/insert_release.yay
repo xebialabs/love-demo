@@ -1,5 +1,10 @@
 Http endpoint: ${xlreleaseUrl}
 ---
+# Get Cool Store folder
+Http GET: /api/v1/folders/find?byPath=${folder}
+Set variable:
+  folderId: ${result.id}
+---
 Read file: ${file}
 Set variable: release
 ---
