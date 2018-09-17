@@ -1,9 +1,12 @@
 Http endpoint: ${xlreleaseUrl}
 ---
-# Get Dashboard
-Http GET:
-- /api/v1/folders/find?byPath=${folder}
-- /dashboards?parentId=${result.id}
+# Get Cool Store folder
+Http GET: /api/v1/folders/find?byPath=Cool Store
+Set variable:
+  folderId: ${result.id}
+---
+# Get Cool Store dashboard
+Http GET: /dashboards?parentId=${folderId}
 Set variable:
   dashboardId: ${result[0][id]}
 ---
