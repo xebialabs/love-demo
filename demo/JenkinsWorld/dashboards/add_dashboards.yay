@@ -9,25 +9,10 @@ Set variable:
 Http GET: /dashboards?parentId=${folderId}
 Set variable:
   dashboardId: ${result[0][id]}
-#---
-## Get dashboard data
-#Http GET: /dashboards/${dashboardId}
-#Set variable: dashboard
 ---
 # Read template dashboard
-Read file: dashboards/template_dashboard.yaml
+Read file: ${file}
 Set variable: templateDashboard
-#---
-## Create updated dashboard
-#Join:
-#  updatedDashboard:
-#  - ${dashboard}
-#  - ${templateDashboard}
-#  - metadata: {}
-#    properties:
-#      filters:
-#      - type: xlrelease.FolderFilter
-#        folderId: ${folderId}
 ---
 # Send updated dashboard to server
 Http PUT:
