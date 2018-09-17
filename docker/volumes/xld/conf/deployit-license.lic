@@ -1,14 +1,1 @@
---- License ---
-License version: 3
-Product: XL Deploy
-Licensed to: XebiaLabs
-Contact: Vincent Partington <vpartington@xebialabs.com>
-Repository id: 3d1092b0-d33b-49d6-afa1-404c725f54cb
-Expires after: 2018-09-22
-Licensed number of CIs: xl.Satellite=0
-Support policy: 1 month of technical support
-Edition: Trial
---- Signature (SHA1withDSA) ---
-302c02145dbd9a316dfcd5e40ec900fd70b1bbff6734b7f602145f0855543bab6731579366990b96
-395b051ceed2
---- End of Signature ---
+LS0tIExpY2Vuc2UgLS0tCkxpY2Vuc2UgdmVyc2lvbjogMwpQcm9kdWN0OiBYTCBEZXBsb3kK TGljZW5zZWQgdG86IFhlYmlhTGFicwpDb250YWN0OiBEZXZPcHMgQXMgQ29kZSA8eGwtZGV2 LWxvdmVAeGViaWFsYWJzLmNvbT4KUmVwb3NpdG9yeSBpZDogZjcyZWI0NjgtZDgxMy00MmY1 LWJkYTEtNmU4YjFkYmRlNmU3CkV4cGlyZXMgYWZ0ZXI6IDIwMTgtMTAtMTcKTGljZW5zZWQg bnVtYmVyIG9mIENJczogeGwuU2F0ZWxsaXRlPTAKU3VwcG9ydCBwb2xpY3k6IDEgbW9udGgg b2YgdGVjaG5pY2FsIHN1cHBvcnQKRWRpdGlvbjogVHJpYWwKLS0tIFNpZ25hdHVyZSAoU0hB MXdpdGhEU0EpIC0tLQozMDJjMDIxNDVhNmRlMWNhNWYwODk2ZDM2YjczNDEyZjFmNzBjYTM2 MGRkN2EyMDIwMjE0MzY0OTI2NzdmMmExN2U5OGRlMmEwNTkxYTdjZgo2M2UzNTU3NDQ1NWYK LS0tIEVuZCBvZiBTaWduYXR1cmUgLS0tCg==
