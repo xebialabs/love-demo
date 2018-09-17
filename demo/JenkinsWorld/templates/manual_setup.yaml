@@ -153,9 +153,9 @@ spec:
 
           Import the following projects from GitHub as multibranch projects in the **Cool Store** folder
 
-          * [demo-address-book](https://github.com/xebialabs/demo-address-book)
-          * [demo-shopping-cart](https://github.com/xebialabs/demo-shopping-cart)
-          * [demo-wish-list](https://github.com/xebialabs/demo-wish-list)
+          * [demo-address-book](https://github.com/xebialabs/demo-address-book) as "Address book"
+          * [demo-shopping-cart](https://github.com/xebialabs/demo-shopping-cart) as "Shopping cart"
+          * [demo-wish-list](https://github.com/xebialabs/demo-wish-list) as "Wish list"
       - name: Import Address book
         type: xlrelease.CreateReleaseTask
         newReleaseTitle: Import Address book pipeline

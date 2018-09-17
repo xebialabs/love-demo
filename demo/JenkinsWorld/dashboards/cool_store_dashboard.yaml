@@ -2,7 +2,7 @@ columns: 4
 description: null
 id: ${dashboardId}
 owner: admin
-parentId: Applications/Folder730cc037484b461a839d38f37dc8705e
+parentId: ${folderId}
 roleEditors:
 - Folder Owner
 roleViewers:

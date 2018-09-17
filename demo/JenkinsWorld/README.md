@@ -52,9 +52,9 @@ You can use this token as a credential in Jenkins.
 
 Import the following projects from GitHub as multibranch projects in the **Cool Store** folder
 
-* [demo-address-book](https://github.com/xebialabs/demo-address-book)
-* [demo-shopping-cart](https://github.com/xebialabs/demo-shopping-cart)
-* [demo-wish-list](https://github.com/xebialabs/demo-wish-list)
+* [demo-address-book](https://github.com/xebialabs/demo-address-book) as "Address book"
+* [demo-shopping-cart](https://github.com/xebialabs/demo-shopping-cart) as "Shopping cart"
+* [demo-wish-list](https://github.com/xebialabs/demo-wish-list) as "Wish list"
 
 Here's an example of the parameters:
 
@@ -103,12 +103,28 @@ Go to the **Cool Store/Address book** folder and select the **Releases** tab. Th
 
 Clicking on the build will show the stages:
 
-![Jenkins Branch Source](doc/jenkins-shadow-pipeline.png)
+![Shadow pipelin in XL Release](doc/jenkins-shadow-pipeline.png)
 
 This corresponds with the BlueOcean view in Jenkins:
 
-![Jenkins Branch Source](doc/jenkins-blue-ocean.png)
+![Jenkins Blue Ocean](doc/jenkins-blue-ocean.png)
 
+## Set up dashboards
 
+Clone https://github.com/Hes-Siemelink/yay and run `python setup.py install`. (This is a utility to run YAML scripts to chain REST calls.)
 
+### Import historical data
 
+Run `./insert.sh`
+
+### Import Cool Store dashboard
+
+Run the follwoing command:
+
+```
+python -m yay dashboards/add_dashboards.yay folder="Cool Store" file=dashboards/cool_store_dashboard.yaml
+```
+
+Go to the Cool Store folder. It should display a dashboard.
+
+![Cool Store dashboard](doc/cool-store-dashboard.png)
