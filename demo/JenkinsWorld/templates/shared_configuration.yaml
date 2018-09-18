@@ -24,4 +24,12 @@ spec:
   url: https://api.emea.fortify.com/
   username: xebialabs\hsiemelink
   password: '#UMrw6.W.}9Ks6[MP2'
-
+---
+apiVersion: xl-release/v1beta1
+kind: Configurations
+spec:
+- name: Checkmarx
+  type: checkmarx.Server
+  url: https://xl-chkmarx-poc.xebialabs.com/
+  username: xl-admin
+  password: '078h!FZlX15H'

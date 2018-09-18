@@ -103,9 +103,11 @@ This corresponds with the BlueOcean view in Jenkins:
 
 ![Jenkins Blue Ocean](doc/jenkins-blue-ocean.png)
 
+Now manually trigger a build for all projects in all folders (exclude the 'master' builds) to seed the data in XL Release.
+
 ## Set up dashboards
 
-Clone https://github.com/Hes-Siemelink/yay and run `python setup.py install`. (This is a utility to run YAML scripts to chain REST calls.)
+Clone https://github.com/Hes-Siemelink/yay and run `python setup.py install`. (This is a utility to run YAML scripts that chain REST calls. You need Python 3 to run it.)
 
 Create a file `~/.yay/default-variables.yaml` with the following contents:
 

@@ -1,5 +1,5 @@
 columns: 4
-description: null
+description: Jenkins Pipeline dashboard
 id: ${dashboardId}
 owner: admin
 parentId: ${folderId}
@@ -27,7 +27,7 @@ tiles:
       timeFrame: LAST_SIX_MONTHS
       type: xlrelease.DateFilter
     title: Jenkins Pipeline Value Stream
-  row: 1
+  row: 0
   sizeX: 4
   sizeY: 1
   title: Jenkins Pipeline Value Stream
@@ -47,7 +47,7 @@ tiles:
     projectName: Address Book
     projectVersion: COOL-234
     title: Fortify Scan
-  row: 0
+  row: 1
   sizeX: 2
   sizeY: null
   title: Fortify Scan
@@ -71,7 +71,7 @@ tiles:
       timeFrame: LAST_SIX_MONTHS
       type: xlrelease.DateFilter
     title: Average Jenkins pipeline duration
-  row: 0
+  row: 2
   sizeX: null
   sizeY: null
   title: Average Jenkins pipeline duration
@@ -95,7 +95,7 @@ tiles:
       timeFrame: LAST_SIX_MONTHS
       type: xlrelease.DateFilter
     title: Jenkins pipeline duration
-  row: 2
+  row: 3
   sizeX: 2
   sizeY: 1
   title: Jenkins pipeline duration
@@ -135,11 +135,28 @@ tiles:
   properties:
     filters: []
     title: Number of Jenkins pipelines
-  row: 0
+  row: 2
   sizeX: null
   sizeY: null
   title: Number of Jenkins pipelines
   type: xlrelease.CompletedReleasesTile
   uri: include/Tiles/completed-releases-tile-view.html
+- col: 2
+  configurationUri: include/CheckmarxSummaryTile/checkmarx-config-view.html
+  description: null
+  detailsUri: null
+  embedded: true
+  id: ${dashboardId}/Tilea0da8b2cbd824f6699ab895b7ef758da
+  properties:
+    checkmarxServer: ${checkmarxId}
+    projectName: sample-java
+    scanId: null
+    team: CxServer
+    title: Checkmarx
+  row: 1
+  sizeX: 2
+  sizeY: null
+  title: Checkmarx
+  type: checkmarx.CheckmarxSummaryTile
+  uri: include/CheckmarxSummaryTile/checkmarx-query-summary-view.html
 title: Dashboard
-
