@@ -25,6 +25,7 @@ services:
     - ../../docker/volumes/xlr/conf/xl-release-license.lic:/opt/xebialabs/xl-release-server/conf/xl-release-license.lic:ro
     - ../../docker/volumes/xlr/hotfix:/opt/xebialabs/xl-release-server/hotfix:ro
     - ./plugins/:/opt/xebialabs/xl-release-server/plugins/:ro
+    - ./xl-impact/xl-release.conf:/opt/xebialabs/xl-release-server/conf/xl-release.conf:ro
     # - ~/Code/xlr-jenkins-pipeline-radar-plugin/src/main/resources:/opt/xebialabs/xl-release-server/ext:rw
     environment:
     - ADMIN_PASSWORD=admin
