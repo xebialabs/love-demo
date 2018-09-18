@@ -1,1 +1,14 @@
-LS0tIExpY2Vuc2UgLS0tCkxpY2Vuc2UgdmVyc2lvbjogMwpQcm9kdWN0OiBYTCBEZXBsb3kK TGljZW5zZWQgdG86IFhlYmlhTGFicwpDb250YWN0OiBEZXZPcHMgQXMgQ29kZSA8eGwtZGV2 LWxvdmVAeGViaWFsYWJzLmNvbT4KUmVwb3NpdG9yeSBpZDogZjcyZWI0NjgtZDgxMy00MmY1 LWJkYTEtNmU4YjFkYmRlNmU3CkV4cGlyZXMgYWZ0ZXI6IDIwMTgtMTAtMTcKTGljZW5zZWQg bnVtYmVyIG9mIENJczogeGwuU2F0ZWxsaXRlPTAKU3VwcG9ydCBwb2xpY3k6IDEgbW9udGgg b2YgdGVjaG5pY2FsIHN1cHBvcnQKRWRpdGlvbjogVHJpYWwKLS0tIFNpZ25hdHVyZSAoU0hB MXdpdGhEU0EpIC0tLQozMDJjMDIxNDVhNmRlMWNhNWYwODk2ZDM2YjczNDEyZjFmNzBjYTM2 MGRkN2EyMDIwMjE0MzY0OTI2NzdmMmExN2U5OGRlMmEwNTkxYTdjZgo2M2UzNTU3NDQ1NWYK LS0tIEVuZCBvZiBTaWduYXR1cmUgLS0tCg==
+--- License ---
+License version: 3
+Product: XL Deploy
+Licensed to: XebiaLabs
+Contact: DevOps As Code <xl-dev-love@xebialabs.com>
+Repository id: f72eb468-d813-42f5-bda1-6e8b1dbde6e7
+Expires after: 2018-10-17
+Licensed number of CIs: xl.Satellite=0
+Support policy: 1 month of technical support
+Edition: Trial
+--- Signature (SHA1withDSA) ---
+302c02145a6de1ca5f0896d36b73412f1f70ca360dd7a202021436492677f2a17e98de2a0591a7cf
+63e35574455f
+--- End of Signature ---
