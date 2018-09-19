@@ -27,19 +27,28 @@ $ cd devops-as-code-demo-workshop-1
 
 1) If you are already running XL Deploy or XL Release on your local machine, please stop them.
 
-2) Start up the XL DevOps Platform:
+2) If you are running the workshop on Windows, execute the following commmand to be able to run the Docker Compose file:
+
+```
+> set COMPOSE_CONVERT_WINDOWS_PATHS=1
+```
+
+For more information on this environment variable, read [the documentation for Docker Compose](https://docs.docker.com/compose/reference/envvars/#compose_convert_windows_paths)
+
+3) Start up the XL DevOps Platform:
+
 ```
 $ docker-compose up --build
 ```
 
-3) Wait for XL Deploy and XL Release to have started up. This will have occurred when the following line is shown in the logs:
+4) Wait for XL Deploy and XL Release to have started up. This will have occurred when the following line is shown in the logs:
 ```
 devops-as-code-demo-workshop-1_xl-cli_1 exited with code 0
 ```
 
-1) Open the XL Deploy GUI at http://localhost:4516/ and login with the username `admin` and password `admin`. Verify that the about box reports the version to be **8.5.0-alpha.3**.
+5) Open the XL Deploy GUI at http://localhost:4516/ and login with the username `admin` and password `admin`. Verify that the about box reports the version to be **8.5.0-alpha.3**.
 
-2) Open the XL Release GUI at http://localhost:5516/ and login with the username `admin` and password `admin`. Verify that the about box reports the version to be **8.5.0-alpha.3**.
+6) Open the XL Release GUI at http://localhost:5516/ and login with the username `admin` and password `admin`. Verify that the about box reports the version to be **8.5.0-alpha.3**.
 
 # Install the XL CLI
 
