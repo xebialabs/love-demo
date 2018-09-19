@@ -1,0 +1,30 @@
+apiVersion: xl-deploy/v1beta1
+kind: Infrastructure
+spec:
+  - name: CLI
+    type: core.Directory
+
+---
+apiVersion: xl-deploy/v1beta1
+kind: Infrastructure
+spec:
+  - name: CLI2
+    type: core.Directory
+---   
+apiVersion: xl-deploy/v1beta1
+kind: Infrastructure
+spec:
+  - name: CLI3
+    type: core.Directory
+  ---
+apiVersion: xl-deploy/v1beta1
+kind: Infrastructure
+spec:
+  - name: CLI3
+    type: core.Directory
+---
+apiVersion: xl-deploy/v1beta1
+kind: Infrastructure
+spec:
+  - name: CLI4
+    type: core.Directory
