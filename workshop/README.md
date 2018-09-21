@@ -56,22 +56,22 @@ devops-as-code-demo-workshop-1_xl-cli_1 exited with code 0
 
 ## Mac
 ```
-$ curl -LO https://s3.amazonaws.com/xl-cli/bin/8.2.0-alpha.9/darwin-amd64/xl
+$ curl -LO https://s3.amazonaws.com/xl-cli/bin/8.5.0-alpha.4/darwin-amd64/xl
 $ chmod +x xl
 $ sudo mv xl /usr/local/bin
 ```
 
 ## Linux
 ```
-$ curl -LO https://s3.amazonaws.com/xl-cli/bin/8.2.0-alpha.9/linux-amd64/xl
+$ curl -LO https://s3.amazonaws.com/xl-cli/bin/8.5.0-alpha.4/linux-amd64/xl
 $ chmod +x xl
 $ sudo mv xl /usr/local/bin
 ```
 
 ## Windows
-```
-> curl -LO https://s3.amazonaws.com/xl-cli/bin/8.2.0-alpha.9/windows-amd64/xl.exe
-```
+Download https://s3.amazonaws.com/xl-cli/bin/8.5.0-alpha.4/windows-amd64/xl.exe
+and place it somewhere on your `%PATH%`
+
 
 2) Test the CLI by running the following the following command:
 ```
