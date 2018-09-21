@@ -16,7 +16,12 @@ spec:
       color: '#ff9e3b'
       type: xlrelease.Phase
       tasks:
-      - name: Deploy rest-o-rant application
+      - name: Deploy REST-o-rant application backend
+        type: xldeploy.Deploy
+        server: XL Deploy
+        deploymentPackage:  rest-o-rant-api-docker/1.1
+        deploymentEnvironment: Environments/Local Docker Engine
+      - name: Deploy REST-o-rant application frontend
         type: xldeploy.Deploy
         server: XL Deploy
         deploymentPackage:  rest-o-rant-web-docker/1.0
@@ -39,7 +44,11 @@ spec:
       color: '#999999'
       type: xlrelease.Phase
       tasks:
-      - name: Undeploy REST-o-rant
+      - name: Undeploy REST-o-rant application frontend
         type: xldeploy.Undeploy
         server: XL Deploy
         deployedApplication: Environments/Local Docker Engine/rest-o-rant-web-docker
+      - name: Undeploy REST-o-rant application backend
+        type: xldeploy.Undeploy
+        server: XL Deploy
+        deployedApplication: Environments/Local Docker Engine/rest-o-rant-api-docker

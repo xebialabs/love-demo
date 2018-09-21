@@ -26,9 +26,6 @@ spec:
   children:
   - name: '1.0'
     type: udm.DeploymentPackage
-    applicationDependencies:
-      rest-o-rant-api-docker: '1.1'
-    undeployDependencies: true
     orchestrator:
     - sequential-by-dependency
     deployables:

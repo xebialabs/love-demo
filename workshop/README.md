@@ -124,7 +124,7 @@ $ xl apply -f workshop/exercise-2/docker-environment.yaml
 ```
 3) Open the XL Deploy GUI and review the environment that you just created.
 
-# Exercise 3: Import a simple application and deploy it
+# Exercise 3: Import a simple package and deploy it
 
 Let's try and deploy something to our local Docker instance with XL Deploy. We'll start with a single container; the backend part of the REST-o-rant application. It's called **rest-o-rant-api** because it serves up the API.
 
@@ -153,27 +153,29 @@ a99c31ddd458        tecnativa/docker-socket-proxy:latest            "/docker-ent
 68a5c6439540        xebialabsunsupported/xl-deploy:8.5.0-alpha.2    "/opt/xebialabs/tini…"   3 days ago          Up About an hour    0.0.0.0:4516->4516/tcp   devops-as-code-demo_xl-deploy_1
 ```
 
-# Exercise 4: Deploy a (slightly) more complex application
+# Exercise 4: Deploy a (slightly) more complex package
 
 Serving a REST API is all nice and dandy, but it's pretty useless without a UI. So let's deploy the **rest-o-rant-web** container. Because it needs to access the **rest-o-rant-api** application to get its data, we'll also need to define a Docker network to allow the two containers to communicate. Version **1.1** of the **rest-o-rant-api** application will define that network.
 
-1) Import the new REST-o-rant-api package, as well as the REST-o-rant-web package:
+1) Import the new version of the **rest-o-rant-api-docker** package, as well as the **rest-o-rant-web-docker** package:
 ```
 $ xl apply -f workshop/exercise-4/rest-o-rant-docker.yaml
 ```
 
-2) Open the XL Deploy GUI and review the two packages that you just imported and compare them with the XL YAML file. Notice the net **rest-o-rant-network** deployable in the **rest-o-rant-api** package, as well as the application dependencies and the orchestrator set on the **rest-o-rant-web** package.
+2) Open the XL Deploy GUI and review the two packages that you just imported and compare them with the XL YAML file. Notice the net **rest-o-rant-network** deployable in the **rest-o-rant-api-docker** package.
 
-3) Deploy version **1.0** of the **rest-o-rant-web** package to the **Local Docker Engine** environment.
+3) Deploy version **1.1** of the **rest-o-rant-api-docker** package to the **Local Docker Engine** environment.
 
-4) When the deployment has finished, open a new browser tab and access it at http://localhost/. You should see a text saying "Find the best restaurants near you!".
+4) Deploy version **1.0** of the **rest-o-rant-web-docker** package to the **Local Docker Engine** environment.
+
+5) When the deployment has finished, open a new browser tab and access it at http://localhost/. You should see a text saying "Find the best restaurants near you!".
 Type "Cow" in the search bar and click "Search" to find the "Old Red Cow" restaurant.
 
 # Exercise 5: Import a pipeline
 
 OK, we've deployed the application, but how do we get rid of it? Well, let's do that manually for one last time:
 
-1) Undeploy the **rest-o-rant-web** application from the **Local Docker Engine** environment.
+1) Undeploy the **rest-o-rant-web** and **rest-o-rant-api** applications from the **Local Docker Engine** environment.
 
 But let's make sure that you don't forget next time that you run this workshop. Let's create a simple pipeline.
 
@@ -186,7 +188,47 @@ $ xl apply -f workshop/exercise-5/rest-o-rant-docker-pipeline.yaml
 
 4) Start a new release from that template and follow the instructions.
 
-# Exercise 6: Shutting down the XL DevOps Platform
+# Exercise 6: Simplify the package and the pipeline by using dependencies
+
+You'll have noticed that the pipeline has two separate steps to deploy and later undeploy the **rest-o-rant-api-docker** and the **rest-o-rant-web-docker** packages. If we make the frontend depend on the backend, we can simplify the pipeline _and_ ensure that the frontend is not deployed without the backend.
+
+In this exercise we will make the necessary modification in the package and the pipeline and then teach you how to export them back to YAML.
+
+1) In XL Deploy, open **Applications/rest-o-rant-web-docker/1.0** and add the following entry to the **Application Dependencies** map:
+
+| Key | Value	|
+|------------------------	|-----	|
+| rest-o-rant-api-docker 	| 1.1 	|
+
+and change **Undeploy Unused Dependencies** to `true`.
+
+2) In XL Release, remove the **Deploy REST-o-rant application backend** task from the first phase and the **Undeploy REST-o-rant application backend** step from the last phase.
+
+3) Run the pipeline to verify that the application dependencies and the updated pipeline function correctly. When the pipeline has completed, go to the XL Deploy UI and check that the **rest-o-rant-api-docker** application was undeployed.
+
+4) Export the XL YAML files for the changes:
+
+```
+$ xl export -s xl-deploy -p Applications/rest-o-rant-web-docker -f workshop/exercise-6/rest-o-rant-web-docker-with-dependencies.yaml
+$ xl export -s xl-release -p REST-o-rant -f workshop/exercise-6/rest-o-rant-pipeline-with-dependencies.yaml
+```
+
+5) Review the exported XL YAML files and compare them with the originals from exercises 4 and 5 respectively.
+
+# Exercise 7: Export an XL YAML file with artifacts
+
+The XL YAML format also allows you to use artifacts. To see what that looks like, let's export the PetClinic sample package:
+
+1) In the XL Deploy UI, import the **PetClinic-ear/1.0** sample package from the XL Deploy server.
+
+2) Export the XL YAML file for the package you just imported to see how to specify artifacts:
+```
+$ xl export -s xl-deploy -p Applications/PetClinic-ear/1.0 -f workshop/exercise-7/petlinic-ear.yaml
+```
+
+3) Review the exported XL YAML file and the artifact.
+
+# Exercise 8: Shutting down the XL DevOps Platform
 
 1) Shut down the XL DevOps Platform:
 
