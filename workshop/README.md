@@ -18,9 +18,9 @@ You'll need to have Docker installed on your machine before you begin:
 
 1) Download and extract the workshop zip:
 ```
-$ curl -LO https://github.com/xebialabs/devops-as-code-demo/archive/workshop-1.zip
-$ unzip workshop-1.zip
-$ cd devops-as-code-demo-workshop-1
+$ curl -LO https://github.com/xebialabs/devops-as-code-demo/archive/workshop-2.zip
+$ unzip workshop-2.zip
+$ cd devops-as-code-demo-workshop-2
 ```
 
 # Start up the XL DevOps Platform
