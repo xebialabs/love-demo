@@ -238,16 +238,6 @@ $ docker-compose down
 
 Not only will this stop the XL DevOps Platform, it will also remove any data stored on it. Therefore you should make sure that all releases and deployments have finished and that you've undeployed any applications you've deployed with it before you shut down the XL DevOps Platform.
 
-# Bonus exercise: putting it all together
+# Bonus exercise: create some new!
 
-OK, that was cool and all. But you had to run the `xl apply` command line four times to get everything into XL Deploy and XL Release. That's nice for a workshop, but not so nice for a demo.
-
-1) Create a single XL YAML file that combines all the exercises we've done so that you can get the demo up and running with two simple commands:
-```
-$ docker-compose up
-$ xl apply -f rest-o-rant-demo.yaml
-```
-
-**N.B. 1:** If the XL YAML file contains multiple documents (blocks), they will be executed in order.
-
-**N.B. 2:** Make sure you've undeployed the REST-o-rant application before trying again. Otherwise you might run into issues with there being two Docker networks named **rest-o-rant-network**. If you do, roll back your deployment and remove both (by ID)
+OK, that was cool and all. Now use the `xl export` command to learn more about the YAML format and build your own YAML file.
