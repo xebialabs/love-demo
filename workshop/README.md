@@ -2,10 +2,13 @@
 
 This workshop will teach you:
 
-* How to start up the XL DevOps Platform with the devops-as-code features installed.
-* How to install the XL CLI.
-* How to import and deploy a Docker application with XL Deploy.
-* How to import and run a pipeline with XL Release.
+* How to start up the XL DevOps Platform with the devops-as-code features installed
+* How to install the XL CLI
+* How to import and deploy a Docker application with XL Deploy
+* How to import and run a pipeline with XL Release
+* How to export XL YAML files to learn about the syntax
+
+**N.B.**: This workshop builds on the first workshop. Exercises 6 and 7 are realy new, but the content of the other exercises was changed slightly. If you've done the first workshop, just quickly go through the first exercises to get your repository up to speed. But you might want to skip actually running the deployments or releases to be faster
 
 ## Prerequisites
 
@@ -116,7 +119,7 @@ When the XL DevOps Platform was started up by [the Docker Compose file](https://
 
 Now that we have the XL DevOps Platform up and runnning and connected to our local Docker instance, let's create an environment that contains it.
 
-1) Open a new terminal window and go to the directory where you checked out the `devops-as-code-workshop` repository.
+1) Open a new terminal window and go to the directory where you unzipped the `devops-as-code-workshop` repository.
 
 2) Create the environment that contains the Docker engine by applying its XL YAML file:
 ```
@@ -136,7 +139,7 @@ $ xl apply -f workshop/exercise-3/rest-o-rant-api-docker.yaml
 
 2) Open the XL Deploy GUI and review version **1.0** of the **rest-o-rant-api-docker** application. Compare it with the contents of the XL YAML file that you applied in the previous step.
 
-3) Deploy version **1.0** of the **rest-o-rant-api-docker** application to the **Local Docker Engine** environment.
+3) Using the GUI, deploy version **1.0** of the **rest-o-rant-api-docker** application to the **Local Docker Engine** environment.
 
 4) When the deployment has finished, check whether the **rest-o-rant-api** container is running:
 ```
@@ -164,29 +167,33 @@ $ xl apply -f workshop/exercise-4/rest-o-rant-docker.yaml
 
 2) Open the XL Deploy GUI and review the two packages that you just imported and compare them with the XL YAML file. Notice the net **rest-o-rant-network** deployable in the **rest-o-rant-api-docker** package.
 
-3) Deploy version **1.1** of the **rest-o-rant-api-docker** package to the **Local Docker Engine** environment.
+3) Using the GUI, deploy version **1.1** of the **rest-o-rant-api-docker** package to the **Local Docker Engine** environment.
 
-4) Deploy version **1.0** of the **rest-o-rant-web-docker** package to the **Local Docker Engine** environment.
+4) Using the GUI, deploy version **1.0** of the **rest-o-rant-web-docker** package to the **Local Docker Engine** environment.
 
-5) When the deployment has finished, open a new browser tab and access it at http://localhost/. You should see a text saying "Find the best restaurants near you!".
+5) When the deployment has finished, open a new browser tab and access it at http://localhost:8181/. You should see a text saying "Find the best restaurants near you!".
 Type "Cow" in the search bar and click "Search" to find the "Old Red Cow" restaurant.
 
 # Exercise 5: Import a pipeline
 
 OK, we've deployed the application, but how do we get rid of it? Well, let's do that manually for one last time:
 
-1) Undeploy the **rest-o-rant-web** and **rest-o-rant-api** applications from the **Local Docker Engine** environment.
+1) Undeploy the **rest-o-rant-web** application from the **Local Docker Engine** environment.
+
+2) Undeploy the **rest-o-rant-api** application from the **Local Docker Engine** environment.
+
+
 
 But let's make sure that you don't forget next time that you run this workshop. Let's create a simple pipeline.
 
-2) Import that REST-o-rant pipeline:
+3) Import that REST-o-rant pipeline:
 ```
 $ xl apply -f workshop/exercise-5/rest-o-rant-docker-pipeline.yaml
 ```
 
-3) Open the XL Release GUI and review the **REST-o-rant on Docker** pipeline that you've just imported and compare it to the XL YAML file.
+4) Open the XL Release GUI and review the **REST-o-rant on Docker** pipeline that you've just imported and compare it to the XL YAML file.
 
-4) Start a new release from that template and follow the instructions.
+5) Start a new release from that template and follow the instructions.
 
 # Exercise 6: Simplify the package and the pipeline by using dependencies
 
