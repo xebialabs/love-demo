@@ -43,7 +43,7 @@ $ docker-compose up --build
 
 4) Wait for XL Deploy and XL Release to have started up. This will have occurred when the following line is shown in the logs:
 ```
-devops-as-code-demo-workshop-1_xl-cli_1 exited with code 0
+devops-as-code-demo-workshop-2_xl-cli_1 exited with code 0
 ```
 
 5) Open the XL Deploy GUI at http://localhost:4516/ and login with the username `admin` and password `admin`. Verify that the about box reports the version to be **8.5.0-alpha.3**.
@@ -101,11 +101,11 @@ Use "xl [command] --help" for more information about a command.
 
 # Exercise 1: Review the XL DevOps Platform running on Docker
 
-When the XL DevOps Platform was started up by [the Docker Compose file](https://github.com/xebialabs/devops-as-code-demo/blob/workshop-1/docker-compose.yaml), four containers were started:
+When the XL DevOps Platform was started up by [the Docker Compose file](https://github.com/xebialabs/devops-as-code-demo/blob/workshop-2/docker-compose.yaml), four containers were started:
 * `xl-deploy` runs XL Deploy.
 * `xl-release` runs XL Release.
 * `dockerproxy` is where XL Deploy will deploy to. It's a proxy for the Docker engine on your local machine, the same that runs XL Release and XL Deploy..
-* `xl-cli` runs the XL CLI to apply the [`configure-xl-devops-platform.yaml`](https://github.com/xebialabs/devops-as-code-demo/blob/workshop-1/config/configure-xl-devops-platform.yaml) YAML file. This XL YAML file adds two configurations:
+* `xl-cli` runs the XL CLI to apply the [`configure-xl-devops-platform.yaml`](https://github.com/xebialabs/devops-as-code-demo/blob/workshop-2/config/configure-xl-devops-platform.yaml) YAML file. This XL YAML file adds two configurations:
   * It adds an XL Deploy configuration to XL Release so that the latter can find the former.
   * It adds a `docker.Engine` configuration to XL Deploy so that XL Deploy can deploy to the Docker engine (via the Docker proxy).
 
