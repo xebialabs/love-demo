@@ -22,7 +22,7 @@ spec:
 - name: Fortify
   type: fortifyOnDemand.Server
   url: https://api.emea.fortify.com/
-  username: xebialabs\hsiemelink
+  username: xebialabs\deployit-dev
   password: 'INSERT PASSWORD FROM LASTPASS AND DO NOT COMMIT PLEASE'
 ---
 apiVersion: xl-release/v1beta1
