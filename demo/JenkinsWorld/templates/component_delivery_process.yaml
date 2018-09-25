@@ -34,7 +34,7 @@ spec:
       - name: Open JIRA Request for QA
         type: jira.CreateIssue
         project: SAN
-        title: ${release.title}
+        ^title: ${release.title}
         description: |
           Release process for ${release.title} has started.
 

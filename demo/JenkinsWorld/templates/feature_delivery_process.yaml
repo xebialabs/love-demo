@@ -78,7 +78,7 @@ spec:
       - name: Open JIRA Request for QA
         type: jira.CreateIssue
         project: SAN
-        title: ${release.title}
+        ^title: ${release.title}
         description: |
           Release process for feature ${release.title} has started.
 
@@ -142,4 +142,4 @@ spec:
         type: release.RegisterRelease
         targetRelease: Release Train
         targetTaskTag: Features
-        title: ${release.title}
+        ^title: ${release.title}

@@ -86,7 +86,7 @@ spec:
           type: release.RegisterRelease
           targetRelease: ${branch}
           targetTaskTag: Pipelines
-          title: Jenkins pipeline ${buildNumber}
+          ^title: Jenkins pipeline ${buildNumber}
         - name: Check compliance
           type: jenkins.Compliance
           pipelineData: ${pipelineData}

@@ -13,8 +13,8 @@ spec:
 - name: Jira Server
   type: jira.Server
   url: https://xebialabs.atlassian.net/
-  username: hsiemelink
-  password: secret
+  username: xlr-jira-testuser@xebialabs.com
+  password: 'INSERT PASSWORD FROM LASTPASS AND DO NOT COMMIT PLEASE'
 ---
 apiVersion: xl-release/v1beta1
 kind: Configurations
