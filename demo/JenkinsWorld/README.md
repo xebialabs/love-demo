@@ -123,6 +123,12 @@ Now manually trigger a build for all projects in all folders (exclude the 'maste
 
 ## Set up dashboards
 
+# Pre-requistes
+
+* Python 3
+* `pip3 install requests`
+* `pip3 install jsonpath_rw`
+
 Clone https://github.com/Hes-Siemelink/yay and run `python setup.py install`. (This is a utility to run YAML scripts that chain REST calls. You need Python 3 to run it.)
 
 Create a file `~/.yay/default-variables.yaml` with the following contents:
