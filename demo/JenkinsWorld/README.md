@@ -14,15 +14,21 @@ Tell [Hes](mailto:hsiemelink@xebialabs.com) if you run into trouble. The Dev ♥
 
 ### Run XL Release and Jenkins
 
-#### Configure XL Impact password
+#### Configure passwords
 
-Configure the XL Impact password before starting XL Release.
+Configure third-party passwords before starting XL Release.
+
+##### XL Impact
 
 Find the password for `demo.xebialabs.io` in LastPass. (Hint: search for 'demo' in LastPass)
 
 Paste it in the following line of `xl-impact/xl-release.conf`:
 
     password="INSERT PASSWORD FROM LASTPASS AND DO NOT COMMIT PLEASE"
+
+##### Fortify, Checkmarx and JIRA
+
+Open `templates/shared_configuration.yaml` and insert passwords from LastPass.
 
 #### Start Docker
 Start docker from the `demo/JenkinsWorld` directory

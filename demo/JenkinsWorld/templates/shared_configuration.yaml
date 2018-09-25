@@ -23,7 +23,7 @@ spec:
   type: fortifyOnDemand.Server
   url: https://api.emea.fortify.com/
   username: xebialabs\hsiemelink
-  password: '#UMrw6.W.}9Ks6[MP2'
+  password: 'INSERT PASSWORD FROM LASTPASS AND DO NOT COMMIT PLEASE'
 ---
 apiVersion: xl-release/v1beta1
 kind: Configurations
@@ -32,4 +32,4 @@ spec:
   type: checkmarx.Server
   url: https://xl-chkmarx-poc.xebialabs.com/
   username: xl-admin
-  password: '078h!FZlX15H'
+  password: 'INSERT PASSWORD FROM LASTPASS AND DO NOT COMMIT PLEASE'
