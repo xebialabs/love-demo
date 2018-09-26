@@ -16,8 +16,7 @@ Replace:
   part: Configuration/Custom/
   in: ${result[0][id]}
   with: ''
-Set variable:
-  fortifyId: ${result}
+Set variable: fortifyId
 ---
 # Get Checkmarx server
 Http GET: /api/v1/config/byTypeAndTitle?configurationType=checkmarx.Server&title=Checkmarx
@@ -25,8 +24,7 @@ Replace:
   part: Configuration/Custom/
   in: ${result[0][id]}
   with: ''
-Set variable:
-  checkmarxId: ${result}
+Set variable: checkmarxId
 ---
 # Read template dashboard
 Read file: ${file}

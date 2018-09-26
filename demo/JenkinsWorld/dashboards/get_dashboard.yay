@@ -12,7 +12,6 @@ Set variable:
 ---
 # Get dashboard data
 Http GET: /dashboards/${dashboardId}
-Set variable:
-  dashboard: ${result}
+Set variable: dashboard
 ---
 Print YAML: ${dashboard}
