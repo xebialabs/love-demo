@@ -1,4 +1,3 @@
-
 apiVersion: xl-release/v1beta1
 kind: Templates
 spec:
@@ -101,7 +100,7 @@ spec:
 
     releaseTriggers:
     - name: Track Jenkins Pipeline
-      type: jenkins.Trigger
+      type: jenkins.PipelineStartedTrigger
       releaseTitle: 'Jenkins pipeline #${buildNumber}'
       enabled: false
       jenkinsServer: Jenkins localhost

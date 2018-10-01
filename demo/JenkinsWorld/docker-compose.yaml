@@ -26,7 +26,7 @@ services:
     - ../../docker/volumes/xlr/hotfix:/opt/xebialabs/xl-release-server/hotfix:ro
     - ./plugins/:/opt/xebialabs/xl-release-server/plugins/:ro
     - ./xl-impact/xl-release.conf:/opt/xebialabs/xl-release-server/conf/xl-release.conf:ro
-    # - ~/Code/xlr-jenkins-pipeline-radar-plugin/src/main/resources:/opt/xebialabs/xl-release-server/ext:rw
+    # - ~/Code/xlr-jenkins-pipeline-radar-plugin/src/main/resources:/opt/xebialabs/xl-release-server/ext:rw # Uncomment this line when developing plugin locally
     environment:
     - ADMIN_PASSWORD=admin
 

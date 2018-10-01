@@ -31,7 +31,7 @@ spec:
       type: xlrelease.Phase
       tasks:
       - name: Import pipelines from Jenkins
-        type: jenkins.ScanPipelines
+        type: jenkins.ImportPipelines
         jenkinsFolder: ${jenkinsFolder}
         targetFolder: ${targetFolder}
         masterTemplate: ${masterTemplate}
