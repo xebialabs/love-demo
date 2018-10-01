@@ -144,6 +144,35 @@ Go to the Cool Store folder. It should display a dashboard.
 
 ![Cool Store dashboard](doc/cool-store-dashboard.png)
 
+## Stopping
+
+The following will kill the demo
+
+    docker-compose down
+    
+Note that this will wipe XL Release and XL Deploy, but the data in Jenkins will remain intact. The next time you start the demo you need to do all configuration steps except the Jenkins configuration.
+
+## Set up XL Deploy
+
+Not needed for the XL Release demo flow, but if you want to show how XL Deploy works follow these steps.
+
+These steps can be done independently if you just want to show XL Deploy.
+
+Set up XL Deploy server in XL Release
+
+	JenkinsWorld        $ cd ../..
+	devops-as-code-demo $ xl apply -f config/configure-xl-devops-platform.yaml 
+
+Set up environment and packages in XL Deploy
+
+	devops-as-code-demo $ xl apply -f workshop/exercise-2/docker-environment.yaml 
+	devops-as-code-demo $ xl apply -f workshop/exercise-4/rest-o-rant-docker.yaml
+	devops-as-code-demo $ xl apply -f workshop/exercise-5/rest-o-rant-docker-pipeline.yaml 
+
+
+You can now deploy **rest-o-rant-api-docker** followed by **rest-o-rant-web-docker** to the **Local Docker Enginge** environment, or use the pipeline in XL Release.
+
+
 # Demo flow
 
 ## Starting screens
@@ -215,4 +244,4 @@ This concludes the mini-demo.
 ## 6. More...
 
 * Show **XL Impact** and discuss KIP-based DevOps transformation improvements.
-* Show **XL Deploy**.
+* Show **XL Deploy**. Deploy **rest-o-rant-api-docker** followed by **rest-o-rant-web-docker** to the **Local Docker Enginge** environment.
