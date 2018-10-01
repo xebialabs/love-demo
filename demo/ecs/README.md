@@ -2,26 +2,9 @@
 
 This demos show you how to deploy to ECS with XL Deploy.
 
-**N.B.:**<br/>
-As of July 25th 2018, this demo depends on a SNAPSHOT build of the AWS plugin, which is still under development. More manual steps are required for now. Those will be replaced once the plugin has been released as part of Deploy 8.2.
-
 ## Prerequisites
 * AWS Command Line Tools
 * Python 3.6 or up
-
-## Step 0. Use SNAPSHOT version of AWS plugin for XL Deploy
-
-**MANUAL STEPS:**<br/>
-
-1. Replace `xld-aws-plugin-8.1.0.xldp` with the `xld-aws-plugin-8.1.1-SNAPSHOT.xldp` file that [can be found in an earlier revision of this repository](https://github.com/xebialabs/devops-as-code-demo/blob/team-developer-love-sprint-1-demo/demo/ecs/xld-aws-plugin-8.1.1-SNAPSHOT.xldp).
-```
-$ rm docker/volumes/xld/plugins/xld-aws-plugin-8.1.0.xldp
-$ cp demo/ecs/xld-aws-plugin-8.1.1-SNAPSHOT.xldp docker/volumes/xld/plugins/
-```
-2. Restart the xl-deploy service:
-```
-$ docker-compose restart xl-deploy
-```
 
 ## Step 1 - Configure AWS in XL Deploy
 
