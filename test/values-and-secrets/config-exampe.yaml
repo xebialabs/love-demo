@@ -1,0 +1,9 @@
+xl-deploy:
+  url: http://localhost:4516
+values:
+  server.address: ora-10g-express-unix
+  server.username: root
+  database.username: scott
+secrets:
+  server.password: centos
+  database.password: tiger
