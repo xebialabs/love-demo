@@ -6,7 +6,11 @@ This is the setup for the JenkinsWorld 2018 demo in San Francisco.
 
 ### Set up Docker & CLI
 
-First, set up Docker and the XL client using the first step of the [DevOps as Code workshop](https://github.com/xebialabs/devops-as-code-demo/tree/workshop-1/workshop).
+The stable version of the demo is on the **JenkinsWorld** tag.
+
+	$ git checkout JenkinsWorld
+
+Set up Docker and the XL client using the first step of the [DevOps as Code workshop](https://github.com/xebialabs/devops-as-code-demo/tree/workshop-1/workshop).
 
 Note: Download the latest XL CLI: [8.5.0-alpha.2](https://s3.amazonaws.com/xl-cli/bin/8.5.0-alpha.2/darwin-amd64/xl). 
 
@@ -126,13 +130,20 @@ Now manually trigger a build for *all* projects in all folders (exclude the 'mas
 ### Pre-requistes
 
 * Python 3
-* `pip3 install requests`
-* `pip3 install jsonpath_rw`
+* `pip3 install requests` (Check if needed)
+* `pip3 install jsonpath_rw` (Check if needed)
 
 
 ### Run scripts
 
-Clone https://github.com/Hes-Siemelink/yay and run `python setup.py install`. (This is a utility to run YAML scripts that chain REST calls. You need Python 3 to run it.)
+To add the dashboards we need to call internal APIs. We will use the Yay, a utility I wrote to run YAML scripts that chain REST calls. 
+
+Clone and install Yay in another directory. Use the **JenkinsWorld** tag.
+
+	$ git clone https://github.com/Hes-Siemelink/yay
+	$ cd yay
+	$ git checkout JenkinsWorld
+	$ python setup.py install
 
 Create a file `~/.yay/default-variables.yaml` with the following contents:
 
