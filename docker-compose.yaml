@@ -1,26 +1,26 @@
 version: '2.3'
 services:
   xl-deploy:
-    image: xebialabsunsupported/xl-deploy:8.5.0-alpha.25-no-devops-as-code
+    image: xebialabsunsupported/xl-deploy:8.5.0-alpha.54
     ports:
     - "4516:4516"
     volumes:
-    - ./docker/volumes/xld/conf/deployit-license.lic:/opt/xebialabs/xl-deploy-server/conf/deployit-license.lic:ro
-    - ./docker/volumes/xld/hotfix/plugins:/opt/xebialabs/xl-deploy-server/hotfix/plugins:ro
+    - ./docker/xld/conf/deployit-license.lic:/opt/xebialabs/xl-deploy-server/conf/deployit-license.lic:ro
+    - ./docker/xld/hotfix/plugins:/opt/xebialabs/xl-deploy-server/hotfix/plugins:ro
     # Workaround for bug (in XL Deploy?) that causes plugins to not function correctly if loaded from within the container
-    - ./docker/volumes/xld/plugins:/opt/xebialabs/xl-deploy-server/plugins
+    - ./docker/xld/plugins:/opt/xebialabs/xl-deploy-server/plugins
     environment:
     - ADMIN_PASSWORD=admin
 
   xl-release:
-    image: xebialabsunsupported/xl-release:8.5.0-alpha.22-no-devops-as-code
+    image: xebialabsunsupported/xl-release:8.5.0-alpha.40
     ports:
     - "5516:5516"
     depends_on:
     - xl-deploy
     volumes:
-    - ./docker/volumes/xlr/conf/xl-release-license.lic:/opt/xebialabs/xl-release-server/conf/xl-release-license.lic:ro
-    - ./docker/volumes/xlr/hotfix:/opt/xebialabs/xl-release-server/hotfix:ro
+    - ./docker/xlr/conf/xl-release-license.lic:/opt/xebialabs/xl-release-server/conf/xl-release-license.lic:ro
+    - ./docker/xlr/hotfix:/opt/xebialabs/xl-release-server/hotfix:ro
     environment:
     - ADMIN_PASSWORD=admin
 

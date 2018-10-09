@@ -40,3 +40,4 @@ s101plugin.state
 
 # Jenkins Docker storage
 jenkins_home
+docker/xld/plugins
