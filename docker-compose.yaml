@@ -33,6 +33,17 @@ services:
     volumes:
     - .:/data:ro
 
+  jenkins:
+    build: docker/jenkins
+    volumes:
+      - ./docker/jenkins/jenkins.yaml:/var/jenkins_home/casc_configs/jenkins.yaml
+    environment:
+      - CASC_JENKINS_CONFIG=/var/jenkins_home/casc_configs/jenkins.yaml
+      - GITHUB_USER=${GITHUB_USER}
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+    ports:
+      - 8080:8080
+
   dockerproxy:
     image: tecnativa/docker-socket-proxy:latest
     privileged: true
