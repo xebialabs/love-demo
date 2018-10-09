@@ -3,7 +3,7 @@ jenkins:
 
 jobs:
   - script: >
-      pipelineJob('devops-as-code-pipeline') {
+      pipelineJob('devops-as-code-ci-demo') {
           definition {
               cpsScm {
                   scm {
@@ -14,7 +14,7 @@ jobs:
                           }
                       }
                   }
-                  scriptPath('Jenkinsfile-provided')
+                  scriptPath('Jenkinsfile')
               }
           }
       }
