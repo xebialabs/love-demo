@@ -32,7 +32,7 @@ Paste it in the following line of `xl-impact/xl-release.conf`:
 
     password="INSERT PASSWORD FROM LASTPASS AND DO NOT COMMIT PLEASE"
 
-##### Fortify, Checkmarx and JIRA
+##### Fortify On Demand, Checkmarx and JIRA
 
 Open `templates/shared_configuration.yaml` and insert passwords from LastPass.
 
