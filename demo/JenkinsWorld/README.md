@@ -64,15 +64,21 @@ Check XL Release for the Jenkins World folder.
 
 Create a folder called **Cool Store** in Jenkins.
 
-In order to do this, you first need to [create a personal access token in GitHub](https://github.com/settings/tokens).
+For the following steps you need to [create a personal access token in GitHub](https://github.com/settings/tokens).
 
-You can use this token as a credential in Jenkins.
+Give the token the following permissions:
 
-Import the following projects from GitHub as multibranch projects in the **Cool Store** folder
+* `repo`
+* `admin:repo_hook`
+* `user`
 
-* [demo-address-book](https://github.com/xebialabs/demo-address-book) as "Address book"
-* [demo-shopping-cart](https://github.com/xebialabs/demo-shopping-cart) as "Shopping cart"
-* [demo-wish-list](https://github.com/xebialabs/demo-wish-list) as "Wish list"
+You can use this token as a credential in Jenkins. Use the **Add** button on the  Branch Source section below to add it to Jenkins.
+
+Import the following projects from GitHub as separate multibranch projects in the **Cool Store** folder. Note that the job names are case sensitive!
+
+* [demo-address-book](https://github.com/xebialabs/demo-address-book) as `Address book`
+* [demo-shopping-cart](https://github.com/xebialabs/demo-shopping-cart) as `Shopping cart`
+* [demo-wish-list](https://github.com/xebialabs/demo-wish-list) as `Wish list`
 
 Here's an example of the parameters:
 
@@ -127,14 +133,21 @@ This corresponds with the BlueOcean view in Jenkins:
 
 Now manually trigger a build for *all* projects in all folders (exclude the 'master' builds) to seed the data in XL Release.
 
+Note that the Jenkinsfiles are configured that to fail intermittently. So your job may succeed or fail.
+
 ## Set up dashboards
 
 ### Pre-requistes
 
 * Python 3
-* `pip3 install requests` (Check if needed)
-* `pip3 install jsonpath_rw` (Check if needed)
 
+On Macos, the easiest way seems to be:
+
+	$ brew install python
+ 	$ alias python='python3'
+
+* `pip3 install pyyaml`
+* Turn on the VPN (Cisco AnyConnect) to be able to connect to Checkmarx server.
 
 ### Run scripts
 
