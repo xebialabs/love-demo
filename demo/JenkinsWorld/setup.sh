@@ -6,3 +6,4 @@ xl apply -f $dir/templates/feature_delivery_process.yaml
 xl apply -f $dir/templates/component_delivery_process.yaml
 xl apply -f $dir/templates/release_train_process.yaml
 xl apply -f $dir/templates/manual_setup.yaml
+echo "Added templates. Now run the Set up template in XL Release."
