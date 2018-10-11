@@ -6,11 +6,11 @@ This is the setup for the JenkinsWorld 2018 demo in San Francisco.
 
 ### Set up Docker & CLI
 
-The stable version of the demo is on the **JenkinsWorld** tag.
+The stable version of the demo is on the **JenkinsWorld-SF** branch.
 
 	$ git clone git@github.com:xebialabs/devops-as-code-demo.git
 	$ cd devops-as-code/demo/JenkinsWorld
-	$ git checkout JenkinsWorld
+	$ git checkout JenkinsWorld-SF
 
 Set up Docker and the XL client using the first step of the [DevOps as Code workshop](https://github.com/xebialabs/devops-as-code-demo/tree/workshop-1/workshop).
 
