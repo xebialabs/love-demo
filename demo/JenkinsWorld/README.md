@@ -24,6 +24,22 @@ Download the latest XL CLI: [8.5.0-alpha.2](https://s3.amazonaws.com/xl-cli/bin/
 
 Configure third-party passwords before starting XL Release.
 
+##### Fortify On Demand, Checkmarx and JIRA
+
+Open or create `~/.xebialabs/config.yaml`, paste in the following section and configure the passwords by copying them from LastPass.
+
+	secrets:
+	  checkmarx.password: INSERT PASSWORD FROM LASTPASS
+	  fortify.password: INSERT PASSWORD FROM LASTPASS
+	  jira.password: INSERT PASSWORD FROM LASTPASS
+	values:
+	  checkmarx.url: https://xl-chkmarx-poc.xebialabs.com/
+	  checkmarx.user: xl-admin
+	  fortify.url: https://api.emea.fortify.com/
+	  fortify.user: xebialabs\deployit-dev
+	  jira.url: https://xebialabs.atlassian.net/
+	  jira.user: xlr-jira-testuser@xebialabs.com
+
 ##### XL Impact
 
 Find the password for `demo.xebialabs.io` in LastPass. (Hint: search for 'demo' in LastPass)
@@ -31,10 +47,6 @@ Find the password for `demo.xebialabs.io` in LastPass. (Hint: search for 'demo' 
 Paste it in the following line of `xl-impact/xl-release.conf`:
 
     password="INSERT PASSWORD FROM LASTPASS AND DO NOT COMMIT PLEASE"
-
-##### Fortify On Demand, Checkmarx and JIRA
-
-Open `templates/shared_configuration.yaml` and insert passwords from LastPass.
 
 #### Start Docker
 
@@ -98,7 +110,7 @@ You should have the following folder structure in XL Release:
     Samples & Tutorials
     Set up
 
-Now go to the [My tasks](http://localhost:5516/#/tasks?has_filter&active&assignedToMe&assignedToMyTeams) view and complete the **Jenkins has GitHub projects** task. 
+Now go to the [My tasks](http://localhost:5516/#/tasks?has_filter&active&assignedToMe&assignedToMyTeams) view and complete the **Jenkins has GitHub projects** task. (You may need to wait a bit and refresh if you are fast.)
 
 The **Set up Cool Store demo** creates several releases and link them together using Gate tasks.
 

@@ -12,24 +12,24 @@ kind: Configurations
 spec:
 - name: Jira Server
   type: jira.Server
-  url: https://xebialabs.atlassian.net/
-  username: xlr-jira-testuser@xebialabs.com
-  password: 'INSERT PASSWORD FROM LASTPASS AND DO NOT COMMIT PLEASE'
+  url: !value jira.url
+  username: !value jira.user
+  password: !secret jira.password
 ---
 apiVersion: xl-release/v1beta1
 kind: Configurations
 spec:
 - name: Fortify
   type: fortifyOnDemand.Server
-  url: https://api.emea.fortify.com/
-  username: xebialabs\deployit-dev
-  password: 'INSERT PASSWORD FROM LASTPASS AND DO NOT COMMIT PLEASE'
+  url: !value fortify.url
+  username: !value fortify.user
+  password: !secret fortify.password
 ---
 apiVersion: xl-release/v1beta1
 kind: Configurations
 spec:
 - name: Checkmarx
   type: checkmarx.Server
-  url: https://xl-chkmarx-poc.xebialabs.com/
-  username: xl-admin
-  password: 'INSERT PASSWORD FROM LASTPASS AND DO NOT COMMIT PLEASE'
+  url: !value checkmarx.url
+  username: !value checkmarx.user
+  password: !secret checkmarx.password
