@@ -1,22 +1,22 @@
 # JenkinsWorld demo
 
-This is the setup for the JenkinsWorld 2018 demo in San Francisco.
+This is the setup for the JenkinsWorld demo, originally shown at the JenkinsWorld 2018 in San Francisco.
+
+_For the stable version of the demo please use the [JenkinsWorld-SF](https://github.com/xebialabs/devops-as-code-demo/tree/JenkinsWorld-SF/demo/JenkinsWorld) branch and follow the instructions of the README in that branch._
+
 
 ## Demo Set up
 
 ### Set up Docker & CLI
 
-The stable version of the demo is on the **JenkinsWorld** tag.
+You'll need to have Docker installed on your machine before you begin:
 
-	$ git clone git@github.com:xebialabs/devops-as-code-demo.git
-	$ cd devops-as-code/demo/JenkinsWorld
-	$ git checkout JenkinsWorld
+* Mac: https://docs.docker.com/docker-for-mac/
+* Windows: https://docs.docker.com/docker-for-windows/
+* Linux: Refer to the instructions for your Linux distribution on how to install Docker
 
-Set up Docker and the XL client using the first step of the [DevOps as Code workshop](https://github.com/xebialabs/devops-as-code-demo/tree/workshop-1/workshop).
+Download the latest XL CLI: [8.5.0-alpha.2](https://s3.amazonaws.com/xl-cli/bin/8.5.0-alpha.2/darwin-amd64/xl). 
 
-Note: Download the latest XL CLI: [8.5.0-alpha.2](https://s3.amazonaws.com/xl-cli/bin/8.5.0-alpha.2/darwin-amd64/xl). 
-
-Tell [Hes](mailto:hsiemelink@xebialabs.com) if you run into trouble. The Dev ♥︎ team is working on a proper release process in the meanwhile, so we won't have issues here.
 
 ### Run XL Release and Jenkins
 
@@ -37,6 +37,9 @@ Paste it in the following line of `xl-impact/xl-release.conf`:
 Open `templates/shared_configuration.yaml` and insert passwords from LastPass.
 
 #### Start Docker
+
+Start the VPN client (Cisco AnyConnect) to be able download the latest XL Release and XL Deploy versions.
+
 Start docker from the `demo/JenkinsWorld` directory
 
     $ cd demo/JenkinsWorld
@@ -52,13 +55,6 @@ This will start
 
 Use admin/admin credentials for XL Release, XL Deploy and Jenkins.
 
-### Configure XL Release templates
-
-Run the following script that will add the templates by calling `xl apply -f` in the right order.
-
-    ./setup.sh
-
-Check XL Release for the Jenkins World folder.
 
 ## Configure Jenkins
 
@@ -84,7 +80,13 @@ Here's an example of the parameters:
 
 ![Jenkins Branch Source](doc/jenkins-branch-source.png)
 
+_Note: Jenkins configuration is persistent, so you don't have to do this again after doing docker-compose down & up._
+
 ## Set up release train
+
+Run the following script that will add the templates by calling `xl apply -f` in the right order.
+
+    ./setup.sh
 
 You should have the following folder structure in XL Release:
 
@@ -96,13 +98,9 @@ You should have the following folder structure in XL Release:
     Samples & Tutorials
     Set up
 
-Run a release from the template **Set up/Set up Cool Store release train**
+Now go to the [My tasks](http://localhost:5516/#/tasks?has_filter&active&assignedToMe&assignedToMyTeams) view and complete the **Jenkins has GitHub projects** task. 
 
-This will create several releases and link them together using Gate tasks.
-
-You will end up with something like this on the Relationship view of the **Cool Store September delivery** release:
-
-Wait on the **Jenkins has GitHub projects** task.
+The **Set up Cool Store demo** creates several releases and link them together using Gate tasks.
 
 Go to the **Cool Store September delivery** and select the relationship viewer. 
 
@@ -113,9 +111,7 @@ You should see something like this:
 
 ### Import Jenkins projects
 
-Continue the Set up release and the release train will be connected to the Release train.
-
-Kick off a manual build in Jenkins of **Address book/COOL-113**
+Go back to Jenkins and kick off a manual build in Jenkins of [Address book/COOL-113](http://localhost:8080/job/Cool%20Store/job/Address%20book/)
 
 This should create a release in XL Release.
 

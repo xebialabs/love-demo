@@ -151,11 +151,11 @@ spec:
 
           You can use this token as a credential in Jenkins.
 
-          Import the following projects from GitHub as multibranch projects in the **Cool Store** folder
+          Import the following projects from GitHub as multibranch projects in the **Cool Store** folder. Note that the job names are case-sensitive.
 
-          * [demo-address-book](https://github.com/xebialabs/demo-address-book) as "Address book"
-          * [demo-shopping-cart](https://github.com/xebialabs/demo-shopping-cart) as "Shopping cart"
-          * [demo-wish-list](https://github.com/xebialabs/demo-wish-list) as "Wish list"
+          * [demo-address-book](https://github.com/xebialabs/demo-address-book) as `Address book`
+          * [demo-shopping-cart](https://github.com/xebialabs/demo-shopping-cart) as `Shopping cart`
+          * [demo-wish-list](https://github.com/xebialabs/demo-wish-list) as `Wish list`
       - name: Import Address book
         type: xlrelease.CreateReleaseTask
         newReleaseTitle: Import Address book pipeline
@@ -210,3 +210,12 @@ spec:
         - key: enableTrigger
           value: true
           type: xlrelease.BooleanVariable
+
+---
+apiVersion: xl-release/v1beta1
+kind: Release
+spec:
+  name: Set up Cool Store demo
+  template: Set up/Set up Cool Store release train
+  variables: # TODO remove this with alpha.12 of the XL client
+    version: '1.0'

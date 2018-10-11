@@ -1,9 +1,9 @@
 dir=$(dirname "$0")
-xl apply -f $dir/templates/shared_configuration.yaml
-xl apply -f $dir/templates/import_jenkins_pipeline.yaml
-xl apply -f $dir/templates/track_jenkins_pipeline.yaml
-xl apply -f $dir/templates/feature_delivery_process.yaml
-xl apply -f $dir/templates/component_delivery_process.yaml
-xl apply -f $dir/templates/release_train_process.yaml
-xl apply -f $dir/templates/manual_setup.yaml
-echo "Added templates. Now run the Set up template in XL Release."
+./xlw version
+./xlw apply -f $dir/templates/shared_configuration.yaml
+./xlw apply -f $dir/templates/import_jenkins_pipeline.yaml
+./xlw apply -f $dir/templates/track_jenkins_pipeline.yaml
+./xlw apply -f $dir/templates/feature_delivery_process.yaml
+./xlw apply -f $dir/templates/component_delivery_process.yaml
+./xlw apply -f $dir/templates/release_train_process.yaml
+./xlw apply -f $dir/templates/manual_setup.yaml
