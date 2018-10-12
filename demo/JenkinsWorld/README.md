@@ -100,6 +100,8 @@ Run the following script that will add the templates by calling `xl apply -f` in
 
     ./setup.sh
 
+This will create the necessary templates and runs a release called **Set up Cool Store demo** to wire it all together. 
+
 You should have the following folder structure in XL Release:
 
     Cool Store
@@ -109,10 +111,6 @@ You should have the following folder structure in XL Release:
     JenkinsWorld
     Samples & Tutorials
     Set up
-
-Now go to the [My tasks](http://localhost:5516/#/tasks?has_filter&active&assignedToMe&assignedToMyTeams) view and complete the **Jenkins has GitHub projects** task. (You may need to wait a bit and refresh if you are fast.)
-
-The **Set up Cool Store demo** creates several releases and link them together using Gate tasks.
 
 Go to the **Cool Store September delivery** and select the relationship viewer. 
 
