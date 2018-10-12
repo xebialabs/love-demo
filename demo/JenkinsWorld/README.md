@@ -174,7 +174,11 @@ Create a file `~/.yay/default-variables.yaml` with the following contents:
     
 Run `./insert.sh`
 
-Go to the Cool Store folder. It should display a dashboard.
+Go to the Cool Store folder. It should display a list with one dashboard.
+
+![Cool Store dashboard](doc/cool-store-dashboard-list.png)
+
+Click on **Cool Store Dashboard** to reveal the dashboard.
 
 ![Cool Store dashboard](doc/cool-store-dashboard.png)
 
@@ -261,13 +265,13 @@ Here, we see a similar procedure, we have some QA on acceptance (second phase), 
 
 ## 5. Dashboarding
 
-Go to **Cool Store** folder.
+Go to **Cool Store** folder and click on **Cool Store Dashboard**.
 
 Since we track everything in XL Release we can do reporting on all levels. 
 
 For example, here you will see the high level reports: release duration and automation. On this tile (top right) you will see manual is yellow and purple is automated. So far we have automated two thirds, sounds pretty good. But below it you see the time spent, that is all yellow -- all manual work, that is where the money goes.
 
-Go to **Address book** folder. (Or another component that has the Release Value Stream mapping tile populated).
+Go to **Address book** folder and click on **Pipeline Dashboard**. (Or another component folder that has the Release Value Stream mapping tile populated).
 
 This is reporting on the Jenkins level, here we do a Release Value Stream Mapping on the Jenkins pipeline. Look at the red numbers, this means that this stage took the most time.
 

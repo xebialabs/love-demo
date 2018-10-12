@@ -8,13 +8,6 @@ Set variable:
   folderId: ${result.id}
 
 ---
-Task: Get Cool Store dashboard
-
-Http GET: /dashboards?parentId=${folderId}
-Set variable:
-  dashboardId: ${result[0][id]}
-
----
 Task: Get Fortify server
 
 Http GET: /api/v1/config/byTypeAndTitle?configurationType=fortifyOnDemand.Server&title=Fortify
@@ -43,6 +36,6 @@ Set variable: templateDashboard
 ---
 Task: Send updated dashboard to server
 
-Http PUT:
-  path: /dashboards/${dashboardId}
+Http POST:
+  path: /dashboards/
   body: ${templateDashboard}

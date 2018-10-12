@@ -1,6 +1,5 @@
 columns: 4
 description: null
-id: ${dashboardId}
 owner: admin
 parentId: ${folderId}
 roleEditors:
@@ -14,7 +13,6 @@ tiles:
   description: null
   detailsUri: null
   embedded: true
-  id: ${dashboardId}/Tile171f0f236db1452bb42669767f97951e
   properties:
     filters:
     - id: '-1'
@@ -37,7 +35,6 @@ tiles:
   description: null
   detailsUri: null
   embedded: true
-  id: ${dashboardId}/Tile840de504f18f4a708e4b991a52828753
   properties:
     filters:
     - id: '-1'
@@ -60,7 +57,6 @@ tiles:
   description: null
   detailsUri: null
   embedded: true
-  id: ${dashboardId}/Tileab78ea3d427c4bce9fd3e2dd22003f26
   properties:
     filters:
     - id: '-1'
@@ -83,7 +79,6 @@ tiles:
   description: null
   detailsUri: null
   embedded: true
-  id: ${dashboardId}/Tile7c0087f4abec441282b168a63e77d2ea
   properties:
     filters:
     - id: '-1'
@@ -106,7 +101,6 @@ tiles:
   description: null
   detailsUri: null
   embedded: true
-  id: ${dashboardId}/Tile5bfde5d6e17846e293fe030f2a87c78b
   properties:
     filters:
     - id: '-1'
@@ -129,7 +123,6 @@ tiles:
   description: null
   detailsUri: null
   embedded: true
-  id: ${dashboardId}/Tile580bdc8712e64767adcf191c4946d388
   properties:
     filters:
     - id: '-1'
@@ -147,5 +140,5 @@ tiles:
   title: Number of releases
   type: xlrelease.ReleasesByMonthTile
   uri: include/Tiles/releases-by-month-tile-view.html
-title: Dashboard
+title: Cool Store Dashboard
 
