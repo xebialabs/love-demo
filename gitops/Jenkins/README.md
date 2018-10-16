@@ -105,3 +105,73 @@ xl-release:
         }
     }
     ```
+    
+# Dealing with secrets and values
+
+Devops-as-code allows you to parameterize your yaml files with the help of values and secrets.
+Imagine, that you'd like to dynamically inject `username` and `password` into such yaml file:
+
+```yaml
+apiVersion: xl-deploy/v1beta1
+kind: Infrastructure
+spec:
+- name: TomcatHostAsCode
+  type: overthere.SshHost
+  os: UNIX
+  connectionType: SUDO
+  address: 192.168.55.11
+  port: 21
+  username: !value user
+  password: !secret pass
+```
+
+There are many ways how you can specify values or secrets:
+
+**Using `<USER_HOME>/.xebialabs/config.yaml`:**
+```yaml
+secrets:
+  pass: qwerty
+values:
+  user: admin
+xl-deploy:
+  password: admin
+  url: http://localhost:4516
+  username: admin
+xl-release:
+  password: admin
+  url: http://localhost:5516
+  username: admin
+```
+
+---
+**Using inline command parameters:**
+```bash
+./xlw apply -v -f host.yaml --values=user=admin --secrets=pass=qwerty
+
+# passing multiple values and secrets
+./xlw apply -v -f host.yaml --values=user=admin --values=order=1 --secrets=pass=qwerty --secrets=passphrase=secret
+```
+
+---
+**Using environment variables.**
+Any environment variable that starts with `XL_VALUE_` or `XL_SECRET_` will be passed devops-as-code command as a value and secret respectively.<br>
+
+_**Please notice, that variable names are case sensitive**_
+
+```groovy
+pipeline {
+    agent any
+    environment {
+        XL_VALUE_user=admin
+        XL_SECRET_pass=qwerty
+    }
+
+    stages {
+        stage("Apply host.yaml") {
+            steps {
+                sh "./xlw apply -v -f host.yaml"
+            }
+        }
+    }
+}
+```
