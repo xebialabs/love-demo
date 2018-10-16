@@ -14,15 +14,13 @@ spec:
       showOnReleaseStart: false
 
     phases:
+
     - name: Dev
       type: xlrelease.Phase
       color: '#08B153'
       tasks:
       - name: Wait for components
         type: xlrelease.GateTask
-
-      - name: Components
-        type: xlrelease.ParallelGroup
         tags:
         - Components
 
@@ -72,6 +70,7 @@ spec:
         issueId: ${jiraTicket}
         newStatus: Resolved
         comment: ${release.title} was deployed to PROD.
+
     - name: Release Preparation
       type: xlrelease.Phase
       color: '#0099CC'

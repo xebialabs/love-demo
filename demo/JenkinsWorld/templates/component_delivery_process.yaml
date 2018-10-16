@@ -23,8 +23,6 @@ spec:
         targetTaskTag: Components
       - name: Wait for features
         type: xlrelease.GateTask
-      - name: Features
-        type: xlrelease.ParallelGroup
         tags:
         - Features
     - name: Acceptance
@@ -51,9 +49,6 @@ spec:
         type: xldeploy.Deploy
         taskFailureHandlerEnabled: true
         taskRecoverOp: SKIP_TASK
-#        retryCounter:
-#          currentContinueRetrial:0
-#          currentPollingTrial:0
       - name: Add comment to change request
         type: jira.UpdateIssue
         issueId: ${jiraTicket}

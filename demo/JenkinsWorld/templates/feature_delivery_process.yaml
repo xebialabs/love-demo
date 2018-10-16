@@ -150,9 +150,3 @@ spec:
         type: github.MergePullRequest
         taskFailureHandlerEnabled: true
         taskRecoverOp: SKIP_TASK
-
-      - name: Register feature in Release Train
-        type: release.RegisterRelease
-        targetRelease: Release Train
-        targetTaskTag: Features
-        ^title: ${release.title}
