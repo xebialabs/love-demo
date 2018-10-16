@@ -18,6 +18,22 @@ jobs:
               }
           }
       }
+  - script: >
+      pipelineJob('devops-as-code-ci-demo-windows') {
+          definition {
+              cpsScm {
+                  scm {
+                      git {
+                          remote {
+                        	credentials('github-credentials')
+                        	url('https://github.com/xebialabs/devops-as-code-ci-demo.git')
+                          }
+                      }
+                  }
+                  scriptPath('Jenkinsfile-windows')
+              }
+          }
+      }
 
 credentials:
   system:
