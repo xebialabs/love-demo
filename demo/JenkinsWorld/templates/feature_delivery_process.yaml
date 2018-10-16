@@ -30,11 +30,24 @@ spec:
         targetTaskTag: Features
       - name: Wait for successful pipeline build
         type: xlrelease.GateTask
-
-      - name: Jenkins pipelines
-        type: xlrelease.ParallelGroup
         tags:
         - Pipelines
+        team: Release Admin
+        taskFailureHandlerEnabled: true
+        taskRecoverOp: RUN_SCRIPT
+        failureHandler: |
+          for dependency in task.dependencies:
+            if not dependency.target or not dependency.target.isActive():
+              taskApi.deleteDependency(dependency.id)
+
+          taskApi.retryTask(task.id, "Removed failing dependency")
+      - name: All pipeline builds
+        type: xlrelease.GateTask
+        tags:
+        - Pipelines
+        team: Release Admin
+        taskFailureHandlerEnabled: true
+        taskRecoverOp: SKIP_TASK
       - name: Code Quality
         type: xlrelease.SequentialGroup
         tasks:
