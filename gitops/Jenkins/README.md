@@ -2,7 +2,7 @@
 
 Taking into account that devops-as-code provides convenient wrapper for *NIX and Windows systems, it is very easy to using together with different CI tools.
 
-To integrate devops-as-code into your git flow, please follow this simple steps:
+To integrate devops-as-code into your git flow, please follow these simple steps:
 
 1) Add wrappers to your project. You can either copy/paste them from another project, or execute `xl wrapper` command in the root of your project to generate them.
 2) Define devops-as-code YAML in your project's directory.  
@@ -162,8 +162,8 @@ _**Please notice, that variable names are case sensitive**_
 pipeline {
     agent any
     environment {
-        XL_VALUE_user=admin
-        XL_SECRET_pass=qwerty
+        XL_VALUE_user = admin
+        XL_SECRET_pass = qwerty
     }
 
     stages {
@@ -175,3 +175,31 @@ pipeline {
     }
 }
 ```
+
+# Hashicorp Vault integration
+
+It is possible to inject values / secrets from Hashicorp Vault.
+
+Just follow these simple steps:
+* Install [hashicorp-vault-pipeline-plugin](https://github.com/jenkinsci/hashicorp-vault-pipeline-plugin)
+* Configure your vault in Jenkins
+* Inject data from vault into `XL_VALUE_`, `XL_SECRET_`, `XL_DEPLOY_` or `XL_RELEASE_` environment variables:
+    ```groovy
+    pipeline {
+        agent any
+        environment {
+            XL_DEPLOY_USERNAME = vault path: 'xl/secrets/xld', key: 'username'
+            XL_DEPLOY_PASSWORD = vault path: 'xl/secrets/xld', key: 'password'
+            XL_SECRET_AWS_ACCESS_TOKEN = vault path: 'xl/secrets/aws', key: 'token'
+            XL_VALUE_BUILD_NUMBER = vault path: 'xl/secrets/nexus', key: 'lastBuildNumber'
+        }
+    
+        stages {
+            stage("Apply infrastructure.yaml") {
+                steps {
+                    sh "./xlw apply -v -f infrastructure.yaml"
+                }
+            }
+        }
+    }
+    ```
