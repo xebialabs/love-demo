@@ -5,34 +5,23 @@ Taking into account that devops-as-code provides convenient wrapper for *NIX and
 It is very easy to integrate devops-as-code into your git flow in Azure DevOps you should do the following:
 
 1) Add wrappers to your project. You can either copy/paste them from another project, or execute `xl wrapper` command in the root of your project to generate them.
-2) Define devops-as-code YAML in your project's directory.  
-3) Define different pipelines depending on the OS. On Windows you should use a `script` step or a `bash` step in your `azure-pipeline.yml` file and in there you
-can use your different devops-as-code YAML file(s)
-    * Windows:
-        ```yaml
-          ....
-          - bash: |
-             # Write your commands here
-             
-             # Use the environment variables input below to pass secret variables to this script
-             
-             sleep 120
-             
-             export DOCKER_PORT=$(docker port gitops_xl-release_1 5516 | awk -F: '{print $2}')
-             
-             ./xlw apply -f xebialabs.yaml --xl-release-url http://localhost:$DOCKER_PORT
-        ```
+2) Define devops-as-code YAML in your project's directory.
+3) On DevOps Azure you can define your build pipeline using a YAML file, normally this YAML file is called `azure-pipeline.yml` and should be located in the root of the repo.
+4) To make use of XL-Client you can define a pipeline with a `bash/script` step, depending on the OS to use.
+On Windows you should use a `script` step. In case of Linux you should use a `bash` step.
     * Linux/Mac:
         ```yaml
           ....
+          - bash: |
+             ./xlw apply -f xebialabs.yaml
+        ```
+    * Windows:
+        ```yaml
+          ....
           - script: |
-             # Write your commands here
-             
-             # Use the environment variables input below to pass secret variables to this script
-             
              xlw apply -f xebialabs.yaml
         ```
-4) You can add different environment variables `bat/sh` or use different variables inside the pipeline to use external values.
+5) If you want to use external values, you can add environment variables or use variables inside the pipeline.
 
 # Dealing with XLD/XLR credentials
 
@@ -65,15 +54,7 @@ xl-release:
     ```yaml
     .....
     - bash: |
-       # Write your commands here
-       
-       # Use the environment variables input below to pass secret variables to this script
-       
-       sleep 120
-       
-       export DOCKER_PORT=$(docker port gitops_xl-release_1 5516 | awk -F: '{print $2}')
-       
-       ./xlw apply -f xebialabs.yaml --xl-release-url http://localhost:$DOCKER_PORT 
+       ./xlw apply -f xebialabs.yaml
       displayName: 'Bash Script'
       continueOnError: true
       env:
@@ -85,16 +66,8 @@ xl-release:
     This approach is convenient if you'd like to use variables from Azure DevOps build pipeline.
     ```yaml
     .....
-    - bash: |
-       # Write your commands here
-       
-       # Use the environment variables input below to pass secret variables to this script
-       
-       sleep 120
-       
-       export DOCKER_PORT=$(docker port gitops_xl-release_1 5516 | awk -F: '{print $2}')
-       
-       ./xlw apply -f xebialabs.yaml --xl-release-url http://localhost:$DOCKER_PORT 
+    - bash: |       
+       ./xlw apply -f xebialabs.yaml
       displayName: 'Bash Script'
       continueOnError: true
       env:
