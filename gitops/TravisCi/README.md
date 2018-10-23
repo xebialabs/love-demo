@@ -6,7 +6,7 @@ To integrate devops-as-code into your git flow, please follow these simple steps
 
 1) Add wrappers to your project. You can either copy/paste them from another project, or execute `xl wrapper` command in the root of your project to generate them.
 2) Define devops-as-code YAML in your project's directory.  
-3) Define `sh / bat` step in your `.travis.yaml` and point to your devops-as-code YAML file(s)
+3) Define `bat / sh` step in your `.travis.yaml` and point to your devops-as-code YAML file(s)
     * Windows:
         ```yaml
         os: windows
