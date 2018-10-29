@@ -11,7 +11,7 @@ set -e
 # detecting program dir
 PROG_DIR="$(cd "$(dirname "${0:-$PWD}")" 2>/dev/null 1>&2 && pwd)"
 
-source "${PROG_DIR}/xl/wrapper/wrapper.conf"
+source "${PROG_DIR}/.xebialabs/wrapper.conf"
 
 XL_WRAPPER_HOME="${HOME}/.xebialabs/wrapper/${CLI_VERSION}"
 
