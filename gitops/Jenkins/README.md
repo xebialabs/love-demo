@@ -106,9 +106,9 @@ xl-release:
     }
     ```
     
-# Dealing with secrets and values
+# Dealing with usernames and passwords
 
-Devops-as-code allows you to parameterize your yaml files with the help of values and secrets.
+Devops-as-code allows you to parameterize your yaml files with the help of values.
 Imagine, that you'd like to dynamically inject `username` and `password` into such yaml file:
 
 ```yaml
@@ -122,39 +122,32 @@ spec:
   address: 192.168.55.11
   port: 21
   username: !value user
-  password: !secret pass
+  password: !value pass
 ```
 
-There are many ways how you can specify values or secrets:
+There are many ways how you can specify values:
 
-**Using `<USER_HOME>/.xebialabs/config.yaml`:**
-```yaml
-secrets:
-  pass: qwerty
-values:
-  user: admin
-xl-deploy:
-  password: admin
-  url: http://localhost:4516
-  username: admin
-xl-release:
-  password: admin
-  url: http://localhost:5516
-  username: admin
+You can specify the values using xlvals files. Please use the extension `.xlvals`, for example put the following values in a file called `secrets.xlvals`:
+
+```properties
+user=admin
+pass=424242
 ```
+
+Please make sure to not check in value files that contain sensitive information into version control. The XL Cli searches for value files in `<USER_HOME>/.xebialabs` and in the folder the yaml file is located. If you keep the xlvals file in the project directory, you can add it to the gitignore to prevent the file from being checked in.
 
 ---
 **Using inline command parameters:**
 ```bash
-./xlw apply -v -f host.yaml --values=user=admin --secrets=pass=qwerty
+./xlw apply -v -f host.yaml --values=user=admin --values=pass=qwerty
 
-# passing multiple values and secrets
-./xlw apply -v -f host.yaml --values=user=admin --values=order=1 --secrets=pass=qwerty --secrets=passphrase=secret
+# passing multiple values
+./xlw apply -v -f host.yaml --values=user=admin --values=order=1 --values=pass=qwerty --values=passphrase=secret
 ```
 
 ---
 **Using environment variables.**
-Any environment variable that starts with `XL_VALUE_` or `XL_SECRET_` will be passed devops-as-code command as a value and secret respectively.<br>
+Any environment variable that starts with `XL_VALUE_` will be passed devops-as-code command as a value respectively.<br>
 
 _**Please notice, that variable names are case sensitive**_
 
@@ -163,7 +156,7 @@ pipeline {
     agent any
     environment {
         XL_VALUE_user = admin
-        XL_SECRET_pass = qwerty
+        XL_VALUE_pass = qwerty
     }
 
     stages {
@@ -178,19 +171,19 @@ pipeline {
 
 # Hashicorp Vault integration
 
-It is possible to inject values / secrets from Hashicorp Vault.
+It is possible to inject values from Hashicorp Vault.
 
 Just follow these simple steps:
 * Install [hashicorp-vault-pipeline-plugin](https://github.com/jenkinsci/hashicorp-vault-pipeline-plugin)
 * Configure your vault in Jenkins
-* Inject data from vault into `XL_VALUE_`, `XL_SECRET_`, `XL_DEPLOY_` or `XL_RELEASE_` environment variables:
+* Inject data from vault into `XL_VALUE_`, `XL_DEPLOY_` or `XL_RELEASE_` environment variables:
     ```groovy
     pipeline {
         agent any
         environment {
             XL_DEPLOY_USERNAME = vault path: 'xl/secrets/xld', key: 'username'
             XL_DEPLOY_PASSWORD = vault path: 'xl/secrets/xld', key: 'password'
-            XL_SECRET_AWS_ACCESS_TOKEN = vault path: 'xl/secrets/aws', key: 'token'
+            XL_VALUE_AWS_ACCESS_TOKEN = vault path: 'xl/secrets/aws', key: 'token'
             XL_VALUE_BUILD_NUMBER = vault path: 'xl/secrets/nexus', key: 'lastBuildNumber'
         }
     

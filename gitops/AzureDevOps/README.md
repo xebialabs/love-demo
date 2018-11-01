@@ -74,9 +74,9 @@ xl-release:
         XL_RELEASE_USERNAME: $(xlr.username)
     ```
     
-# Working with secrets and values
+# Working with usernames and passwords
 
-Devops-as-code allows you to include in your yaml files with the help of values and secrets.
+Devops-as-code allows you to include in your yaml files with the help of value injection.
 Imagine, that you'd like to dynamically inject `username` and `password` into such yaml file:
 
 ```yaml
@@ -89,40 +89,31 @@ spec:
   connectionType: SUDO
   address: 192.168.55.11
   port: 21
-  username: !value tomcat.username
-  password: !secret tomcat.password
+  username: !value tomcat_username
+  password: !value tomcat_password
 ```
 
-There are many ways how you can specify values or secrets:
+You can specify the values using xlvals files. Please use the extension `.xlvals`, for example put the following values in a file called `secrets.xlvals`:
 
-**Using `<USER_HOME>/.xebialabs/config.yaml`:**
-```yaml
-secrets:
-  tomcat.password: 424242
-values:
-  tomcat.username: admin
-xl-deploy:
-  password: admin
-  url: http://localhost:4516
-  username: admin
-xl-release:
-  password: admin
-  url: http://localhost:5516
-  username: admin
+```properties
+tomcat_username=admin
+tomcat_password=424242
 ```
+
+Please make sure to not check in value files that contain sensitive information into version control. The XL Cli searches for value files in `<USER_HOME>/.xebialabs` and in the folder the yaml file is located. If you keep the xlvals file in the project directory, you can add it to the gitignore to prevent the file from being checked in.
 
 ---
 **Using inline command parameters:**
 ```bash
-./xlw apply -v -f host.yaml --values=tomcat.username=admin --secrets=tomcat.password=424242
+./xlw apply -v -f host.yaml --values=tomcat_username=admin --values=tomcat_password=424242
 
-# passing multiple values and secrets
-./xlw apply -v -f host.yaml --values=tomcat.username=admin --values=order=1 --secrets=tomcat.password=424242 --secrets=passphrase=secret
+# passing multiple values
+./xlw apply -v -f host.yaml --values=tomcat_username=admin --values=order=1 --values=tomcat_password=424242 --values=passphrase=secret
 ```
 
 ---
 **Using environment variables.**
-Any environment variable that starts with `XL_VALUE_` or `XL_SECRET_` will be passed devops-as-code command as a value and secret respectively.<br>
+Any environment variable that starts with `XL_VALUE_` will be passed devops-as-code command as a value respectively.<br>
 
 _**Please notice, that variable names are case sensitive**_
 
@@ -141,12 +132,12 @@ _**Please notice, that variable names are case sensitive**_
   continueOnError: true
   env:
     XL_VALUE_RELEASE_NAME: Test Release
-    XL_SECRET_BUILD_NUMBER: $(Build.BuildId)
+    XL_VALUE_BUILD_NUMBER: $(Build.BuildId)
 ```
 
 # Azure Key Vault integration
 
-It is possible to insert values / secrets from Azure Key Vault.
+It is possible to insert values from Azure Key Vault.
 
 Just follow these simple steps:
 * Create a new `Azure Key Vault` in your [Azure Account](https://portal.azure.com)
@@ -156,7 +147,7 @@ Just follow these simple steps:
 * Configure in the step your subscription and also the vault that you want to use
 * After that configuration, all the **following steps** can use secrets stored in the **Azure Key Vault**  as a Variable.
 E.g: If in your vault you have a secret with key `mySecret` you can access it using `$(mySecret)`
-* Inject data from Azure key vault into `XL_VALUE_` or `XL_SECRET_` environment variables:
+* Inject data from Azure key vault into `XL_VALUE_` environment variables:
     ```yaml
     - bash: |
       # Write your commands here
@@ -169,7 +160,7 @@ E.g: If in your vault you have a secret with key `mySecret` you can access it us
       displayName: 'Bash Script'
       continueOnError: true
       env:
-        XL_SECRET_RELEASE_NAME: $(testSecret)
+        XL_VALUE_RELEASE_NAME: $(testSecret)
         XL_VALUE_BUILD_NUMBER: $(testValue)
     ```
     
