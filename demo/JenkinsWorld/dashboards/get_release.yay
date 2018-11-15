@@ -1,9 +1,0 @@
-Http endpoint: ${xlreleaseUrl}
----
-Http POST:
-  path: /api/v1/releases/search
-  body:
-    title: ${title}
-    completed: true
-    aborted: true
-Print YAML: ${result[0]}
