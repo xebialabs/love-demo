@@ -1,0 +1,15 @@
+apiVersion: xl-deploy/v1
+kind: Applications
+spec:
+- name: Applications/{{ .ApplicationName }}
+  type: udm.Application
+  children:
+  - name: "1.0"
+    type: udm.DeploymentPackage
+    deployables:
+    - name: {{ .ApplicationName }}
+      type: docker.ContainerSpec
+      containerName: {{ .ApplicationName }}
+      image: {{ .Image }}
+      showLogsAfter: 10
+
