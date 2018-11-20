@@ -1,0 +1,7 @@
+apiVersion: xl/v1
+kind: Import
+metadata:
+  imports:
+  - docker-environment.yaml
+  - rest-o-rant-docker-application.yaml
+  - rest-o-rant-docker-pipeline.yaml
