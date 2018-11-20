@@ -9,3 +9,7 @@ spec:
 - name: Image
   type: Input
   description: What is the Docker image to deploy?
+- name: ShowLogsAfter
+  type: Input
+  description: How many seconds should we wait before retrieving the container logs?
+  default: 10

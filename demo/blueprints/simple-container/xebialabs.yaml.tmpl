@@ -18,4 +18,4 @@ spec:
       type: docker.ContainerSpec
       containerName: "{{ $imageName }}"
       image: "{{ .Image }}"
-      showLogsAfter: 10
+      showLogsAfter: {{ .ShowLogsAfter }}
