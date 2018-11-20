@@ -6,10 +6,6 @@ metadata:
   author: XebiaLabs
   version: '1.0'
 spec:
-
-- name: ApplicationName
-  type: Input
-  description: What is the Application name?
 - name: Image
   type: Input
   description: What is the Docker image to deploy?

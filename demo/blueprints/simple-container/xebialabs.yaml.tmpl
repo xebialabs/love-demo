@@ -1,15 +1,21 @@
+{{ $imageName := regexReplaceAll "^[^/]*/" .Image "" }}
+{{ $version := "latest" }}
+{{ $tag := regexFind ":.*$" .Image }}
+{{ if $tag }}
+  {{ $imageName = regexReplaceAll ":.*$" $imageName "" }}
+  {{ $version = trimAll ":" $tag}}
+{{ end }}
 apiVersion: xl-deploy/v1
 kind: Applications
 spec:
-- name: Applications/{{ .ApplicationName }}
+- name: "Applications/{{ $imageName }}"
   type: udm.Application
   children:
-  - name: "1.0"
+  - name: "{{ $version }}"
     type: udm.DeploymentPackage
     deployables:
-    - name: {{ .ApplicationName }}
+    - name: "{{ $imageName }}"
       type: docker.ContainerSpec
-      containerName: {{ .ApplicationName }}
-      image: {{ .Image }}
+      containerName: "{{ $imageName }}"
+      image: "{{ .Image }}"
       showLogsAfter: 10
-
