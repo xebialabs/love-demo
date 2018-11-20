@@ -13,3 +13,7 @@ spec:
   type: Input
   description: How many seconds should we wait before retrieving the container logs?
   default: 10
+- name: PublishAllPorts
+  type: Confirm
+  description: Should all ports be exposed?
+  default: true
