@@ -1,4 +1,4 @@
-FROM xebialabsunsupported/xl-deploy:8.5.0-alpha.86
+FROM xebialabsunsupported/xl-deploy:8.5.0-alpha.98
 
 COPY default-conf/* /opt/xebialabs/xl-deploy-server/default-conf/
 RUN rm -f /opt/xebialabs/xl-deploy-server/default-plugins/xld-aws-plugin-*.xldp
