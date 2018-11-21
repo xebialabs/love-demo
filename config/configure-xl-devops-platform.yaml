@@ -14,7 +14,7 @@ spec:
   username: admin
   password: admin
 ---
-apiVersion: xl-release/v1beta1
+apiVersion: xl-release/v1
 kind: Configurations
 spec:
 - name: jenkins
