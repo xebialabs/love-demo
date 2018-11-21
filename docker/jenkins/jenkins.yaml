@@ -34,6 +34,23 @@ jobs:
               }
           }
       }
+  - script: >
+      pipelineJob('devops-as-code-eks-blueprint') {
+          definition {
+              cpsScm {
+                  scm {
+                      git {
+                          branch("master")
+                          remote {
+                        	credentials('github-credentials')
+                        	url('https://github.com/xebialabs/e-commerce-microservice.git')
+                          }
+                      }
+                  }
+                  scriptPath('store/Jenkinsfile')
+              }
+          }
+      }
 
 credentials:
   system:
@@ -54,3 +71,8 @@ credentials:
             id:       xlr-credentials
             username: admin
             password: admin
+        - usernamePassword:
+            scope:    GLOBAL
+            id:       docker-login
+            username: ${DOCKER_USER}
+            password: ${DOCKER_PASS}

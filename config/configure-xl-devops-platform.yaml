@@ -13,3 +13,12 @@ spec:
   url: http://xl-deploy:4516
   username: admin
   password: admin
+---
+apiVersion: xl-release/v1beta1
+kind: Configurations
+spec:
+- name: jenkins
+  type: jenkins.Server
+  url: http://jenkins:8080
+  username: admin
+  password: admin
