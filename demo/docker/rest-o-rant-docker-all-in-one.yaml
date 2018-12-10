@@ -1,4 +1,4 @@
-apiVersion: xl-deploy/v1beta1
+apiVersion: xl-deploy/v1
 kind: Environments
 spec:
 - name: Local Docker Engine
@@ -6,7 +6,7 @@ spec:
   members:
   - Infrastructure/local-docker
 ---
-apiVersion: xl-deploy/v1beta1
+apiVersion: xl-deploy/v1
 kind: Applications
 spec:
 - name: rest-o-rant-api-docker
@@ -26,7 +26,7 @@ spec:
       - rest-o-rant
       showLogsAfter: 5
 ---
-apiVersion: xl-deploy/v1beta1
+apiVersion: xl-deploy/v1
 kind: Applications
 spec:
 - name: rest-o-rant-web-docker
@@ -50,23 +50,20 @@ spec:
         containerPort: 80
         protocol: tcp
 ---
-apiVersion: xl-release/v1beta1
+apiVersion: xl-release/v1
 kind: Templates
 spec:
-- name: REST-o-rant
-  type: xlrelease.Folder
+- directory: REST-o-rant
   children:
-  - name: REST-o-rant on Docker
-    type: xlrelease.Release
+  - template: REST-o-rant on Docker
     description: |
       This XL Release template shows how to deploy and undeploy an application to Docker using XL Deploy.
     tags:
     - REST-o-rant
     - Docker
     phases:
-    - name: Deploy
+    - phase: Deploy
       color: '#ff9e3b'
-      type: xlrelease.Phase
       tasks:
       - name: Deploy REST-o-rant application backend
         type: xldeploy.Deploy
@@ -78,8 +75,7 @@ spec:
         server: XL Deploy
         deploymentPackage:  rest-o-rant-web-docker/1.0
         deploymentEnvironment: Environments/Local Docker Engine
-    - name: Test
-      type: xlrelease.Phase
+    - phase: Test
       tasks:
       - name: Test the REST-o-rant application
         type: xlrelease.Task
@@ -92,9 +88,8 @@ spec:
           You should see a text saying "Find the best restaurants near you!". Type "Cow" in the search bar and click "Search" to find the "Old Red Cow" restaurant.
 
           When everything looks OK, complete this task to continue the release and undeploy the application.
-    - name: Clean up
+    - phase: Clean up
       color: '#999999'
-      type: xlrelease.Phase
       tasks:
       - name: Undeploy REST-o-rant application frontend
         type: xldeploy.Undeploy

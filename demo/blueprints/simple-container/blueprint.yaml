@@ -5,7 +5,7 @@ metadata:
   description: This blueprint defines an application that consists of a single container to be start on a Docker engine
   author: XebiaLabs
   version: '1.0'
-spec:
+parameters:
 - name: Image
   type: Input
   description: What is the Docker image to deploy?
@@ -17,3 +17,5 @@ spec:
   type: Confirm
   description: Should all ports be exposed?
   default: true
+files:
+- path: xebialabs.yaml.tmpl
