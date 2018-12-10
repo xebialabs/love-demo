@@ -74,5 +74,5 @@ credentials:
         - usernamePassword:
             scope:    GLOBAL
             id:       docker-login
-            username: ${DOCKER_USER}
-            password: ${DOCKER_PASS}
+            username: ${DOCKER_HUB_USERNAME}
+            password: ${DOCKER_HUB_PASSWORD}
