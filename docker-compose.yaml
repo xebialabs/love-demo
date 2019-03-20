@@ -25,20 +25,20 @@ services:
     volumes:
     - .:/data:ro
 
-  jenkins:
-    build: docker/jenkins
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - ./docker/jenkins/jenkins.yaml:/var/jenkins_home/casc_configs/jenkins.yaml
-    environment:
-      - CASC_JENKINS_CONFIG=/var/jenkins_home/casc_configs/jenkins.yaml
-      - GITHUB_USER=${GITHUB_USER}
-      - GITHUB_TOKEN=${GITHUB_TOKEN}
-      - DOCKER_HUB_USERNAME=${DOCKER_HUB_USERNAME}
-      - DOCKER_HUB_PASSWORD=${DOCKER_HUB_PASSWORD}
-    ports:
-      - 8080:8080
-      - 55888:55888
+  # jenkins:
+  #   build: docker/jenkins
+  #   volumes:
+  #     - /var/run/docker.sock:/var/run/docker.sock
+  #     - ./docker/jenkins/jenkins.yaml:/var/jenkins_home/casc_configs/jenkins.yaml
+  #   environment:
+  #     - CASC_JENKINS_CONFIG=/var/jenkins_home/casc_configs/jenkins.yaml
+  #     - GITHUB_USER=${GITHUB_USER}
+  #     - GITHUB_TOKEN=${GITHUB_TOKEN}
+  #     - DOCKER_HUB_USERNAME=${DOCKER_HUB_USERNAME}
+  #     - DOCKER_HUB_PASSWORD=${DOCKER_HUB_PASSWORD}
+  #   ports:
+  #     - 8080:8080
+  #     - 55888:55888
 
   dockerproxy:
     image: tecnativa/docker-socket-proxy:latest
